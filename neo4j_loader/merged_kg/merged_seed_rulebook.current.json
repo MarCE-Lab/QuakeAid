@@ -1,0 +1,432 @@
+{
+  "_meta": {
+    "purpose": "Final civil-engineering safety seed rules using canonical final node IDs (post Phase 4.0 — terminology edges only).",
+    "version": "1.0-phase4_5",
+    "language": "zh-TW",
+    "authority": "civil_engineering_seed_rule (highest tier, equal to structured_terminology_fields)",
+    "principle": "Conservative > Optimistic. Safety > Convenience. Override > Silent correction.",
+    "reference_spec": "KG_BUILD_SPEC.md §2.4, §8",
+    "source_rulebook": "terminology/seed_rulebook.json"
+  },
+  "rules": [
+    {
+      "rule_id": "SEED_001",
+      "description": "X-shaped crack on a wall indicates shear failure under reversed-cyclic earthquake loading; in walls this constitutes plastic shear damage and maps to Severity Level A (immediate evacuation).",
+      "validator_grade": true,
+      "confidence": 0.97,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "X形裂縫由雙向剪力作用造成；當其出現在牆體（剪力主導構件），代表結構已進入塑性破壞階段。ATC-20 與 Taiwan 耐震規範均判定貫穿性 X 形裂縫為 A 級損傷。",
+      "source_rule_ids": [
+        "terminology:SEED_001"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000001",
+        "edge_final_000002",
+        "edge_final_000003",
+        "edge_final_000004"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "element": "E_WALL",
+        "pattern": "T_term_271"
+      },
+      "path": [
+        [
+          "E_WALL",
+          "has_damage",
+          "T_term_271"
+        ],
+        [
+          "T_term_271",
+          "indicates",
+          "F_term_159"
+        ],
+        [
+          "F_term_159",
+          "severity_in_element",
+          "SEV_A",
+          {
+            "element": "E_WALL"
+          }
+        ],
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_002",
+      "description": "X-shaped crack on a column likewise indicates shear failure of a primary load-bearing element; SEV_A is mandatory.",
+      "validator_grade": true,
+      "confidence": 0.97,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "柱為主要垂直承重構件，X 形裂縫在柱體出現代表剪力破壞主導。柱失效會直接威脅整棟建築垂直載重能力。",
+      "source_rule_ids": [
+        "terminology:SEED_002"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000005",
+        "edge_final_000002",
+        "edge_final_000006",
+        "edge_final_000004"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "element": "E_term_006",
+        "pattern": "T_term_271"
+      },
+      "path": [
+        [
+          "E_term_006",
+          "has_damage",
+          "T_term_271"
+        ],
+        [
+          "T_term_271",
+          "indicates",
+          "F_term_159"
+        ],
+        [
+          "F_term_159",
+          "severity_in_element",
+          "SEV_A",
+          {
+            "element": "E_term_006"
+          }
+        ],
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_003",
+      "description": "Exposed rebar — irrespective of element — indicates concrete cover loss and corrosion onset; minimum severity candidate is A. This is mandated by DATASET_SPEC §3 (鋼筋裸露 → damage_level must contain A).",
+      "validator_grade": true,
+      "confidence": 0.95,
+      "source": "dataset_spec_seed_rule + civil_engineering_seed_rule",
+      "rationale": "鋼筋裸露代表混凝土保護層已破壞，承載核心受損且鋼筋暴露於腐蝕環境。DATASET_SPEC 明確規定此 pattern 必含 SEV_A 候選。",
+      "source_rule_ids": [
+        "terminology:SEED_003"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000007",
+        "edge_final_000004"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "pattern": "T_term_091"
+      },
+      "path": [
+        [
+          "T_term_091",
+          "severity_of",
+          "SEV_A"
+        ],
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_004",
+      "description": "Diagonal cracks on columns indicate shear demand exceeding shear capacity; baseline severity is A unless corroborating evidence shows hairline width.",
+      "validator_grade": true,
+      "confidence": 0.92,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "柱面 45° 斜向裂縫為剪力剪壞典型特徵；因柱為承重構件，此情況不應被低估。",
+      "source_rule_ids": [
+        "terminology:SEED_004"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000008",
+        "edge_final_000009",
+        "edge_final_000006",
+        "edge_final_000004"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "element": "E_term_006",
+        "pattern": "T_term_276"
+      },
+      "path": [
+        [
+          "E_term_006",
+          "has_damage",
+          "T_term_276"
+        ],
+        [
+          "T_term_276",
+          "indicates",
+          "F_term_159"
+        ],
+        [
+          "F_term_159",
+          "severity_in_element",
+          "SEV_A",
+          {
+            "element": "E_term_006"
+          }
+        ],
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_005",
+      "description": "Concrete spalling exposing structural rebar in a column or shear wall must trigger SEV_A. (Spalling alone without rebar exposure may be SEV_B.)",
+      "validator_grade": true,
+      "confidence": 0.94,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "承重構件混凝土剝落且伴隨鋼筋裸露，代表保護層失效與承載核心受損；應立即撤離並進行結構技師評估。",
+      "source_rule_ids": [
+        "terminology:SEED_005"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000010",
+        "edge_final_000004"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "pattern": "T_term_090",
+        "co_pattern": "T_term_091",
+        "element_in": [
+          "E_term_001",
+          "E_term_006"
+        ]
+      },
+      "path": [
+        [
+          "T_term_090",
+          "severity_of",
+          "SEV_A"
+        ],
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_006",
+      "description": "Severity → Action mapping is fixed: A → 盡速遠離; B → 請教專業技師; C → 自行修補.",
+      "validator_grade": true,
+      "confidence": 1.0,
+      "source": "dataset_spec_seed_rule",
+      "rationale": "DATASET_SPEC §3 明確規定此對應關係（A=盡速遠離，B=請教專業技師，C=自行修補）。",
+      "source_rule_ids": [
+        "terminology:SEED_006"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000004",
+        "edge_final_000011",
+        "edge_final_000012"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {},
+      "path": [
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ],
+        [
+          "SEV_B",
+          "requires_action",
+          "ACT_ENGINEER_INSPECTION"
+        ],
+        [
+          "SEV_C",
+          "requires_action",
+          "ACT_SELF_REPAIR_OR_MONITOR"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_007",
+      "description": "Punching shear failure in slabs around column heads is a brittle failure mode and must trigger SEV_A.",
+      "validator_grade": true,
+      "confidence": 0.93,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "衝剪破壞為脆性無預警破壞；發生於板柱接頭時可能導致樓板瞬間崩塌。",
+      "source_rule_ids": [
+        "terminology:SEED_007"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000013",
+        "edge_final_000004"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "element": "E_term_008",
+        "failure_mode": "F_term_310"
+      },
+      "path": [
+        [
+          "F_term_310",
+          "severity_in_element",
+          "SEV_A",
+          {
+            "element": "E_term_008"
+          }
+        ],
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_008",
+      "description": "Soft-story collapse mechanism in any building level must trigger SEV_A.",
+      "validator_grade": true,
+      "confidence": 0.95,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "軟弱層集中變形可能引發層間倒塌（連續性倒塌前兆）。",
+      "source_rule_ids": [
+        "terminology:SEED_008"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000014",
+        "edge_final_000004"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "failure_mode": "F_term_132"
+      },
+      "path": [
+        [
+          "F_term_132",
+          "severity_of",
+          "SEV_A"
+        ],
+        [
+          "SEV_A",
+          "requires_action",
+          "ACT_EVAC"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_009",
+      "description": "Hairline / fine cracks (<0.3mm) on non-structural walls map to SEV_C unless co-located with structural-element cracks.",
+      "validator_grade": false,
+      "confidence": 0.78,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "髮絲裂縫寬度通常<0.3mm，多為乾縮或溫度應力造成；單獨出現於非承重構件時為 SEV_C。validator_grade=false 因為 element 是 unconstrained。",
+      "source_rule_ids": [
+        "terminology:SEED_009"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000015",
+        "edge_final_000012"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "pattern": "T_term_111"
+      },
+      "path": [
+        [
+          "T_term_111",
+          "severity_of",
+          "SEV_C"
+        ],
+        [
+          "SEV_C",
+          "requires_action",
+          "ACT_SELF_REPAIR_OR_MONITOR"
+        ]
+      ]
+    },
+    {
+      "rule_id": "SEED_010",
+      "description": "Severity hierarchy: SEV_A > SEV_B > SEV_C. When CV severity is lower than KG-expected severity, return OVERRIDE flag, never silent acceptance.",
+      "validator_grade": true,
+      "confidence": 1.0,
+      "source": "civil_engineering_seed_rule + readme_design",
+      "rationale": "保守性原則：寧可誤判為較嚴重而促進複檢，也不可低估而錯過撤離窗口。",
+      "source_rule_ids": [
+        "terminology:SEED_010"
+      ],
+      "mapped_edge_ids": [],
+      "status": "accepted",
+      "warnings": [],
+      "is_meta_rule": true,
+      "if": {},
+      "path": []
+    },
+    {
+      "rule_id": "SEED_011",
+      "description": "Cost relations (`affects_cost`) and inspection-cost edges are NEVER validator_grade. They are retrieval/explanation only and must be presented with disclaimer '僅供參考'.",
+      "validator_grade": false,
+      "confidence": 1.0,
+      "source": "dataset_spec_seed_rule",
+      "rationale": "DATASET_SPEC §3 規定費用估算需附「僅供參考」；KG_BUILD_SPEC §8 規則 6 明訂成本估算永遠不能升為 validator-grade。",
+      "source_rule_ids": [
+        "terminology:SEED_011"
+      ],
+      "mapped_edge_ids": [],
+      "status": "accepted",
+      "warnings": [],
+      "is_meta_rule": true,
+      "if": {},
+      "path": []
+    },
+    {
+      "rule_id": "SEED_012",
+      "description": "Network/map cracking (alligator pattern) is typically a surface-shrinkage / freeze-thaw / map-cracking phenomenon on plaster or non-structural finishes; on its own it is SEV_C. If it appears on structural concrete with rebar exposure, escalate to higher-level rules.",
+      "validator_grade": false,
+      "confidence": 0.72,
+      "source": "civil_engineering_seed_rule",
+      "rationale": "網狀裂縫單獨出現於粉刷層多為非結構性；validator_grade=false 因為高度 element-dependent。",
+      "source_rule_ids": [
+        "terminology:SEED_012"
+      ],
+      "mapped_edge_ids": [
+        "edge_final_000016"
+      ],
+      "status": "accepted",
+      "warnings": [],
+      "if": {
+        "pattern": "T_term_273"
+      },
+      "path": [
+        [
+          "T_term_273",
+          "severity_of",
+          "SEV_C"
+        ]
+      ]
+    }
+  ],
+  "_severity_ordinal": {
+    "SEV_A": 3,
+    "SEV_B": 2,
+    "SEV_C": 1
+  },
+  "_action_severity_default_map": {
+    "SEV_A": "ACT_EVAC",
+    "SEV_B": "ACT_ENGINEER_INSPECTION",
+    "SEV_C": "ACT_SELF_REPAIR_OR_MONITOR"
+  }
+}
