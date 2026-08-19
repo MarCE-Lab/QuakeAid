@@ -1,0 +1,15 @@
+# LLM_agent/config/llm_config.yaml
+# Configuration for Breeze-7B LLM inference
+
+llm:
+  base_model: "MediaTek-Research/Breeze-7B-Instruct-v1_0"
+  lora_path: null  # Set to "LLM_agent/models/breeze_lora" after fine-tuning
+  use_fp16: true
+  max_length: 2048
+
+generation:
+  max_new_tokens: 512
+  temperature: 0.3
+  top_p: 0.9
+  do_sample: false
+  repetition_penalty: 1.1

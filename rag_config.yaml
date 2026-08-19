@@ -1,0 +1,81 @@
+encoder:
+  model: rag_system/models/bge_m3_finetuned_v4/checkpoint-11000
+  use_fp16: true
+index:
+  dir: rag_system/models/hybrid_index_finetuned_v4
+  dense_dim: 1024
+retrieval:
+  sparse_top_k: 100
+  dense_top_k: 100
+  graph_top_k: 50
+  fused_top_k: 50
+  rrf_k: 60
+  rrf_weights:
+    sparse: 0.2
+    dense: 0.6
+    graph: 0.2
+  reranker_top_k: 3
+reranker:
+  model: rag_system/models/reranker_finetuned_v4/best_checkpoint
+  blend_alpha: 1.0
+  use_fp16: true
+  channel_budget:
+    graph: 1
+    text: 2
+metadata_filtering:
+  enabled: true
+  strategy: soft
+  min_results: 10
+prompt:
+  max_context_tokens: 1000
+  max_retrieved_docs: 3
+  max_kg_facts: 8
+routing:
+  enabled: true
+  classifier: knn
+  knn_dir: rag_system/models/qtype_knn_v4
+  skip_zero_weight_channels: true
+  default:
+    sparse: 0.2
+    dense: 0.6
+    graph: 0.2
+  by_type:
+    T1: {sparse: 0.4, dense: 0.6, graph: 0.0}
+    T2: {sparse: 0.2, dense: 0.6, graph: 0.2}
+    T3: {sparse: 0.2, dense: 0.6, graph: 0.2}
+    T4: {sparse: 0.2, dense: 0.6, graph: 0.2}
+    T5: {sparse: 0.2, dense: 0.6, graph: 0.2}
+graph:
+  qa_passage_source: graph_kg
+  enabled: true
+  neo4j_uri: ${NEO4J_URI:-bolt://localhost:7687}
+  neo4j_user: ${NEO4J_USER:-neo4j}
+  neo4j_password: ${NEO4J_PASSWORD:-caece913}
+  neo4j_database: ${NEO4J_DATABASE:-neo4j}
+  alias_index_path: neo4j_loader/merged_kg/merged_kg_alias_index.current.json
+  seed_rulebook_path: neo4j_loader/merged_kg/merged_seed_rulebook.current.json
+  sentences_path: neo4j_loader/merged_kg/merged_graph_retrieval_sentences.current.with_synth.jsonl
+  corpus_path: rag_system/data/rag_corpus_eval_v4.json
+  edges_path: neo4j_loader/merged_kg/merged_kg_edges.current.jsonl
+  crosswalk_path: neo4j_loader/merged_kg/edge_id_crosswalk.current.json
+  edge_mode: comprehensive
+  max_hops: 2
+  per_entity_limit: 25
+  max_entities_linked: 8
+  validator_weight: 2.0
+  hop_decay: 0.5
+  cache_size: 1024
+  use_apoc: false
+  seed_rule_force_score: 20.0
+data:
+  term_definition: rag_system/data/all/term_definition.json
+  qa_files:
+  - rag_system/data/all/QA_T1_damage_pattern.json
+  - rag_system/data/all/QA_T2_severity_level.json
+  - rag_system/data/all/QA_T3_element_specific.json
+  - rag_system/data/all/QA_T4_repair_cost.json
+  - rag_system/data/all/QA_T5_cause_general.json
+  corpus: rag_system/data/rag_corpus_eval_v4.json
+  qa_grounding: rag_system/data/all/qa_grounding_all_v4.jsonl
+
+
