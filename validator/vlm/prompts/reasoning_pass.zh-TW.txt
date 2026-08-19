@@ -1,0 +1,113 @@
+【階段二：REASONING PASS（結構推理）v3】
+
+輸入：階段一 extraction 產出的 JSON（pass_completed = "extraction"）＋ 同一張影像。
+任務：以技師的推理，在該 JSON 之上「補填推理類欄位」，輸出更新後的完整 JSON，並設 pass_completed = "reasoning"。
+
+再次強調絕對界線：本階段「仍然不可」輸出 A/B/C、紅黃綠單、甲乙丙彙總、或撤離/拆除/安全等行動結論。你只把觀察提升為「破壞機制 + I~V 損害程度 + 承載力觀察判斷 + 不確定性」這層中間表徵，交給下游 KG。critical_signatures_detected 由系統依你的 features/relationships/global_indicators 機械推導，你不需（也無法）直接填寫——想成立某簽章，就把對應原始徵象記錄正確。
+
+請逐步進行下列推理鏈，再輸出 JSON。
+
+══════════════════════════════════════
+步驟 0：重看影像，核對並修正階段一（本步驟是你「再次看圖」的理由，務必執行）
+══════════════════════════════════════
+• 逐一 member 對照影像：
+  a) 這個 member 真的存在嗎？階段一若虛構了背景構材（畫面中指不出來、material_evidence 空泛），請「刪除」該 member 及其特徵，並重排 relationships。
+  b) 有無「遺漏的重度徵象」？特別檢查：主筋是否外鼓/燈籠狀（main_buckled）、是否拉斷（main_ruptured）、箍筋是否脫開/斷裂（tie_opened/tie_fractured）、核心混凝土是否碎裂（core_disintegrated/crushed+depth=core）、構材是否錯位/縮短/斷面歪斜。看到了就「補列」對應 damage_feature（新 id 續編），並於 observation_evidence 開頭註記「（第二階段補列）」。
+  c) 材質複核：任何剝落/破口內若可見磚體 → 依 extraction P4 鐵則改判 material 與 member_type，並同步修正 exposed_material_after_spalling=brick_body。
+• 允許且鼓勵修正階段一的觀察欄位；保留其餘正確內容。
+
+══════════════════════════════════════
+步驟 1：逐一損害特徵 → 判定破壞機制
+（填 damage_features[].{inferred_mechanism, mechanism_confidence}）
+══════════════════════════════════════
+依下列判別規則（不只看「有沒有裂」，要看「怎麼裂」；方向以【影像技術資訊】之原始長寬比為準）：
+• 柱/梁「端部」與構材軸線近乎垂直之裂縫 + 受壓側保護層剝落，且主筋未挫屈、箍筋未斷 → flexural（彎曲；若箍筋足夠屬正常塑鉸）。
+• 「斜向 45°」或「X 交叉」裂縫，尤其位於構材中央、寬度大 → shear（剪力，脆性高危；裂縫越寬代表箍筋已降伏甚至失效）。
+• 柱混凝土爆裂、主筋挫屈外鼓、柱縮短 → axial_compression（軸力/壓潰）。
+• 受 spandrel_or_sill_wall 束制之柱（見 relationships 的 sill_wall_constrains_column）出現集中剪力裂縫 → short_column_effect（短柱效應）。此機制「僅適用於柱」且必須有束制關係佐證。
+• 梁柱接頭區對角裂縫/剝落 → joint_failure（僅適用於接頭區/joint_region）。
+• 鋼構局部鼓曲/鋼板皺褶 → buckling；螺栓剪斷/銲道開裂 → connection_failure。
+• 非結構墜落 → non_structural_falling；非結構傾倒 → non_structural_toppling。
+• 證據不足以分辨 → indeterminate，並降低 mechanism_confidence。不可把 shear/short_column_effect/joint_failure 套用在無對應位置與關係證據的特徵上。
+
+══════════════════════════════════════
+步驟 2：裂縫成因鑑別（地震 vs 既有）
+（填 damage_features[].likely_seismic_or_preexisting）
+══════════════════════════════════════
+• preexisting（既有/非地震）：細微無方向性的乾縮/溫差網狀裂；沿內埋管路的直線裂；沿鋼筋方向且伴鏽斑/鏽水的鏽蝕膨脹裂。
+• seismic（地震）：方向性明確、集中於端部/接頭/開口角隅、伴保護層剝落或錯位的裂縫。
+• 【鏽蝕不等於免責】鏽蝕(corroded)只說明「劣化早已存在」，不改變「現在承載力已受損」的事實：同一特徵可 likely_seismic_or_preexisting=preexisting，但其 feature_severity_grade 仍須依當前可見狀態（剝落範圍、鋼筋裸露程度）如實定級，不得因判為既有而降級。
+• 無法排除結構性者 → indeterminate（下游保守處理）。
+
+══════════════════════════════════════
+步驟 3：逐一損害特徵 → 給予 I~V 損害程度
+（填 damage_features[].feature_severity_grade，依構材類型套用下列門檻）
+══════════════════════════════════════
+【柱 / 梁（RC）】
+  I  ：髮絲裂縫（約 0.2mm 內）。
+  II ：明顯裂痕（>0.2mm）/ 剪力裂縫 >0.3mm，且混凝土粉刷層剝落。
+  III：混凝土保護層剝落，但主筋未挫屈、箍筋未脫開或斷裂（rebar_state = exposed_intact）。
+  IV ：保護層脫落範圍大，部分箍筋脫開或斷裂、主筋可能挫屈（rebar_state = tie_opened / tie_fractured / main_buckled 之初期）。
+  V  ：箍筋脫開斷裂、主筋挫屈嚴重或拉斷、核心混凝土碎裂脫落、樓層下陷（rebar_state = main_buckled/main_ruptured 或 concrete_state = crushed/blown_out/core_disintegrated）。
+
+【結構牆 / 剪力牆（RC）】
+  I  ：輕微裂縫，水平向裂縫 <0.3mm。
+  II ：水平向裂縫多且延伸至柱，寬 0.3–0.5mm；斜向裂縫長度未超過牆對角線一半。
+  III：有斜向裂縫，但未見牆內主筋。
+  IV ：大量斜向裂縫，可見牆內主筋但未拉斷、邊柱保護層脫落。
+  V  ：斜向裂縫擴大、牆內主筋拉斷、邊柱壓潰、柱筋挫屈、混凝土碎裂脫落、樓板下陷。
+
+【磚牆 / 加強磚造】
+  磚牆裂縫 ≤0.5cm 約 I 級；>0.5cm 進級；上下錯位變形/局部坍塌屬重度（IV~V）。加強磚造之柱、梁同上 RC 表。磚牆貫穿破口/整片磚體外露崩落屬 V。
+
+【鋼構】
+  無統一裂縫門檻；依挫屈/鋼板拉裂/接頭破壞之有無與程度，對應輕(≈I~II)/中(≈III~IV)/重(≈V)；因有包覆，以包覆破損、樓板下陷、層間變位間接定級，並降低信心。
+
+【定級鐵則（取嚴）】
+  a) 兩級之間拿不定 → 取較嚴重者，並於 reasoning 寫明猶豫點（原則七）。III/IV 邊界尤其如此。
+  b) 大面積剝落 + 鋼筋成排裸露：先回步驟 0 確認箍筋/主筋狀態。確認 exposed_intact 才可停在 III；「看不清」箍筋主筋時，若剝落範圍大或構材外形已歪斜/錯位/斷面束縮 → 至少 IV，並把不可辨處寫入 key_uncertainties。
+  c) 構材整體已折斷、鉸接變形、錯位、明顯縮短 → 一律 V，無論裂縫寬度可否量測。
+  d) 無比例尺時依定性寬度與 rebar_state/concrete_state 保守定級；無法定級填 indeterminate。
+• 每個特徵於 reasoning 欄寫繁中推理依據。
+
+══════════════════════════════════════
+步驟 4：構材彙整
+（填 members[].{member_damage_grade, load_capacity_status, member_reasoning}；「每個 member 都必填，不得留 null」）
+══════════════════════════════════════
+• 【輸出順序】每個 member 先「完整輸出更新後的 damage_features 陣列」（含步驟 1~3 補填之機制與級數），之後才輸出 member_damage_grade / load_capacity_status / member_reasoning——受控解碼為固定順序，damage_features 槽位跳過即無法回填，嚴禁改以文字夾帶。
+• member_damage_grade = 該構材所有 feature 中「最嚴重」的級數（取大不取小）；無任何特徵之構材填 I 或 indeterminate（不可 null）。
+• load_capacity_status（承擔垂直載重能力之觀察判斷，這是 A/B/C 的前驅、但你不可給 A/B/C）：
+  — intact：僅 I~II 級表層損害。
+  — possibly_compromised：III 級、保護層剝落但主筋完好。
+  — likely_compromised：IV 級、箍筋斷裂/主筋疑似挫屈。
+  — clearly_lost：V 級、主筋挫屈/拉斷、核心碎裂、下陷。
+  — indeterminate：資訊不足。非結構構材填 na。
+• member_reasoning：繁中，說明取最嚴重特徵與承載力判斷的理由。
+
+══════════════════════════════════════
+步驟 5：跨構材關係的結構意義
+（補強 relationships[].significance）
+══════════════════════════════════════
+• 例：sill_wall_constrains_column → 「窗台牆束制致短柱效應，剪力需求集中、易脆性破壞」。
+• discontinuous_column_line → 「柱線不連貫，傳力路徑中斷，易形成軟弱層」。
+• beam_column_joint 之接頭裂損 → 「接頭失效將致框架機制崩潰」。
+• 兩端 id 必須存在於 members[]；步驟 0 刪除構材後請同步清理。
+
+══════════════════════════════════════
+步驟 6：損害彙整（assessment_inputs_summary）
+══════════════════════════════════════
+• 【系統推導欄位】structural_members_involved、worst_member_damage_grade、critical_signatures_detected、non_structural_hazards_present、second_line_defense_compromised 由系統依你上面的輸出自動計算覆寫——你無須填寫、也不會被採信。你的職責是把「原始徵象」記對：主筋挫屈記在 rebar_state、樓層下陷記在 global_indicators、窗台束制記在 relationships，簽章即自動成立。
+• 【你要填的文字欄位——並「依此順序」輸出（schema v1.3 屬性順序）】
+  — key_uncertainties：繁中列出主要不確定點（遮擋/無比例尺/材質不明/僅見局部/包覆/箍筋主筋不可辨等）。
+  — information_sufficiency：sufficient_for_visible_scope（對可見範圍足夠，但不代表對整棟）/ limited / insufficient。
+  — analyst_notes：繁中技師整體觀察，但「不得」出現 A/B/C、紅黃綠單、撤離與否之結論。
+
+══════════════════════════════════════
+輸出要求
+══════════════════════════════════════
+1. 只輸出一個合法 JSON，符合 context_schema.json v1.2，pass_completed = "reasoning"，保留並更新階段一的所有觀察欄位（含步驟 0 之修正）。
+2. enum 只用 schema 定義值；推理欄位用繁體中文與正確結構術語。
+3. 嚴守界線：可給「破壞機制 + I~V 損害程度 + 承載力觀察 + 不確定性」；「不可」給 A/B/C、紅黃綠單、甲乙丙彙總、行動建議。
+4. 不確定/看不到者保守處理（indeterminate / 低信心 / 寫入 uncertainties），不可臆造，不可由單一構材推論整棟；級數猶豫時取嚴。
+5. 【欄位順序】依 schema 屬性順序輸出；damage_features 必在 member 級欄位之前；summary 先輸出三個文字欄位。跳過的欄位無法回填，不得夾帶進字串。
+6. 不要有任何 JSON 以外的文字。

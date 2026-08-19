@@ -1,0 +1,1045 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/seismic-damage/context_schema.json",
+  "title": "震損單張影像 VLM 結構化輸出 Schema (graph-ready)",
+  "description": "VLM 對單張建築物震損影像的結構化輸出契約。設計為知識圖譜 (KG) 友善：構材(members)、損害特徵(damage_features)、關係(relationships)、整體指標(global_indicators) 皆可直接映射為 KG 節點與邊。所有受控詞彙以英文 enum 表示以利 KG 對齊；描述性文字以繁體中文填入 *_reasoning / evidence / notes 欄位。重要：本 Schema 刻意不含 A/B/C 評級、紅黃綠單、甲乙丙彙總、撤離建議等下游判定欄位 —— 那些由 KG / 人工標註 / GNN 負責。VLM 僅輸出觀察與構材級判斷 (含損害機制與 I~V 損害程度)。 [v1.3←1.2] 變更：members 必填 is_primary_subject 與 exposed_material_after_spalling；damage_feature 必填 position_on_member 與 orientation；新增 runner 注入之 image_context.source_image（原始像素尺寸/長寬比/letterbox 資訊）；assessment_inputs_summary.critical_signatures_detected 改由 runner 依 features/relationships/global_indicators 機械推導（模型輸出不再直接採信，generation schema 已移除該欄）。enum 值本身無任何增刪，KG 詞彙表與 feature_spec 不受影響。 [v1.3] 針對受控解碼『固定屬性順序』特性之修正：member.required 新增 damage_features（無損害時為空陣列，槽位不可跳過）；assessment_inputs_summary 屬性重排為文字欄位在前（key_uncertainties→information_sufficiency→analyst_notes→系統推導欄位）且該三文字欄位改為必填。enum 值仍無任何增刪。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "image_context",
+    "members"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.3"
+    },
+    "pass_completed": {
+      "type": "string",
+      "enum": [
+        "extraction",
+        "reasoning"
+      ],
+      "description": "標記此 JSON 已完成哪一階段。extraction = 僅觀察欄位；reasoning = 觀察+推理欄位皆已填。"
+    },
+    "image_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "影像層級脈絡 (KG 中對應一個 Image/Scene 節點)。對應判讀維度 P1, P5, P12。",
+      "required": [
+        "viewing_distance",
+        "image_quality"
+      ],
+      "properties": {
+        "scene_type": {
+          "$ref": "#/$defs/scene_type"
+        },
+        "building_use": {
+          "$ref": "#/$defs/building_use"
+        },
+        "indoor_outdoor": {
+          "$ref": "#/$defs/indoor_outdoor"
+        },
+        "building_age_hint": {
+          "$ref": "#/$defs/building_age_hint"
+        },
+        "scene_evidence": {
+          "type": "string",
+          "description": "繁中：由哪些線索判定場景 (家具/地磚/外牆磁磚/樓梯間等)。"
+        },
+        "viewing_distance": {
+          "$ref": "#/$defs/viewing_distance"
+        },
+        "scale_reference": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "比例尺/已知尺寸參考物，決定裂縫寬度能否量化。",
+          "properties": {
+            "present": {
+              "type": "boolean"
+            },
+            "reference_object": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "如 50元硬幣/紅磚模距/磁磚縫/插座面板/門框。"
+            },
+            "enables_width_measurement": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "present",
+            "enables_width_measurement"
+          ]
+        },
+        "image_quality": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "影像品質與可信度元評估 (P12)。issues 影響整體 confidence，並使下游推理偏保守。",
+          "required": [
+            "overall_confidence"
+          ],
+          "properties": {
+            "overall_confidence": {
+              "$ref": "#/$defs/confidence_level"
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/image_quality_issue"
+              },
+              "uniqueItems": true
+            },
+            "occlusion_present": {
+              "type": "boolean"
+            },
+            "surface_fully_covered": {
+              "type": "boolean",
+              "description": "結構是否被裝修/壁紙/磁磚完全包覆而無法檢視底層。"
+            },
+            "notes": {
+              "type": "string",
+              "description": "繁中：可信度相關備註。"
+            }
+          }
+        },
+        "id": {
+          "type": "string",
+          "description": "Stable globally-unique image id injected by the runner (handoff §2)."
+        },
+        "source_image": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Runner-injected（模型不需輸出；generation schema 已移除）：原始影像技術資訊，供下游判讀方向/解析度可信度。",
+          "properties": {
+            "width_px": {
+              "type": "integer"
+            },
+            "height_px": {
+              "type": "integer"
+            },
+            "aspect_ratio": {
+              "type": "number",
+              "description": "width/height，原始未補邊。"
+            },
+            "min_side_px": {
+              "type": "integer"
+            },
+            "letterboxed": {
+              "type": "boolean",
+              "description": "是否已由 runner 補邊成正方形（不拉伸）。"
+            },
+            "pad_fraction": {
+              "type": "number",
+              "description": "補邊像素佔正方形面積比例 0~1。"
+            },
+            "low_resolution_input": {
+              "type": "boolean",
+              "description": "min_side_px < 門檻（vlm_config.MIN_SIDE_WARN_PX）時為 true。"
+            }
+          },
+          "required": [
+            "width_px",
+            "height_px",
+            "aspect_ratio",
+            "letterboxed"
+          ]
+        }
+      }
+    },
+    "members": {
+      "type": "array",
+      "description": "影像中辨識出的構材陣列。每個元素 = 一個 KG 構材節點 (Member)。涵蓋 P2, P3, P4, P7, P8 及 reasoning 的構材級判斷。",
+      "items": {
+        "$ref": "#/$defs/member"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "description": "跨構材關係 = KG 中的邊 (Edge)。涵蓋接頭、相鄰、短柱束制、牆於框架內、柱線不連貫、支承關係等 (P3, P7, P9)。",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    },
+    "global_indicators": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "建物整體/系統性簽章 (P10)。多為中遠距離影像可判讀者。每項僅記錄 observed + 量值 + 證據，不做安全評級。",
+      "properties": {
+        "overall_tilt": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "observed": {
+              "type": "boolean"
+            },
+            "estimated_ratio": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "如 '1/30'、'1/50'；無法估則 null。此為觀察量值，非評級。"
+            },
+            "direction": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observed"
+          ]
+        },
+        "story_offset_or_soft_story": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "observed": {
+              "type": "boolean"
+            },
+            "affected_story": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observed"
+          ]
+        },
+        "differential_settlement": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "observed": {
+              "type": "boolean"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observed"
+          ]
+        },
+        "story_collapse_or_slab_sagging": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "observed": {
+              "type": "boolean"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observed"
+          ]
+        },
+        "foundation_separation_or_scour": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "observed": {
+              "type": "boolean"
+            },
+            "estimated_offset_cm": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "柱基與上部結構脫離/錯開估計量 (cm)。"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observed"
+          ]
+        },
+        "drift_indirect_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "層間變位的間接證據。",
+          "properties": {
+            "observed": {
+              "type": "boolean"
+            },
+            "indicators": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "window_door_jammed",
+                  "widespread_glass_breakage",
+                  "widespread_partition_x_cracks",
+                  "widespread_tile_spalling"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observed"
+          ]
+        },
+        "adjacent_building_influence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "observed": {
+              "type": "boolean"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observed"
+          ]
+        }
+      }
+    },
+    "human_markings": {
+      "type": "array",
+      "description": "人為標記 (P6)。封條等級為下游判定下限的重要脈絡訊號。每項 = KG 節點。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/$defs/human_marking_type"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "secondary_hazards": {
+      "type": "array",
+      "description": "二次災害源/非結構附掛危害 (P6, 3-6)。非構材本體損害但具墜落/傾倒/管線破裂風險者。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/$defs/secondary_hazard_type"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assessment_inputs_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "reasoning 階段產出，餵給 KG 的彙整。僅彙整觀察與構材級判斷，刻意不含任何 A/B/C / 紅黃綠 / 甲乙丙 / 撤離建議。 [v1.3] 屬性順序＝輸出順序：三個文字欄位（模型填）在前且必填；其後五個系統推導欄位由 runner 覆寫，模型可省略。",
+      "properties": {
+        "key_uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "繁中：本判讀的主要不確定點 (遮擋/無比例尺/材質不明/僅見局部等)。"
+        },
+        "information_sufficiency": {
+          "$ref": "#/$defs/information_sufficiency"
+        },
+        "analyst_notes": {
+          "type": "string",
+          "description": "繁中：技師視角的整體觀察備註，但不得出現 A/B/C、紅黃綠單、撤離與否之結論。"
+        },
+        "structural_members_involved": {
+          "type": "boolean",
+          "description": "影像是否涉及任何主結構承重構材。"
+        },
+        "worst_member_damage_grade": {
+          "$ref": "#/$defs/damage_grade",
+          "description": "全部構材中最嚴重之 I~V。runner 會依 members 重新推導覆寫。"
+        },
+        "critical_signatures_detected": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/critical_signature"
+          },
+          "uniqueItems": true,
+          "description": "偵測到的關鍵簽章 (承載力喪失/崩塌類)。KG 規則的直接輸入。【v1.2 起由 runner 依本 JSON 之 damage_features / relationships / global_indicators 機械推導並覆寫；generation schema 不含此欄，模型無法自由填寫。】"
+        },
+        "non_structural_hazards_present": {
+          "type": "boolean"
+        },
+        "second_line_defense_compromised": {
+          "type": "boolean",
+          "description": "隔間牆是否嚴重裂損/錯位 (第二道防線失效警訊)。"
+        }
+      },
+      "required": [
+        "key_uncertainties",
+        "information_sufficiency",
+        "analyst_notes"
+      ]
+    }
+  },
+  "$defs": {
+    "scene_type": {
+      "type": "string",
+      "enum": [
+        "indoor_general",
+        "bedroom",
+        "living_room",
+        "kitchen",
+        "bathroom",
+        "stairwell",
+        "balcony",
+        "corridor",
+        "exterior_residential",
+        "school",
+        "gymnasium",
+        "office",
+        "factory",
+        "parking",
+        "unknown"
+      ]
+    },
+    "building_use": {
+      "type": "string",
+      "enum": [
+        "residential",
+        "commercial_office",
+        "school",
+        "gymnasium",
+        "factory",
+        "public",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "indoor_outdoor": {
+      "type": "string",
+      "enum": [
+        "indoor",
+        "outdoor",
+        "unknown"
+      ]
+    },
+    "building_age_hint": {
+      "type": "string",
+      "enum": [
+        "old_pre1980",
+        "mid",
+        "recent_post1997",
+        "unknown"
+      ],
+      "description": "屋齡推估，影響材質判斷 (老舊多磚造/加強磚造，較新多RC/SRC/鋼構)。"
+    },
+    "viewing_distance": {
+      "type": "string",
+      "enum": [
+        "close",
+        "medium",
+        "far"
+      ],
+      "description": "close=看不到整個構材(細節清楚但缺整體); medium=看得到整個構材(最適構材級判讀); far=含背景或多構材(適整體性判讀)。"
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "image_quality_issue": {
+      "type": "string",
+      "enum": [
+        "blur",
+        "low_resolution",
+        "overexposed",
+        "underexposed",
+        "backlit",
+        "heavy_shadow",
+        "occlusion",
+        "extreme_angle",
+        "perspective_distortion",
+        "surface_covered"
+      ]
+    },
+    "member_type": {
+      "type": "string",
+      "enum": [
+        "column",
+        "beam",
+        "beam_column_joint",
+        "shear_wall",
+        "bearing_wall",
+        "rc_wall",
+        "partition_wall",
+        "curtain_wall",
+        "spandrel_or_sill_wall",
+        "slab",
+        "staircase",
+        "foundation_or_column_base",
+        "brace",
+        "parapet",
+        "non_structural_element",
+        "unknown"
+      ],
+      "description": "構材類型。column柱/beam梁/beam_column_joint梁柱接頭/shear_wall剪力牆/bearing_wall承重牆/rc_wall RC外牆或分戶牆/partition_wall隔間牆/curtain_wall帷幕牆/spandrel_or_sill_wall窗台或窗間牆/slab樓板/staircase樓梯/foundation_or_column_base基礎或柱腳/brace斜撐/parapet女兒牆/non_structural_element其他非結構。"
+    },
+    "structural_role": {
+      "type": "string",
+      "enum": [
+        "primary_load_bearing",
+        "secondary_lateral",
+        "non_structural",
+        "unknown"
+      ],
+      "description": "構材角色 (分級主軸)。primary_load_bearing主結構承重; secondary_lateral半結構/第二道防線(如隔間磚牆); non_structural非結構; unknown無法判定(下游須保守處理)。"
+    },
+    "material": {
+      "type": "string",
+      "enum": [
+        "reinforced_concrete",
+        "steel",
+        "src",
+        "brick_masonry",
+        "confined_masonry",
+        "timber",
+        "bamboo_mud",
+        "light_partition",
+        "glass",
+        "unknown"
+      ],
+      "description": "材質。reinforced_concrete RC/steel鋼構/src鋼骨RC/brick_masonry磚造/confined_masonry加強磚造/timber木構造/bamboo_mud竹泥造/light_partition輕隔間(矽酸鈣板)/glass玻璃。"
+    },
+    "exposed_material": {
+      "type": "string",
+      "enum": [
+        "none",
+        "cement_render",
+        "mortar_substrate",
+        "brick_body",
+        "rebar",
+        "core_concrete_aggregate",
+        "steel_under_cladding",
+        "unknown"
+      ],
+      "description": "剝落後裸露物，反推損害深度與真實材質。none未剝落/cement_render水泥粉刷/mortar_substrate砂漿底層/brick_body磚砌體/rebar鋼筋/core_concrete_aggregate核心混凝土骨材/steel_under_cladding包覆內鋼構。"
+    },
+    "damage_type": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hairline_crack",
+        "surface_map_crack",
+        "horizontal_crack",
+        "vertical_crack",
+        "diagonal_crack_45",
+        "x_shaped_crack",
+        "through_crack",
+        "offset_crack",
+        "mortar_joint_crack",
+        "joint_diagonal_crack",
+        "cover_spalling",
+        "large_area_spalling_rebar_exposed",
+        "core_concrete_crushing",
+        "concrete_blowout",
+        "tile_spalling",
+        "plaster_spalling",
+        "compression_crushing",
+        "rebar_exposed_intact",
+        "tie_opened",
+        "tie_fractured",
+        "main_rebar_buckled",
+        "main_rebar_ruptured",
+        "rebar_corrosion",
+        "corrosion_expansion_cracking",
+        "overall_tilt",
+        "story_offset",
+        "dislocation",
+        "slab_sagging",
+        "beam_sagging",
+        "column_shortening",
+        "differential_settlement",
+        "base_separation",
+        "beam_column_joint_failure",
+        "bolt_loosened_or_sheared",
+        "weld_cracking",
+        "steel_buckling",
+        "support_displacement",
+        "member_detachment",
+        "parapet_damage",
+        "exterior_finish_spalling",
+        "curtain_wall_damage",
+        "ceiling_collapse",
+        "glass_breakage",
+        "partition_collapse"
+      ],
+      "description": "損害特徵類型 (完整 taxonomy)。詳見評估架構第三部分。"
+    },
+    "position_on_member": {
+      "type": "string",
+      "enum": [
+        "column_top",
+        "column_bottom",
+        "column_mid",
+        "beam_end",
+        "beam_mid",
+        "joint_region",
+        "wall_center",
+        "wall_corner",
+        "opening_corner",
+        "wall_column_interface",
+        "mid_height",
+        "base",
+        "distributed",
+        "unknown"
+      ],
+      "description": "損害於構材上的位置，本身具診斷意義 (柱端水平裂縫=彎曲; 柱中斜裂=剪力; 開口角隅=應力集中)。"
+    },
+    "orientation": {
+      "type": "string",
+      "enum": [
+        "horizontal",
+        "vertical",
+        "diagonal_45",
+        "x_cross",
+        "irregular",
+        "na"
+      ]
+    },
+    "crack_width_qualitative": {
+      "type": "string",
+      "enum": [
+        "hairline",
+        "visible",
+        "wide",
+        "na"
+      ],
+      "description": "hairline髮絲(<0.2mm)/visible明顯/wide寬大。無比例尺時用此定性。"
+    },
+    "length_qualitative": {
+      "type": "string",
+      "enum": [
+        "short",
+        "medium",
+        "long",
+        "na"
+      ]
+    },
+    "damage_depth": {
+      "type": "string",
+      "enum": [
+        "surface_finish",
+        "plaster",
+        "cover",
+        "core",
+        "through",
+        "na"
+      ],
+      "description": "深度層次。surface_finish裝修層/plaster粉刷層/cover保護層/core核心/through貫穿。"
+    },
+    "area_extent": {
+      "type": "string",
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "na"
+      ]
+    },
+    "rebar_state": {
+      "type": "string",
+      "enum": [
+        "not_exposed",
+        "exposed_intact",
+        "tie_opened",
+        "tie_fractured",
+        "main_buckled",
+        "main_ruptured",
+        "corroded",
+        "na"
+      ],
+      "description": "RC構材嚴重度核心指標 (遞增)。not_exposed未裸露/exposed_intact裸露完好/tie_opened箍筋脫開/tie_fractured箍筋斷裂/main_buckled主筋挫屈(燈籠狀)/main_ruptured主筋拉斷/corroded長期鏽蝕。"
+    },
+    "concrete_state": {
+      "type": "string",
+      "enum": [
+        "intact",
+        "cracked",
+        "crushed",
+        "blown_out",
+        "core_disintegrated",
+        "na"
+      ]
+    },
+    "failure_mechanism": {
+      "type": "string",
+      "enum": [
+        "flexural",
+        "shear",
+        "axial_compression",
+        "short_column_effect",
+        "joint_failure",
+        "buckling",
+        "connection_failure",
+        "non_structural_falling",
+        "non_structural_toppling",
+        "indeterminate"
+      ],
+      "description": "破壞機制 (reasoning 階段判定)。flexural彎曲/shear剪力(脆性高危)/axial_compression軸力壓潰/short_column_effect短柱效應/joint_failure接頭破壞/buckling鋼構挫屈/connection_failure接合破壞。"
+    },
+    "seismic_or_preexisting": {
+      "type": "string",
+      "enum": [
+        "seismic",
+        "preexisting",
+        "indeterminate"
+      ],
+      "description": "裂縫成因鑑別 (P11)。preexisting如乾縮/溫差/沿管路/長期鏽蝕。無法排除結構性者填 indeterminate。"
+    },
+    "damage_grade": {
+      "type": "string",
+      "enum": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "na",
+        "indeterminate"
+      ],
+      "description": "I~V 損害程度 (依《住宅建築物地震毀損程度評估方法及判定準則》)。此為描述性損害狀態分類，非安全評級；甲乙丙彙總/紅黃綠/A·B·C 不在 VLM 範圍。"
+    },
+    "load_capacity_status": {
+      "type": "string",
+      "enum": [
+        "intact",
+        "possibly_compromised",
+        "likely_compromised",
+        "clearly_lost",
+        "indeterminate",
+        "na"
+      ],
+      "description": "構材承擔垂直載重能力之觀察判斷 (A/B/C 前驅但非 A/B/C)。clearly_lost = 主筋挫屈/拉斷+核心碎裂+下陷等；na = 非結構構材不適用。"
+    },
+    "relationship_type": {
+      "type": "string",
+      "enum": [
+        "beam_column_joint",
+        "adjacent_to",
+        "sill_wall_constrains_column",
+        "wall_in_frame",
+        "discontinuous_column_line",
+        "supported_by"
+      ],
+      "description": "跨構材關係。sill_wall_constrains_column=窗台牆束制柱(短柱效應); wall_in_frame=牆位於梁柱框內; discontinuous_column_line=柱線不連貫。"
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "跨構材關係 = KG 中的一條邊。",
+      "required": [
+        "id",
+        "type",
+        "from_member_id",
+        "to_member_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "如 'R1'。"
+        },
+        "type": {
+          "$ref": "#/$defs/relationship_type"
+        },
+        "from_member_id": {
+          "type": "string",
+          "description": "來源構材 id。"
+        },
+        "to_member_id": {
+          "type": "string",
+          "description": "目標構材 id。"
+        },
+        "observation": {
+          "type": "string",
+          "description": "繁中：觀察到的關係事實 (extraction 階段)。"
+        },
+        "significance": {
+          "type": "string",
+          "description": "繁中：此關係的結構意義 (reasoning 階段)。"
+        }
+      }
+    },
+    "human_marking_type": {
+      "type": "string",
+      "enum": [
+        "red_placard",
+        "yellow_placard",
+        "paint_mark",
+        "crack_monitor_gauge",
+        "warning_tape",
+        "shoring_present",
+        "none"
+      ]
+    },
+    "secondary_hazard_type": {
+      "type": "string",
+      "enum": [
+        "exposed_wiring",
+        "water_leak",
+        "gas_pipe",
+        "sprinkler_pipe",
+        "loose_sign",
+        "loose_window_grille",
+        "tilted_water_tank",
+        "falling_debris",
+        "ceiling_fixture_loose"
+      ]
+    },
+    "critical_signature": {
+      "type": "string",
+      "enum": [
+        "main_rebar_buckled",
+        "main_rebar_ruptured",
+        "tie_fractured",
+        "core_concrete_crushing",
+        "concrete_blowout",
+        "story_collapse",
+        "overall_tilt_observed",
+        "soft_story",
+        "joint_failure",
+        "short_column_shear",
+        "base_separation",
+        "support_displacement_severe"
+      ],
+      "description": "承載力喪失/崩塌類關鍵簽章，KG 規則的直接輸入。"
+    },
+    "information_sufficiency": {
+      "type": "string",
+      "enum": [
+        "sufficient_for_visible_scope",
+        "limited",
+        "insufficient"
+      ],
+      "description": "資訊充分度。sufficient_for_visible_scope=對可見範圍足夠(但不代表對整棟); limited=部分受限; insufficient=不足以排除結構危害。"
+    },
+    "damage_feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "單一損害特徵 = KG 中的 DamageFeature 節點，經 member_id 連回其構材。",
+      "required": [
+        "id",
+        "damage_type",
+        "position_on_member",
+        "orientation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "如 'M1-D1'。"
+        },
+        "damage_type": {
+          "$ref": "#/$defs/damage_type"
+        },
+        "position_on_member": {
+          "$ref": "#/$defs/position_on_member"
+        },
+        "orientation": {
+          "$ref": "#/$defs/orientation",
+          "description": "裂縫/損害方向。【必填；非裂縫類填 na】方向一律以 source_image 之『原始長寬比』為準（影像已 letterbox 補邊、未拉伸）。"
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "width_value": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "需比例尺方填數值。"
+            },
+            "width_unit": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "mm",
+                "cm",
+                null
+              ]
+            },
+            "width_qualitative": {
+              "$ref": "#/$defs/crack_width_qualitative"
+            },
+            "length_qualitative": {
+              "$ref": "#/$defs/length_qualitative"
+            },
+            "depth": {
+              "$ref": "#/$defs/damage_depth"
+            },
+            "is_through": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "extends_to_adjacent": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "description": "是否延伸至相鄰構材 (如牆裂延伸至柱)。"
+            },
+            "offset_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "offset_value_cm": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "area_extent": {
+              "$ref": "#/$defs/area_extent"
+            }
+          }
+        },
+        "rebar_state": {
+          "$ref": "#/$defs/rebar_state"
+        },
+        "concrete_state": {
+          "$ref": "#/$defs/concrete_state"
+        },
+        "observation_evidence": {
+          "type": "string",
+          "description": "繁中：此特徵的客觀描述 (extraction 階段填)。"
+        },
+        "inferred_mechanism": {
+          "$ref": "#/$defs/failure_mechanism"
+        },
+        "mechanism_confidence": {
+          "$ref": "#/$defs/confidence_level"
+        },
+        "likely_seismic_or_preexisting": {
+          "$ref": "#/$defs/seismic_or_preexisting"
+        },
+        "feature_severity_grade": {
+          "$ref": "#/$defs/damage_grade"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "繁中：機制與級數的推理依據 (reasoning 階段填)。"
+        }
+      }
+    },
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "member_type",
+        "structural_role",
+        "material",
+        "is_primary_subject",
+        "exposed_material_after_spalling",
+        "damage_features"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "如 'M1'，全 JSON 唯一。"
+        },
+        "member_type": {
+          "$ref": "#/$defs/member_type"
+        },
+        "structural_role": {
+          "$ref": "#/$defs/structural_role"
+        },
+        "role_confidence": {
+          "$ref": "#/$defs/confidence_level"
+        },
+        "material": {
+          "$ref": "#/$defs/material"
+        },
+        "material_confidence": {
+          "$ref": "#/$defs/confidence_level"
+        },
+        "material_evidence": {
+          "type": "string",
+          "description": "繁中：材質如何判斷 (厚度>20cm且無開口且框圍→剪力牆; 紅磚磚縫→磚牆等)。"
+        },
+        "is_primary_subject": {
+          "type": "boolean",
+          "description": "是否為畫面主體對焦構材。【必填】每張影像『恰好一個』member 為 true；使用者已指定類型時，該類型構材即為 true。"
+        },
+        "position_in_image": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "如 foreground/background、left/center/right。"
+        },
+        "exposed_material_after_spalling": {
+          "$ref": "#/$defs/exposed_material",
+          "description": "剝落後裸露物，反推損害深度與『真實材質』。【必填】無任何剝落時填 none；有剝落但看不清填 unknown。若可見紅磚/空心磚磚體 → 必填 brick_body，且該構材 material 不得判為 reinforced_concrete（見 extraction P4）。"
+        },
+        "damage_features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/damage_feature"
+          },
+          "description": "此構材的損害特徵。【必填；無損害時輸出空陣列 []】受控解碼為固定欄位順序：本欄位必須在 member_damage_grade / load_capacity_status / member_reasoning 之前輸出，跳過後即無法回填。"
+        },
+        "member_damage_grade": {
+          "$ref": "#/$defs/damage_grade"
+        },
+        "load_capacity_status": {
+          "$ref": "#/$defs/load_capacity_status"
+        },
+        "member_reasoning": {
+          "type": "string",
+          "description": "繁中：構材級彙整推理 (取最嚴重特徵、承載力判斷)。reasoning 階段填。"
+        }
+      }
+    }
+  },
+  "$comment": "schema_version 1.1 — added image_context.id; pruned 10 non-building damage_type values"
+}

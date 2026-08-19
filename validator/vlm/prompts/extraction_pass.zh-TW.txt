@@ -1,0 +1,129 @@
+【階段一：EXTRACTION PASS（觀察抽取）v3】
+
+請對所附的單張影像進行「客觀觀察抽取」。本階段「只填觀察類欄位」，先不要做破壞機制推論、不要給 I~V 損害程度、不要做承載力判斷（那些留待第二階段）。輸出一個符合 context_schema.json (v1.2) 的 JSON，並設 pass_completed = "extraction"。
+
+開始前先讀取訊息末端的【影像技術資訊】：原始寬×高與長寬比決定你能宣稱的細節等級與所有方向判讀；若標註為單一構材之裁切片段，本影像預設「只有 1 個構材」。
+
+請依序完成下列 12 個判讀維度。每個維度註明對應的 JSON 欄位與可用的 enum 值。
+
+────────────────────────────────────────
+P1　場景與環境判別  →  image_context.{scene_type, building_use, indoor_outdoor, building_age_hint, scene_evidence}
+────────────────────────────────────────
+• 由家具、地磚、燈具、開關插座、外牆磁磚、樓梯間等線索，判定室內/室外與細部場景。
+• scene_type 選項：indoor_general / bedroom / living_room / kitchen / bathroom / stairwell / balcony / corridor / exterior_residential / school / gymnasium / office / factory / parking / unknown。
+• 【誠實原則】緊貼構材的窄裁切影像通常「無法」判定場景——此時 scene_type=unknown、building_use=unknown，不要憑構材表面猜「exterior_residential / corridor」。scene_evidence 必須寫出具體線索；寫不出線索就填 unknown。
+• 推估屋齡 building_age_hint（old_pre1980 / mid / recent_post1997 / unknown，影響後續材質判斷）。
+
+────────────────────────────────────────
+P5　拍攝視角、尺度與比例尺  →  image_context.{viewing_distance, scale_reference}
+────────────────────────────────────────
+• viewing_distance：close（看不到整個構材）/ medium（看得到整個構材）/ far（含背景或多構材）。
+• scale_reference：是否有已知尺寸參考物（50元硬幣厚≈0.2cm、紅磚模距、磁磚縫、插座面板、門框）。設定 present、reference_object、enables_width_measurement。
+  — enables_width_measurement=true 的門檻是「參考物與裂縫在同一平面、且解析度足以量測」；低解析輸入一律 false。若無參考物，enables_width_measurement=false，後續裂縫寬度一律只填定性值。
+
+────────────────────────────────────────
+P12　影像品質與可信度  →  image_context.image_quality
+────────────────────────────────────────
+• overall_confidence：high / medium / low。【影像技術資訊】標註低解析時，上限為 medium。
+• issues（可複選）：blur / low_resolution / overexposed / underexposed / backlit / heavy_shadow / occlusion / extreme_angle / perspective_distortion / surface_covered。低解析輸入必含 low_resolution。
+• occlusion_present、surface_fully_covered（構材是否被裝修/磁磚完全包覆而無法檢視底層）。
+• notes：繁中備註。
+
+────────────────────────────────────────
+P2　構材偵測與分割  →  members[]（為每個構材建立一個物件並給唯一 id：M1, M2…）
+────────────────────────────────────────
+• 【數量紀律，違反視同臆造】members 長度 = 影像中「確實可辨識」的獨立構材數：
+  — 單一構材裁切影像（見【影像技術資訊】）：預設「恰好 1 個」member。
+  — 新增第 2、3 個構材的條件：該構材在畫面中明確可見，且你能在其 material_evidence 與 position_in_image 寫出「它在畫面哪裡、憑什麼認出它」（如「畫面右側可見另一面貼磁磚牆與門框」）。寫不出來就不要新增。
+  — 「不得」反射性補上背景 rc_wall / slab / foundation 湊成固定模板；「不得」替模糊背景物件編造 damage_features（背景物件看不清 → 不建 member，或建 member 但 damage_features=[] 並註記不可辨）。
+• 每個 member 必填 is_primary_subject（恰好一個 true；使用者已指定類型者即為 true）與 position_in_image（foreground/background、left/center/right）。
+• 視野較廣時，特別檢視構材交界（梁柱接頭、牆柱交界、樓板與梁交界）——震損高發區。
+
+────────────────────────────────────────
+P3　構材角色判別（分級主軸）  →  members[].{structural_role, role_confidence}
+────────────────────────────────────────
+• structural_role：primary_load_bearing（主結構承重）/ secondary_lateral（半結構，如隔間磚牆）/ non_structural（非結構）/ unknown。
+• 牆的角色判別是最易誤判處：
+  — 剪力牆：厚度>20cm 之 RC 牆、四周梁柱框圍、無門窗開口，常見於樓梯間/電梯井/山牆 → primary_load_bearing。
+  — 承重牆、15cm 以上 RC 外牆/分戶牆 → primary_load_bearing。
+  — 隔間牆（磚牆/輕隔間）→ secondary_lateral。磚體外露之牆原則上先視為磚造隔間牆或磚造承重牆，除非可見 RC 牆體證據。
+  — 帷幕牆、窗台牆/窗間牆、女兒牆 → non_structural（但窗台牆束制柱的關係於 P9/relationships 記錄）。
+• 無法確定者填 unknown + 低 role_confidence（依原則四，不可預設非結構；也不可為了「保守」而把明顯的磚隔間牆升格成 RC 剪力牆——角色從嚴 ≠ 材質亂判）。
+
+────────────────────────────────────────
+P4　材質與構材類別  →  members[].{member_type, material, material_confidence, material_evidence, exposed_material_after_spalling}
+────────────────────────────────────────
+• member_type：column / beam / beam_column_joint / shear_wall / bearing_wall / rc_wall / partition_wall / curtain_wall / spandrel_or_sill_wall / slab / staircase / foundation_or_column_base / brace / parapet / non_structural_element / unknown。
+• material：reinforced_concrete / steel / src / brick_masonry / confined_masonry / timber / bamboo_mud / light_partition / glass / unknown。
+• exposed_material_after_spalling【每個 member 必填】：none / cement_render / mortar_substrate / brick_body / rebar / core_concrete_aggregate / steel_under_cladding / unknown。
+  — 無任何剝落 → none；有剝落但看不清底層 → unknown。
+• 【材質判讀順序，務必執行】
+  第 1 步：找影像中所有剝落/破口/斷面，看「裡面露出什麼」。
+  第 2 步：露出紅磚/空心磚/磚縫 → exposed_material_after_spalling=brick_body；該構材 material=brick_masonry（或有 RC 邊柱/繫梁證據時 confined_masonry）；牆之 member_type 依證據改為 partition_wall 或 bearing_wall，「不得」為 rc_wall/shear_wall + reinforced_concrete。
+  第 3 步：露出灰色骨材/鋼筋 → RC 證據成立（rebar / core_concrete_aggregate）。（磁磚縫/馬賽克縫/分割縫不是磚縫；未直接見磚體不得判 brick_body。）
+  第 4 步：完全無破口、僅見粉刷/磁磚/油漆 → 底材未證實：material 可依構造脈絡推測，但 material_confidence 至多 medium，material_evidence 必須寫「表面包覆、底材未直接可見」。
+• material_evidence：繁中說明判斷依據（含上述剝落證據）。
+
+────────────────────────────────────────
+P7　損害特徵種類與位置  →  members[].damage_features[]（每個給唯一 id：M1-D1…）
+────────────────────────────────────────
+• 為每個構材列出「所有可見」損害特徵；無損害則填空陣列 []。「不得」輸出 damage_type="none" 之佔位列；「不得」為湊數而在不同構材複製同一組特徵模板。
+• damage_type（完整清單見 schema，分六類）：
+  — 裂縫類：hairline_crack / surface_map_crack / horizontal_crack / vertical_crack / diagonal_crack_45 / x_shaped_crack / through_crack / offset_crack / mortar_joint_crack / joint_diagonal_crack
+  — 剝落爆裂類：cover_spalling / large_area_spalling_rebar_exposed / core_concrete_crushing / concrete_blowout / tile_spalling / plaster_spalling / compression_crushing
+  — 鋼筋類：rebar_exposed_intact / tie_opened / tie_fractured / main_rebar_buckled / main_rebar_ruptured / rebar_corrosion / corrosion_expansion_cracking
+  — 變位幾何類：overall_tilt / story_offset / dislocation / slab_sagging / beam_sagging / column_shortening / differential_settlement / base_separation
+  — 接頭支承類：beam_column_joint_failure / bolt_loosened_or_sheared / weld_cracking / steel_buckling / support_displacement / member_detachment
+  — 非結構類：parapet_damage / exterior_finish_spalling / curtain_wall_damage / ceiling_collapse / glass_breakage / partition_collapse
+• position_on_member【必填】：column_top / column_bottom / column_mid / beam_end / beam_mid / joint_region / wall_center / wall_corner / opening_corner / wall_column_interface / mid_height / base / distributed / unknown。
+• orientation【必填；非方向性損害填 na】：horizontal / vertical / diagonal_45 / x_cross / irregular / na。
+  — 【方向以原始長寬比為準】影像已補方未拉伸；請以【影像技術資訊】之原始寬高想像實際比例。窄長條影像中，沿構材長軸的裂縫（柱=vertical、梁=horizontal）與斜向裂縫的區分是後續剪力/彎曲判別的關鍵，請逐條裂縫確認其與構材軸線的實際夾角，不要一律填與構材同向。
+
+────────────────────────────────────────
+P8　損害特徵細節（量值）  →  members[].damage_features[].{metrics, rebar_state, concrete_state, observation_evidence}
+────────────────────────────────────────
+• metrics：
+  — width_value + width_unit（mm/cm）：「僅在 enables_width_measurement=true 時」填數值；否則留 null。
+  — width_qualitative：hairline（<0.2mm）/ visible / wide / na。低解析輸入不得宣稱 hairline。
+  — length_qualitative、area_extent：short/medium/long、small/medium/large。
+  — depth：surface_finish / plaster / cover / core / through / na（剝落或裂縫深及哪一層；露出磚體時＝已穿過粉刷層，depth 至少 plaster）。
+  — is_through、extends_to_adjacent、offset_present、offset_value_cm。
+• rebar_state（RC 嚴重度核心，僅客觀記錄所見）：not_exposed / exposed_intact / tie_opened / tie_fractured / main_buckled / main_ruptured / corroded / na。
+  — 【重度徵象檢查】凡有大面積剝落、鋼筋成排裸露、構材外形歪斜/束縮者，必須逐一檢視：箍筋是否脫開/斷裂？主筋是否外鼓成燈籠狀（挫屈）或拉斷？看得到就如實記錄 tie_opened/tie_fractured/main_buckled/main_ruptured；真的看不清才記 exposed_intact 並於 observation_evidence 註明「箍筋/主筋細部不可辨」。把挫屈鋼筋記成 exposed_intact 是本階段最危險的錯誤。
+• concrete_state：intact / cracked / crushed / blown_out / core_disintegrated / na。
+• observation_evidence：繁中客觀描述此特徵（不做機制推論，那是下一階段）。
+
+────────────────────────────────────────
+P6　脈絡、人為標記與二次災害源  →  human_markings[]、secondary_hazards[]
+────────────────────────────────────────
+• human_markings[].type：red_placard / yellow_placard / paint_mark / crack_monitor_gauge / warning_tape / shoring_present / none。（封條是重要脈絡，務必記錄。）
+• secondary_hazards[].type：exposed_wiring / water_leak / gas_pipe / sprinkler_pipe / loose_sign / loose_window_grille / tilted_water_tank / falling_debris / ceiling_fixture_loose。
+• 被家具/雜物/植栽/帆布遮擋之區域，於相關 evidence 與 image_quality 註明。
+
+────────────────────────────────────────
+P9　跨構材關係（觀察層）  →  relationships[]（每個給唯一 id：R1…）
+────────────────────────────────────────
+• 本階段只記錄「觀察到的關係事實」，機制命名留待下一階段。只在兩端 member 都真實存在於 members[] 時建立。
+• relationship_type：beam_column_joint / adjacent_to / sill_wall_constrains_column（窗台牆束制柱）/ wall_in_frame（牆位於梁柱框內）/ discontinuous_column_line（柱線不連貫）/ supported_by。
+• 設 from_member_id、to_member_id、observation（繁中描述）。
+
+────────────────────────────────────────
+P10　整體性與系統性簽章  →  global_indicators
+────────────────────────────────────────
+• 僅在「中遠距離」且有足夠視覺證據時標 observed=true，並寫 evidence；否則 observed=false。單一構材裁切影像原則上全部 observed=false——樓層下陷/整棟傾斜/軟弱層無法由一段構材表面判定。
+• overall_tilt（可估則填 estimated_ratio 如 '1/30'）、story_offset_or_soft_story、differential_settlement、story_collapse_or_slab_sagging、foundation_separation_or_scour（可估 estimated_offset_cm）、drift_indirect_evidence（indicators：window_door_jammed / widespread_glass_breakage / widespread_partition_x_cracks / widespread_tile_spalling）、adjacent_building_influence。
+
+────────────────────────────────────────
+P11　裂縫成因（觀察層）  →  暫不判定
+────────────────────────────────────────
+• 本階段先不填 likely_seismic_or_preexisting；但若觀察到明顯「非地震/既有」線索（沿鋼筋鏽斑/鏽水、沿管路直線裂、表層乾縮網狀），請寫入該特徵的 observation_evidence，供下一階段成因鑑別參考。
+
+────────────────────────────────────────
+輸出要求
+────────────────────────────────────────
+1. 只輸出一個合法 JSON，符合 context_schema.json v1.2，pass_completed = "extraction"。
+2. enum 只用 schema 定義值；描述欄位用繁體中文與正確結構術語。
+3. 看不到/無法判讀者填 null / unknown / na，不可臆造。不可由單一構材推論整棟；不可虛構背景構材與其損害。
+4. 不要輸出 inferred_mechanism、feature_severity_grade、member_damage_grade、load_capacity_status、assessment_inputs_summary（留待第二階段）。
+5. 【欄位順序】所有物件之欄位依 schema 屬性順序輸出；每個 member 的 damage_features（可為 []）必須輸出且位於任何 member 級欄位之前。跳過的欄位無法回填。
+6. 不要有任何 JSON 以外的文字。

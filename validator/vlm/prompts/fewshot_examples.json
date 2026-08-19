@@ -1,0 +1,149 @@
+{
+  "_README": "v3: identical pedagogical content to v2 (single-member crop discipline, brick-behind-spalling, shear+crushing grading, shattered-column V) but every `output` object now emits keys in EXACT schema property order. Guided decoding compiles additionalProperties:false objects as a FIXED-order grammar: the v2 reasoning exemplars put member grades before damage_features, taught the model an illegal order, and the skipped damage_features slot could never be revisited — that single ordering mistake destroyed pass-2 features in 21/23 images and truncated 4 runs. load_fewshot now calls vlm_postprocess.assert_fewshot_schema_order(), so any future out-of-order edit fails at startup instead of on the GPU. Loader contract unchanged; outputs remain deliberately PARTIAL (示意).",
+  "extraction": [
+    {
+      "note": "範例（文字）：極窄柱裁切影像（原始 112×644，僅見單一柱面）。正確做法：members 恰好 1 個、is_primary_subject=true；『不得』補背景 rc_wall/樓板湊數；場景線索不足 → scene_type=unknown；低解析 → 不宣稱 hairline、confidence 上限 medium。欄位一律依 schema 順序輸出。以下僅示意關鍵欄位（非完整 JSON）。",
+      "output": {
+        "pass_completed": "extraction",
+        "image_context": {
+          "scene_type": "unknown",
+          "viewing_distance": "close",
+          "image_quality": { "overall_confidence": "medium", "issues": ["low_resolution"] }
+        },
+        "members": [
+          {
+            "id": "M1",
+            "member_type": "column",
+            "structural_role": "primary_load_bearing",
+            "material": "unknown",
+            "material_confidence": "low",
+            "material_evidence": "表面為粉刷層、無剝落破口，底材未直接可見。",
+            "is_primary_subject": true,
+            "exposed_material_after_spalling": "none",
+            "damage_features": [
+              {
+                "id": "M1-D1",
+                "damage_type": "diagonal_crack_45",
+                "position_on_member": "column_mid",
+                "orientation": "diagonal_45",
+                "observation_evidence": "以原始長寬比(0.17)判讀：裂縫與柱軸約成45度斜向，非沿柱軸之垂直裂縫。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "note": "範例（文字）：牆面粉刷剝落、剝落處『直接可見』紅磚磚體與水平磚縫（注意：磁磚縫/馬賽克縫不是磚縫）。正確做法：exposed_material_after_spalling=brick_body → material 改判 brick_masonry、member_type=partition_wall（secondary_lateral），『不得』維持 rc_wall + reinforced_concrete。欄位一律依 schema 順序輸出。以下僅示意（非完整 JSON）。",
+      "output": {
+        "pass_completed": "extraction",
+        "members": [
+          {
+            "id": "M1",
+            "member_type": "partition_wall",
+            "structural_role": "secondary_lateral",
+            "role_confidence": "medium",
+            "material": "brick_masonry",
+            "material_confidence": "high",
+            "material_evidence": "粉刷剝落處露出紅磚與水平磚縫，證實底材為磚砌體，非RC牆。",
+            "is_primary_subject": true,
+            "exposed_material_after_spalling": "brick_body",
+            "damage_features": [
+              {
+                "id": "M1-D1",
+                "damage_type": "plaster_spalling",
+                "position_on_member": "wall_center",
+                "orientation": "na",
+                "metrics": { "depth": "plaster", "area_extent": "medium" },
+                "observation_evidence": "粉刷層成片剝落，底層紅磚外露。"
+              },
+              {
+                "id": "M1-D2",
+                "damage_type": "diagonal_crack_45",
+                "position_on_member": "wall_center",
+                "orientation": "diagonal_45",
+                "observation_evidence": "剝落區旁延伸一道斜向裂縫，沿磚縫階梯狀發展。"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "reasoning": [
+    {
+      "note": "範例（文字）：柱中央 45° 斜向裂縫且寬度明顯、混凝土壓碎 → 機制應為 shear（脆性剪力），且 concrete_state=crushed 屬重度，feature 與 member 損害程度不可只給 III。注意輸出順序：damage_features（含各特徵之機制與級數）一律在 member_damage_grade / load_capacity_status / member_reasoning『之前』。以下僅示意（非完整 JSON）。",
+      "output": {
+        "pass_completed": "reasoning",
+        "members": [
+          {
+            "id": "M1",
+            "member_type": "column",
+            "structural_role": "primary_load_bearing",
+            "material": "reinforced_concrete",
+            "is_primary_subject": true,
+            "exposed_material_after_spalling": "core_concrete_aggregate",
+            "damage_features": [
+              {
+                "id": "M1-D1",
+                "damage_type": "diagonal_crack_45",
+                "position_on_member": "column_mid",
+                "orientation": "diagonal_45",
+                "rebar_state": "not_exposed",
+                "concrete_state": "cracked",
+                "inferred_mechanism": "shear",
+                "feature_severity_grade": "III"
+              },
+              {
+                "id": "M1-D2",
+                "damage_type": "compression_crushing",
+                "position_on_member": "column_mid",
+                "orientation": "irregular",
+                "rebar_state": "exposed_intact",
+                "concrete_state": "crushed",
+                "inferred_mechanism": "shear",
+                "feature_severity_grade": "IV"
+              }
+            ],
+            "member_damage_grade": "IV",
+            "load_capacity_status": "likely_compromised"
+          }
+        ]
+      }
+    },
+    {
+      "note": "範例（文字）：柱中段大範圍爆裂、鋼筋成排裸露、柱身已歪斜錯位、周邊散落碎塊。錯誤示範=『cover_spalling、III、possibly_compromised』。正確做法：步驟0重看影像確認主筋外鼓（燈籠狀）→ rebar_state=main_buckled、concrete_state=crushed → V、clearly_lost；若主筋細部真的不可辨，因剝落範圍大且柱身歪斜，依取嚴鐵則至少 IV 並將『箍筋/主筋不可辨』寫入 key_uncertainties。另：鋼筋帶鏽（corroded/preexisting）只說明劣化既存，『不得』因此把當前級數降級。damage_features 完整列於 member 級欄位之前。以下僅示意（非完整 JSON）。",
+      "output": {
+        "pass_completed": "reasoning",
+        "members": [
+          {
+            "id": "M1",
+            "member_type": "column",
+            "structural_role": "primary_load_bearing",
+            "material": "reinforced_concrete",
+            "is_primary_subject": true,
+            "exposed_material_after_spalling": "rebar",
+            "damage_features": [
+              {
+                "id": "M1-D1",
+                "damage_type": "large_area_spalling_rebar_exposed",
+                "position_on_member": "column_mid",
+                "orientation": "irregular",
+                "rebar_state": "main_buckled",
+                "concrete_state": "crushed",
+                "observation_evidence": "（第二階段補列複核）主筋外鼓成燈籠狀、核心混凝土碎裂脫落。",
+                "inferred_mechanism": "axial_compression",
+                "likely_seismic_or_preexisting": "seismic",
+                "feature_severity_grade": "V",
+                "reasoning": "符合 V 級門檻；鋼筋雖帶鏽斑，僅屬既有劣化，不影響當前級數判定。"
+              }
+            ],
+            "member_damage_grade": "V",
+            "load_capacity_status": "clearly_lost",
+            "member_reasoning": "大範圍保護層與核心混凝土碎裂、主筋外鼓挫屈、柱身錯位，取最嚴重特徵定 V；垂直承載已明確喪失。"
+          }
+        ]
+      }
+    }
+  ]
+}
