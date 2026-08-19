@@ -1,0 +1,25 @@
+schema_damage_type,intl_term,standard,notes,source
+hairline_crack,Grade 1 hairline cracks,EMS-98,EMS masonry/RC G1 hairline cracks in few walls or plaster,EMS-98
+hairline_crack,Insignificant flexural crack,FEMA-306,no crack widths exceed 3/16in,FEMA-306
+diagonal_crack_45,diagonal tension shear crack,FEMA-306,flexure diagonal tension behavior mode RC1B,FEMA-306
+diagonal_crack_45,stair-step crack,FEMA-306,URM bed-joint sliding stair-step diagonal,FEMA-306
+x_shaped_crack,preemptive diagonal tension,FEMA-306,weaker pier RC2H brittle x-pattern,FEMA-306
+mortar_joint_crack,bed-joint sliding,FEMA-306,URM in-plane shear along mortar joints,FEMA-306
+cover_spalling,spalling of concrete cover,EMS-98,EMS RC G3 spalling of concrete cover,EMS-98
+cover_spalling,Moderate toe spalling,FEMA-306,spalling at toe regions in plastic hinge cover only,FEMA-306
+core_concrete_crushing,compression failure of concrete,EMS-98,EMS RC G4 compression failure,EMS-98
+core_concrete_crushing,web crushing,FEMA-306,flexure web crushing behavior mode RC1C,FEMA-306
+main_rebar_buckled,buckling of reinforced rods,EMS-98,EMS RC G3 buckling of reinforcement,EMS-98
+main_rebar_buckled,boundary compression bar buckling,FEMA-306,flexure boundary compression RC1E,FEMA-306
+main_rebar_ruptured,fracture of rebars,EMS-98,EMS RC G4 fracture of rebars,EMS-98
+main_rebar_ruptured,reinforcement has fractured,FEMA-306,FEMA Extreme severity rebar fractured,FEMA-306
+dislocation,sliding shear offset,FEMA-306,flexure sliding shear horizontal offset at base RC1D,FEMA-306
+overall_tilt,tilting of columns,EMS-98,EMS RC G4 tilting of columns,EMS-98
+overall_tilt,building or story leaning,ATC-20,ATC-20 rapid eval observed condition,ATC-20
+story_offset,collapse of single upper floor,EMS-98,EMS RC G4 collapse of a single upper floor,EMS-98
+parapet_damage,chimney parapet falling hazard,ATC-20,ATC-20 falling hazard observed condition,ATC-20
+parapet_damage,partial collapse of chimneys,EMS-98,EMS masonry G2 partial chimney collapse,EMS-98
+partition_collapse,failure of infill panels,EMS-98,EMS RC G3 failure of individual infill panels,EMS-98
+beam_column_joint_failure,cracks in beam-column joints,EMS-98,EMS RC G3 cracks in columns and beam-column joints,EMS-98
+differential_settlement,ground slope movement or cracking,ATC-20,ATC-20 geotechnical observed condition,ATC-20
+compression_crushing,corner crushing of infill,FEMA-306,infill solid panel diagonal compression strut corner crushing,FEMA-306

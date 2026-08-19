@@ -1,0 +1,13 @@
+id,label_zh,related_damage_type,load_capacity_implication,implies_placard,risk_weight,source
+main_rebar_buckled,主筋挫屈,main_rebar_buckled,clearly_lost,紅單,critical,判定準則;教材
+main_rebar_ruptured,主筋拉斷,main_rebar_ruptured,clearly_lost,紅單,critical,判定準則;教材
+tie_fractured,箍筋斷裂,tie_fractured,likely_compromised,紅單,critical,判定準則;教材
+core_concrete_crushing,核心混凝土碎裂,core_concrete_crushing,clearly_lost,紅單,critical,判定準則
+concrete_blowout,混凝土爆裂,concrete_blowout,clearly_lost,紅單,critical,判定準則
+story_collapse,樓層崩塌,slab_sagging,clearly_lost,紅單,critical,判定準則;勘災作業準則
+overall_tilt_observed,整體傾斜,overall_tilt,likely_compromised,紅單,critical,明細表;教材
+soft_story,軟層/弱層,story_offset,clearly_lost,紅單,critical,教材;自我檢視因應手冊
+joint_failure,接頭破壞,beam_column_joint_failure,likely_compromised,紅單,high,教材;勘災作業準則
+short_column_shear,短柱剪力破壞,x_shaped_crack,likely_compromised,紅單,high,教材;判定準則
+base_separation,基礎脫離,base_separation,likely_compromised,紅單,critical,判定準則;明細表
+support_displacement_severe,支承移位嚴重,support_displacement,likely_compromised,紅單,high,明細表;教材

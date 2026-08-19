@@ -1,0 +1,30 @@
+id,scheme,code,label,primary_material,lateral_system,seismic_vulnerability,source
+W1,FEMA-154,W1,Light wood frame residential,timber,wood shear panels,low,FEMA-154
+W2,FEMA-154,W2,Larger wood frame commercial,timber,wood shear panels,low,FEMA-154
+S1,FEMA-154,S1,Steel moment-resisting frame,steel,moment frame,medium,FEMA-154
+S2,FEMA-154,S2,Steel braced frame,steel,braced frame,medium,FEMA-154
+S3,FEMA-154,S3,Light metal building,steel,braced frame,medium,FEMA-154
+S4,FEMA-154,S4,Steel frame with concrete shear wall,steel,concrete shear wall,medium,FEMA-154
+S5,FEMA-154,S5,Steel frame with URM infill,steel,urm infill,high,FEMA-154
+C1,FEMA-154,C1,Concrete moment-resisting frame,reinforced_concrete,moment frame,medium,FEMA-154
+C2,FEMA-154,C2,Concrete shear wall,reinforced_concrete,concrete shear wall,low,FEMA-154
+C3,FEMA-154,C3,Concrete frame with URM infill,reinforced_concrete,urm infill,high,FEMA-154
+PC1,FEMA-154,PC1,Tilt-up concrete,reinforced_concrete,tilt-up wall,high,FEMA-154
+PC2,FEMA-154,PC2,Precast concrete frame,reinforced_concrete,precast frame,high,FEMA-154
+RM1,FEMA-154,RM1,Reinforced masonry flexible diaphragm,confined_masonry,reinforced masonry wall,medium,FEMA-154
+RM2,FEMA-154,RM2,Reinforced masonry rigid diaphragm,confined_masonry,reinforced masonry wall,medium,FEMA-154
+URM,FEMA-154,URM,Unreinforced masonry bearing wall,brick_masonry,urm bearing wall,high,FEMA-154
+MH,FEMA-154,MH,Mobile home or manufactured housing,steel,none,high,FEMA-154
+ATC_wood,ATC-20,wood_frame,Wood frame,timber,wood shear panels,low,ATC-20
+ATC_csw,ATC-20,concrete_shear_wall,Concrete shear wall,reinforced_concrete,concrete shear wall,low,ATC-20
+ATC_steel,ATC-20,steel_frame,Steel frame,steel,moment or braced frame,medium,ATC-20
+ATC_urm,ATC-20,unreinforced_masonry,Unreinforced masonry,brick_masonry,urm bearing wall,high,ATC-20
+ATC_tiltup,ATC-20,tilt_up_concrete,Tilt-up concrete,reinforced_concrete,tilt-up wall,high,ATC-20
+ATC_rm,ATC-20,reinforced_masonry,Reinforced masonry,confined_masonry,reinforced masonry wall,medium,ATC-20
+ATC_cframe,ATC-20,concrete_frame,Concrete frame,reinforced_concrete,moment frame,medium,ATC-20
+EMS_A,EMS-98,A,Vulnerability class A rubble stone adobe,brick_masonry,bearing wall,highest,EMS-98
+EMS_B,EMS-98,B,Vulnerability class B simple stone unreinforced masonry manufactured units,brick_masonry,bearing wall,high,EMS-98
+EMS_C,EMS-98,C,Vulnerability class C unreinforced masonry RC frame without ERD,reinforced_concrete,frame or bearing wall,medium,EMS-98
+EMS_D,EMS-98,D,Vulnerability class D reinforced or confined masonry RC with moderate ERD,confined_masonry,frame or wall,medium,EMS-98
+EMS_E,EMS-98,E,Vulnerability class E RC steel with high ERD,reinforced_concrete,frame with seismic design,low,EMS-98
+EMS_F,EMS-98,F,Vulnerability class F steel ductile RC with high ERD,steel,ductile frame,lowest,EMS-98

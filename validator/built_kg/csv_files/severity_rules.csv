@@ -1,0 +1,43 @@
+id,member_type,condition,resulting_severity,requires_whole_floor_stats
+SR_col_C,column,grade_V_pct>10 OR grade_IV_plus_V_pct>20,丙_嚴重,true
+SR_col_B,column,grade_IV_plus_V_pct<=20 AND (has_IV OR has_V),乙_中等,true
+SR_col_A,column,no_IV AND no_V,甲_輕微,true
+SR_beam_C,beam,grade_V_pct>10 OR grade_IV_plus_V_pct>20,丙_嚴重,true
+SR_beam_B,beam,grade_IV_plus_V_pct<=20 AND (has_IV OR has_V),乙_中等,true
+SR_beam_A,beam,no_IV AND no_V,甲_輕微,true
+SR_wall_C,shear_wall,grade_V_pct>10 OR grade_IV_plus_V_pct>20,丙_嚴重,true
+SR_wall_B,shear_wall,grade_IV_plus_V_pct<=20 AND (has_IV OR has_V),乙_中等,true
+SR_wall_A,shear_wall,no_IV AND no_V,甲_輕微,true
+SR_brick_C,bearing_wall,brick_crack_gt_0.5cm_length_pct>50,丙_嚴重,true
+SR_brick_B,bearing_wall,brick_crack_gt_0.5cm_length_pct 20..50,乙_中等,true
+SR_brick_A,bearing_wall,brick_crack_gt_0.5cm_length_pct<20,甲_輕微,true
+SR_tilt_C,building,tilt>0.03333,丙_嚴重,false
+SR_tilt_B,building,tilt 0.01667..0.03333,乙_中等,false
+SR_tilt_A,building,tilt<0.01667,甲_輕微,false
+SR_base_C,foundation_or_column_base,base_separation_ge_5cm_pct>20,丙_嚴重,true
+SR_base_B,foundation_or_column_base,base_separation_ge_5cm_pct 10..20,乙_中等,true
+SR_base_A,foundation_or_column_base,base_separation_ge_5cm_pct<10,甲_輕微,true
+SR_support_C,masonry_support,support_disp_ratio>0.5,丙_嚴重,false
+SR_support_B,masonry_support,support_disp_ratio 0.25..0.5,乙_中等,false
+SR_support_A,masonry_support,support_disp_ratio<0.25,甲_輕微,false
+SR_brace_C,brace,severe_buckling_or_plate_tear_or_connection_failure,丙_嚴重,false
+SR_brace_B,brace,moderate_deformation,乙_中等,false
+SR_brace_A,brace,minor_or_intact,甲_輕微,false
+SR_groundcrack_C,building,ground_crack_through_building_or_endangers_foundation,丙_嚴重,false
+SR_groundcrack_B,building,ground_crack_moderate,乙_中等,false
+SR_groundcrack_A,building,ground_crack_minor,甲_輕微,false
+SR_slope_C,building,slope_severe_within_range OR slope_severe_edge,丙_嚴重,false
+SR_slope_B,building,slope_matrix_moderate,乙_中等,false
+SR_slope_A,building,slope_minor_or_outside_2x,甲_輕微,false
+SR_retwall_C,building,retaining_wall_tilt>0.03333_or_failed,丙_嚴重,false
+SR_retwall_B,building,retaining_wall_tilt 0.01667..0.03333_or_cracks_rebar,乙_中等,false
+SR_retwall_A,building,retaining_wall_tilt<0.01667,甲_輕微,false
+SR_adjacent_C,building,adjacent_tilt>0.03333_and_DH_lt_1,丙_嚴重,false
+SR_adjacent_B,building,adjacent_tilt_matrix_moderate,乙_中等,false
+SR_adjacent_A,building,adjacent_tilt<0.01667_or_DH_gt_2,甲_輕微,false
+SR_ext_fall_C,non_structural_element,glass_finish_pct>10 OR clear_tilt OR partial_fallen,丙_嚴重,false
+SR_ext_fall_B,non_structural_element,glass_finish_pct 1..10 OR minor_tilt,乙_中等,false
+SR_ext_fall_A,non_structural_element,glass_finish_pct<1 OR no_tilt,甲_輕微,false
+SR_int_topple_C,partition_wall,risk_of_falling_or_toppling,丙_嚴重,false
+SR_int_topple_B,partition_wall,damage_unclear_possible_aftershock_risk,乙_中等,false
+SR_int_topple_A,partition_wall,sound_no_tilt,甲_輕微,false

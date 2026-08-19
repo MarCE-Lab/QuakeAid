@@ -1,0 +1,262 @@
+{
+  "feature_spec_version": "1.1",
+  "schema_version": "1.1",
+  "label_map": {
+    "A": 0,
+    "B": 1,
+    "C": 2
+  },
+  "label_source": "ground_truth.final_abc (folder-gold, human-assigned)",
+  "node_kinds": [
+    "ImageContext",
+    "MemberInstance",
+    "DamageFeatureInstance",
+    "GlobalIndicatorInstance",
+    "HumanMarkingInstance",
+    "SecondaryHazardInstance"
+  ],
+  "relations_with_reverse": [
+    "IN_IMAGE",
+    "HAS_DAMAGE",
+    "HAS_INDICATOR",
+    "HAS_MARKING",
+    "HAS_HAZARD",
+    "REL_beam_column_joint",
+    "REL_adjacent_to",
+    "REL_sill_wall_constrains_column",
+    "REL_wall_in_frame",
+    "REL_discontinuous_column_line",
+    "REL_supported_by",
+    "REV_IN_IMAGE",
+    "REV_HAS_DAMAGE",
+    "REV_HAS_INDICATOR",
+    "REV_HAS_MARKING",
+    "REV_HAS_HAZARD",
+    "REV_REL_beam_column_joint",
+    "REV_REL_adjacent_to",
+    "REV_REL_sill_wall_constrains_column",
+    "REV_REL_wall_in_frame",
+    "REV_REL_discontinuous_column_line",
+    "REV_REL_supported_by"
+  ],
+  "per_node_dims": {
+    "ImageContext": 57,
+    "MemberInstance": 46,
+    "DamageFeatureInstance": 68,
+    "GlobalIndicatorInstance": 10,
+    "HumanMarkingInstance": 7,
+    "SecondaryHazardInstance": 9
+  },
+  "homogeneous_dim": 74,
+  "vocabularies": {
+    "member_type": [
+      "column",
+      "beam",
+      "beam_column_joint",
+      "shear_wall",
+      "bearing_wall",
+      "rc_wall",
+      "partition_wall",
+      "curtain_wall",
+      "spandrel_or_sill_wall",
+      "slab",
+      "staircase",
+      "foundation_or_column_base",
+      "brace",
+      "parapet",
+      "non_structural_element",
+      "unknown"
+    ],
+    "structural_role": [
+      "primary_load_bearing",
+      "secondary_lateral",
+      "non_structural",
+      "unknown"
+    ],
+    "material": [
+      "reinforced_concrete",
+      "steel",
+      "src",
+      "brick_masonry",
+      "confined_masonry",
+      "timber",
+      "bamboo_mud",
+      "light_partition",
+      "glass",
+      "unknown"
+    ],
+    "load_capacity": [
+      "intact",
+      "possibly_compromised",
+      "likely_compromised",
+      "clearly_lost",
+      "indeterminate",
+      "na"
+    ],
+    "damage_category": [
+      "crack",
+      "spalling",
+      "rebar",
+      "deformation",
+      "joint_support",
+      "non_structural",
+      "none"
+    ],
+    "position": [
+      "column_top",
+      "column_bottom",
+      "column_mid",
+      "beam_end",
+      "beam_mid",
+      "joint_region",
+      "wall_center",
+      "wall_corner",
+      "opening_corner",
+      "wall_column_interface",
+      "mid_height",
+      "base",
+      "distributed",
+      "unknown"
+    ],
+    "orientation": [
+      "horizontal",
+      "vertical",
+      "diagonal_45",
+      "x_cross",
+      "irregular",
+      "na"
+    ],
+    "rebar_state": [
+      "not_exposed",
+      "exposed_intact",
+      "tie_opened",
+      "tie_fractured",
+      "main_buckled",
+      "main_ruptured",
+      "corroded",
+      "na"
+    ],
+    "concrete_state": [
+      "intact",
+      "cracked",
+      "crushed",
+      "blown_out",
+      "core_disintegrated",
+      "na"
+    ],
+    "mechanism": [
+      "flexural",
+      "shear",
+      "axial_compression",
+      "short_column_effect",
+      "joint_failure",
+      "buckling",
+      "connection_failure",
+      "non_structural_falling",
+      "non_structural_toppling",
+      "indeterminate"
+    ],
+    "brittleness": [
+      "brittle",
+      "ductile_if_confined",
+      "na"
+    ],
+    "seismic": [
+      "seismic",
+      "preexisting",
+      "indeterminate"
+    ],
+    "scene_type": [
+      "indoor_general",
+      "bedroom",
+      "living_room",
+      "kitchen",
+      "bathroom",
+      "stairwell",
+      "balcony",
+      "corridor",
+      "exterior_residential",
+      "school",
+      "gymnasium",
+      "office",
+      "factory",
+      "parking",
+      "unknown"
+    ],
+    "viewing_distance": [
+      "close",
+      "medium",
+      "far"
+    ],
+    "info_sufficiency": [
+      "sufficient_for_visible_scope",
+      "limited",
+      "insufficient"
+    ],
+    "placard": [
+      "紅單_partial",
+      "黃單_partial",
+      "綠單_partial",
+      "不足"
+    ],
+    "critical_signature": [
+      "main_rebar_buckled",
+      "main_rebar_ruptured",
+      "tie_fractured",
+      "core_concrete_crushing",
+      "concrete_blowout",
+      "story_collapse",
+      "overall_tilt_observed",
+      "soft_story",
+      "joint_failure",
+      "short_column_shear",
+      "base_separation",
+      "support_displacement_severe"
+    ],
+    "global_indicator": [
+      "overall_tilt",
+      "story_offset_or_soft_story",
+      "differential_settlement",
+      "story_collapse_or_slab_sagging",
+      "foundation_separation_or_scour",
+      "drift_indirect_evidence",
+      "adjacent_building_influence"
+    ]
+  },
+  "ordinal_tables": {
+    "confidence": {
+      "low": 1,
+      "medium": 2,
+      "high": 3
+    },
+    "width_qualitative": {
+      "hairline": 1,
+      "visible": 2,
+      "wide": 3
+    },
+    "risk_weight": {
+      "low": 1,
+      "medium": 2,
+      "high": 3,
+      "critical": 4
+    },
+    "info_sufficiency": {
+      "insufficient": 1,
+      "limited": 2,
+      "sufficient_for_visible_scope": 3
+    },
+    "grade": {
+      "I": 1,
+      "II": 2,
+      "III": 3,
+      "IV": 4,
+      "V": 5
+    }
+  },
+  "notes": [
+    "GRAPH = instance subgraph only; ontology values are node features (kg_build §9).",
+    "LABEL never derived from VLM/KG output (no leakage).",
+    "Member feature carries BOTH grade_vlm and grade_kg + conflict + undergrade,",
+    "  so the GNN can learn to correct the VLM's documented under-grading."
+  ]
+}

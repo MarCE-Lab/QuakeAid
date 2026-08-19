@@ -1,0 +1,16 @@
+id,scope,abc_level,condition_zh,action_zh,maps_to_grade_hint,source
+ABC_tilt_A,building,A,目視可察覺樓房傾斜,立即離開儘速通知專業技師,IV_V,安全耐震我的家
+ABC_tilt_B,building,B,目視無法察覺但懷疑樓房已傾斜,通知專業技師檢查,III,安全耐震我的家
+ABC_col_A1,column,A,柱子鋼筋外露,立即離開儘速通知專業技師,IV_V,安全耐震我的家
+ABC_col_A2,column,A,柱子連續的X形V形倒V形斜向或垂直向開裂,立即離開儘速通知專業技師,IV_V,安全耐震我的家
+ABC_col_B,column,B,柱子不連續的垂直向斜向裂縫,通知專業技師檢查,II_III,安全耐震我的家
+ABC_col_C,column,C,柱子細小的水平向裂紋,可自行修補,I,安全耐震我的家
+ABC_beam_A1,beam,A,梁的鋼筋外露,立即離開儘速通知專業技師,IV_V,安全耐震我的家
+ABC_beam_B,beam,B,梁有明顯而連續的X形斜向水平向垂直向裂縫,通知專業技師檢查,II_III,安全耐震我的家
+ABC_beam_C,beam,C,梁有垂直向不連續的裂紋,可自行修補,I,安全耐震我的家
+ABC_wall_A1,shear_wall,A,剪力牆鋼筋外露,立即離開儘速通知專業技師,IV_V,安全耐震我的家
+ABC_wall_A2,bearing_wall,A,加強磚造承重牆或RC隔間牆整片倒塌傾斜或大面積掉落,立即離開儘速通知專業技師,IV_V,安全耐震我的家
+ABC_wall_B,shear_wall,B,剪力牆承重牆隔間牆有長而連續的開裂,通知專業技師檢查,III_IV,安全耐震我的家
+ABC_wall_C,shear_wall,C,剪力牆承重牆隔間牆有短而不連續的裂紋,可自行修補,I_II,安全耐震我的家
+ABC_slab_A,slab,A,樓板開裂管線破壞,立即離開儘速通知專業技師,V,安全耐震我的家
+ABC_slab_B,slab,B,樓板角隅出現裂縫,通知專業技師檢查,II_III,安全耐震我的家

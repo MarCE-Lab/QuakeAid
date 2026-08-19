@@ -1,0 +1,7 @@
+id,rgcn_edge,label_zh,significance_zh,risk_implication,source
+beam_column_joint,REL_beam_column_joint,梁柱接頭,梁與柱交會之接頭區接頭破壞屬脆性高危,high,教材;勘災作業準則
+adjacent_to,REL_adjacent_to,相鄰,構材空間相鄰用於碰撞或連動分析,low,context_schema
+sill_wall_constrains_column,REL_sill_wall_constrains_column,窗台牆束制柱,窗台或窗間牆束制柱有效柱高縮短形成短柱效應剪力控制破壞,critical,判定準則;教材
+wall_in_frame,REL_wall_in_frame,牆位於框架內,牆位於梁柱框架內影響勁度分布與地震力吸收,medium,教材;判定準則
+discontinuous_column_line,REL_discontinuous_column_line,柱線不連貫,柱線不連續造成勁度突變或軟層風險,high,教材;耐震評估補強方案
+supported_by,REL_supported_by,支承於,屋頂或樓版支承於牆或梁支承移位有掉落風險,high,明細表;教材;勘災作業準則

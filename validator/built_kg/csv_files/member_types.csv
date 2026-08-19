@@ -1,0 +1,16 @@
+id,label_zh,default_role,is_primary,structure_systems,source
+column,柱,primary_load_bearing,true,reinforced_concrete;steel;src;brick_masonry;confined_masonry;timber,判定準則;明細表;教材;FEMA-306;EMS-98;ATC-20
+beam,梁,primary_load_bearing,true,reinforced_concrete;steel;src,判定準則;明細表;教材;FEMA-306;EMS-98
+beam_column_joint,梁柱接頭,primary_load_bearing,true,reinforced_concrete;steel;src,教材;淺談;EMS-98;FEMA-306
+shear_wall,剪力牆,primary_load_bearing,true,reinforced_concrete,判定準則;自我檢查手冊;FEMA-306;ATC-20;FEMA-154
+bearing_wall,承重牆,primary_load_bearing,true,reinforced_concrete;brick_masonry;confined_masonry,判定準則;明細表;FEMA-306;EMS-98
+rc_wall,RC外牆或分戶牆,secondary_lateral,false,reinforced_concrete,判定準則;耐震評估補強方案;FEMA-306
+partition_wall,隔間牆,secondary_lateral,false,brick_masonry;confined_masonry;light_partition,判定準則;自我檢查手冊;自行檢測簡易手冊;EMS-98;FEMA-306
+curtain_wall,帷幕牆,non_structural,false,glass;steel,明細表;教材;ATC-20
+spandrel_or_sill_wall,窗台或窗間牆,non_structural,false,brick_masonry;reinforced_concrete,判定準則;教材;FEMA-306
+slab,樓板,primary_load_bearing,true,reinforced_concrete,自行檢測簡易手冊;安全耐震我的家;勘災作業準則;FEMA-306
+staircase,樓梯,secondary_lateral,false,reinforced_concrete,自行檢測簡易手冊;明細表
+foundation_or_column_base,基礎或柱腳,primary_load_bearing,true,reinforced_concrete;brick_masonry;timber,判定準則;明細表;教材;FEMA-306
+brace,斜撐,primary_load_bearing,true,steel,明細表;教材;ATC-20;FEMA-154
+parapet,女兒牆,non_structural,false,brick_masonry;reinforced_concrete,明細表;教材;ATC-20;EMS-98
+non_structural_element,其他非結構構材,non_structural,false,light_partition;glass;steel;reinforced_concrete,明細表;教材;ATC-20

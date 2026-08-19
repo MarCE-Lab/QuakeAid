@@ -1,0 +1,4696 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d86" for="edge" attr.name="reasoning_zh" attr.type="string"/>
+<key id="d85" for="edge" attr.name="source" attr.type="string"/>
+<key id="d84" for="edge" attr.name="strength" attr.type="string"/>
+<key id="d83" for="edge" attr.name="etype" attr.type="string"/>
+<key id="d82" for="node" attr.name="notes" attr.type="string"/>
+<key id="d81" for="node" attr.name="intl_term" attr.type="string"/>
+<key id="d80" for="node" attr.name="schema_damage_type" attr.type="string"/>
+<key id="d79" for="node" attr.name="observable_signature" attr.type="string"/>
+<key id="d78" for="node" attr.name="description_en" attr.type="string"/>
+<key id="d77" for="node" attr.name="standard" attr.type="string"/>
+<key id="d76" for="node" attr.name="intl_submode" attr.type="string"/>
+<key id="d75" for="node" attr.name="schema_mechanism" attr.type="string"/>
+<key id="d74" for="node" attr.name="seismic_vulnerability" attr.type="string"/>
+<key id="d73" for="node" attr.name="lateral_system" attr.type="string"/>
+<key id="d72" for="node" attr.name="primary_material" attr.type="string"/>
+<key id="d71" for="node" attr.name="code" attr.type="string"/>
+<key id="d70" for="node" attr.name="scheme" attr.type="string"/>
+<key id="d69" for="node" attr.name="modification_factors" attr.type="string"/>
+<key id="d68" for="node" attr.name="crack_criteria" attr.type="string"/>
+<key id="d67" for="node" attr.name="severity" attr.type="string"/>
+<key id="d66" for="node" attr.name="ductility" attr.type="string"/>
+<key id="d65" for="node" attr.name="maps_to_mechanism" attr.type="string"/>
+<key id="d64" for="node" attr.name="behavior_mode" attr.type="string"/>
+<key id="d63" for="node" attr.name="component_type" attr.type="string"/>
+<key id="d62" for="node" attr.name="system" attr.type="string"/>
+<key id="d61" for="node" attr.name="maps_to_tw_grade" attr.type="string"/>
+<key id="d60" for="node" attr.name="modification_factor" attr.type="string"/>
+<key id="d59" for="node" attr.name="structural_meaning" attr.type="string"/>
+<key id="d58" for="node" attr.name="label" attr.type="string"/>
+<key id="d57" for="node" attr.name="level" attr.type="string"/>
+<key id="d56" for="node" attr.name="scale_id" attr.type="string"/>
+<key id="d55" for="node" attr.name="confidence" attr.type="string"/>
+<key id="d54" for="node" attr.name="inferred_value" attr.type="string"/>
+<key id="d53" for="node" attr.name="cue_zh" attr.type="string"/>
+<key id="d52" for="node" attr.name="target" attr.type="string"/>
+<key id="d51" for="node" attr.name="reasoning_zh" attr.type="string"/>
+<key id="d50" for="node" attr.name="position_on_member" attr.type="string"/>
+<key id="d49" for="node" attr.name="placard_floor_hint" attr.type="string"/>
+<key id="d48" for="node" attr.name="meaning_zh" attr.type="string"/>
+<key id="d47" for="node" attr.name="implies_placard_hint" attr.type="string"/>
+<key id="d46" for="node" attr.name="hazard_category" attr.type="string"/>
+<key id="d45" for="node" attr.name="risk_implication" attr.type="string"/>
+<key id="d44" for="node" attr.name="significance_zh" attr.type="string"/>
+<key id="d43" for="node" attr.name="rgcn_edge" attr.type="string"/>
+<key id="d42" for="node" attr.name="maps_to_grade_hint" attr.type="string"/>
+<key id="d41" for="node" attr.name="action_zh" attr.type="string"/>
+<key id="d40" for="node" attr.name="condition_zh" attr.type="string"/>
+<key id="d39" for="node" attr.name="abc_level" attr.type="string"/>
+<key id="d38" for="node" attr.name="scope" attr.type="string"/>
+<key id="d37" for="node" attr.name="resulting_placard" attr.type="string"/>
+<key id="d36" for="node" attr.name="requires_whole_floor_stats" attr.type="boolean"/>
+<key id="d35" for="node" attr.name="resulting_severity" attr.type="string"/>
+<key id="d34" for="node" attr.name="condition" attr.type="string"/>
+<key id="d33" for="node" attr.name="cond_extra" attr.type="string"/>
+<key id="d32" for="node" attr.name="cond_orientation" attr.type="string"/>
+<key id="d31" for="node" attr.name="cond_width_max_mm" attr.type="double"/>
+<key id="d30" for="node" attr.name="cond_width_min_mm" attr.type="double"/>
+<key id="d29" for="node" attr.name="cond_concrete_state" attr.type="string"/>
+<key id="d28" for="node" attr.name="cond_rebar_state" attr.type="string"/>
+<key id="d27" for="node" attr.name="implies_placard" attr.type="string"/>
+<key id="d26" for="node" attr.name="load_capacity_implication" attr.type="string"/>
+<key id="d25" for="node" attr.name="related_damage_type" attr.type="string"/>
+<key id="d24" for="node" attr.name="applies_to" attr.type="string"/>
+<key id="d23" for="node" attr.name="unit" attr.type="string"/>
+<key id="d22" for="node" attr.name="value" attr.type="double"/>
+<key id="d21" for="node" attr.name="name" attr.type="string"/>
+<key id="d20" for="node" attr.name="criteria_text" attr.type="string"/>
+<key id="d19" for="node" attr.name="severity_ordinal" attr.type="long"/>
+<key id="d18" for="node" attr.name="damage_coefficient" attr.type="double"/>
+<key id="d17" for="node" attr.name="grade" attr.type="string"/>
+<key id="d16" for="node" attr.name="member_type" attr.type="string"/>
+<key id="d15" for="node" attr.name="typical_damage_types" attr.type="string"/>
+<key id="d14" for="node" attr.name="risk_weight" attr.type="string"/>
+<key id="d13" for="node" attr.name="brittleness" attr.type="string"/>
+<key id="d12" for="node" attr.name="severity_weight" attr.type="string"/>
+<key id="d11" for="node" attr.name="grade_hint" attr.type="string"/>
+<key id="d10" for="node" attr.name="typical_depth" attr.type="string"/>
+<key id="d9" for="node" attr.name="typical_position" attr.type="string"/>
+<key id="d8" for="node" attr.name="typical_mechanism" attr.type="string"/>
+<key id="d7" for="node" attr.name="typical_member" attr.type="string"/>
+<key id="d6" for="node" attr.name="category" attr.type="string"/>
+<key id="d5" for="node" attr.name="source" attr.type="string"/>
+<key id="d4" for="node" attr.name="structure_systems" attr.type="string"/>
+<key id="d3" for="node" attr.name="is_primary" attr.type="boolean"/>
+<key id="d2" for="node" attr.name="default_role" attr.type="string"/>
+<key id="d1" for="node" attr.name="label_zh" attr.type="string"/>
+<key id="d0" for="node" attr.name="ntype" attr.type="string"/>
+<graph edgedefault="directed"><node id="MemberType::column">
+  <data key="d0">MemberType</data>
+  <data key="d1">柱</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">reinforced_concrete;steel;src;brick_masonry;confined_masonry;timber</data>
+  <data key="d5">判定準則;明細表;教材;FEMA-306;EMS-98;ATC-20</data>
+</node>
+<node id="Role::primary_load_bearing">
+  <data key="d0">Role</data>
+</node>
+<node id="MemberType::beam">
+  <data key="d0">MemberType</data>
+  <data key="d1">梁</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">reinforced_concrete;steel;src</data>
+  <data key="d5">判定準則;明細表;教材;FEMA-306;EMS-98</data>
+</node>
+<node id="MemberType::beam_column_joint">
+  <data key="d0">MemberType</data>
+  <data key="d1">梁柱接頭</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">reinforced_concrete;steel;src</data>
+  <data key="d5">教材;淺談;EMS-98;FEMA-306</data>
+</node>
+<node id="MemberType::shear_wall">
+  <data key="d0">MemberType</data>
+  <data key="d1">剪力牆</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">reinforced_concrete</data>
+  <data key="d5">判定準則;自我檢查手冊;FEMA-306;ATC-20;FEMA-154</data>
+</node>
+<node id="MemberType::bearing_wall">
+  <data key="d0">MemberType</data>
+  <data key="d1">承重牆</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">reinforced_concrete;brick_masonry;confined_masonry</data>
+  <data key="d5">判定準則;明細表;FEMA-306;EMS-98</data>
+</node>
+<node id="MemberType::rc_wall">
+  <data key="d0">MemberType</data>
+  <data key="d1">RC外牆或分戶牆</data>
+  <data key="d2">secondary_lateral</data>
+  <data key="d3">False</data>
+  <data key="d4">reinforced_concrete</data>
+  <data key="d5">判定準則;耐震評估補強方案;FEMA-306</data>
+</node>
+<node id="Role::secondary_lateral">
+  <data key="d0">Role</data>
+</node>
+<node id="MemberType::partition_wall">
+  <data key="d0">MemberType</data>
+  <data key="d1">隔間牆</data>
+  <data key="d2">secondary_lateral</data>
+  <data key="d3">False</data>
+  <data key="d4">brick_masonry;confined_masonry;light_partition</data>
+  <data key="d5">判定準則;自我檢查手冊;自行檢測簡易手冊;EMS-98;FEMA-306</data>
+</node>
+<node id="MemberType::curtain_wall">
+  <data key="d0">MemberType</data>
+  <data key="d1">帷幕牆</data>
+  <data key="d2">non_structural</data>
+  <data key="d3">False</data>
+  <data key="d4">glass;steel</data>
+  <data key="d5">明細表;教材;ATC-20</data>
+</node>
+<node id="Role::non_structural">
+  <data key="d0">Role</data>
+</node>
+<node id="MemberType::spandrel_or_sill_wall">
+  <data key="d0">MemberType</data>
+  <data key="d1">窗台或窗間牆</data>
+  <data key="d2">non_structural</data>
+  <data key="d3">False</data>
+  <data key="d4">brick_masonry;reinforced_concrete</data>
+  <data key="d5">判定準則;教材;FEMA-306</data>
+</node>
+<node id="MemberType::slab">
+  <data key="d0">MemberType</data>
+  <data key="d1">樓板</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">reinforced_concrete</data>
+  <data key="d5">自行檢測簡易手冊;安全耐震我的家;勘災作業準則;FEMA-306</data>
+</node>
+<node id="MemberType::staircase">
+  <data key="d0">MemberType</data>
+  <data key="d1">樓梯</data>
+  <data key="d2">secondary_lateral</data>
+  <data key="d3">False</data>
+  <data key="d4">reinforced_concrete</data>
+  <data key="d5">自行檢測簡易手冊;明細表</data>
+</node>
+<node id="MemberType::foundation_or_column_base">
+  <data key="d0">MemberType</data>
+  <data key="d1">基礎或柱腳</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">reinforced_concrete;brick_masonry;timber</data>
+  <data key="d5">判定準則;明細表;教材;FEMA-306</data>
+</node>
+<node id="MemberType::brace">
+  <data key="d0">MemberType</data>
+  <data key="d1">斜撐</data>
+  <data key="d2">primary_load_bearing</data>
+  <data key="d3">True</data>
+  <data key="d4">steel</data>
+  <data key="d5">明細表;教材;ATC-20;FEMA-154</data>
+</node>
+<node id="MemberType::parapet">
+  <data key="d0">MemberType</data>
+  <data key="d1">女兒牆</data>
+  <data key="d2">non_structural</data>
+  <data key="d3">False</data>
+  <data key="d4">brick_masonry;reinforced_concrete</data>
+  <data key="d5">明細表;教材;ATC-20;EMS-98</data>
+</node>
+<node id="MemberType::non_structural_element">
+  <data key="d0">MemberType</data>
+  <data key="d1">其他非結構構材</data>
+  <data key="d2">non_structural</data>
+  <data key="d3">False</data>
+  <data key="d4">light_partition;glass;steel;reinforced_concrete</data>
+  <data key="d5">明細表;教材;ATC-20</data>
+</node>
+<node id="MaterialType::reinforced_concrete">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::steel">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::src">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::brick_masonry">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::confined_masonry">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::timber">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::bamboo_mud">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::light_partition">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="MaterialType::glass">
+  <data key="d0">MaterialType</data>
+</node>
+<node id="DamageType::none">
+  <data key="d0">DamageType</data>
+  <data key="d6">none</data>
+  <data key="d1">無損害</data>
+  <data key="d7">any</data>
+  <data key="d8">na</data>
+  <data key="d9">na</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">none</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::hairline_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">髮絲裂縫</data>
+  <data key="d7">column;beam;shear_wall</data>
+  <data key="d8">flexural</data>
+  <data key="d9">distributed</data>
+  <data key="d10">surface_finish</data>
+  <data key="d11">I</data>
+  <data key="d12">low</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::surface_map_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">表面網狀/龜裂</data>
+  <data key="d7">non_structural_element;slab</data>
+  <data key="d8">non_structural_falling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">surface_finish</data>
+  <data key="d11">I</data>
+  <data key="d12">low</data>
+  <data key="d5">新北市震後檢測;自我檢查手冊</data>
+</node>
+<node id="DamageType::horizontal_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">水平向裂縫</data>
+  <data key="d7">column;shear_wall</data>
+  <data key="d8">flexural</data>
+  <data key="d9">column_top;wall_center</data>
+  <data key="d10">plaster</data>
+  <data key="d11">I_II</data>
+  <data key="d12">low</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::vertical_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">垂直向裂縫</data>
+  <data key="d7">column;beam;bearing_wall</data>
+  <data key="d8">flexural</data>
+  <data key="d9">column_mid;beam_mid</data>
+  <data key="d10">plaster</data>
+  <data key="d11">I_II</data>
+  <data key="d12">low</data>
+  <data key="d5">判定準則;自行檢測簡易手冊</data>
+</node>
+<node id="DamageType::diagonal_crack_45">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">斜向45度裂縫</data>
+  <data key="d7">column;beam;shear_wall;bearing_wall</data>
+  <data key="d8">shear</data>
+  <data key="d9">column_mid;wall_center;beam_end</data>
+  <data key="d10">plaster</data>
+  <data key="d11">II_III</data>
+  <data key="d12">medium</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::x_shaped_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">X形交叉裂縫</data>
+  <data key="d7">shear_wall;bearing_wall;column</data>
+  <data key="d8">shear</data>
+  <data key="d9">wall_center;column_mid</data>
+  <data key="d10">cover</data>
+  <data key="d11">III_IV</data>
+  <data key="d12">high</data>
+  <data key="d5">判定準則;教材;安全耐震我的家</data>
+</node>
+<node id="DamageType::through_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">貫穿裂縫</data>
+  <data key="d7">shear_wall;bearing_wall;slab</data>
+  <data key="d8">shear</data>
+  <data key="d9">wall_center;distributed</data>
+  <data key="d10">through</data>
+  <data key="d11">III_IV</data>
+  <data key="d12">high</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::offset_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">錯位/錯動裂縫</data>
+  <data key="d7">shear_wall;bearing_wall;staircase</data>
+  <data key="d8">shear</data>
+  <data key="d9">wall_center;base</data>
+  <data key="d10">through</data>
+  <data key="d11">IV_V</data>
+  <data key="d12">high</data>
+  <data key="d5">自行檢測簡易手冊</data>
+</node>
+<node id="DamageType::mortar_joint_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">沿磚縫/砂漿界面裂縫</data>
+  <data key="d7">bearing_wall;partition_wall</data>
+  <data key="d8">shear</data>
+  <data key="d9">distributed</data>
+  <data key="d10">surface_finish</data>
+  <data key="d11">I_II</data>
+  <data key="d12">medium</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::joint_diagonal_crack">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">接頭斜裂縫</data>
+  <data key="d7">beam_column_joint</data>
+  <data key="d8">joint_failure</data>
+  <data key="d9">joint_region</data>
+  <data key="d10">cover</data>
+  <data key="d11">III_IV</data>
+  <data key="d12">high</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="DamageType::cover_spalling">
+  <data key="d0">DamageType</data>
+  <data key="d6">spalling</data>
+  <data key="d1">混凝土保護層剝落</data>
+  <data key="d7">column;beam;shear_wall</data>
+  <data key="d8">flexural</data>
+  <data key="d9">column_top;column_bottom;beam_end</data>
+  <data key="d10">cover</data>
+  <data key="d11">III</data>
+  <data key="d12">medium</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::large_area_spalling_rebar_exposed">
+  <data key="d0">DamageType</data>
+  <data key="d6">spalling</data>
+  <data key="d1">大範圍保護層脫落鋼筋外露</data>
+  <data key="d7">column;beam;shear_wall</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">column_top;column_bottom</data>
+  <data key="d10">cover</data>
+  <data key="d11">IV</data>
+  <data key="d12">high</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::core_concrete_crushing">
+  <data key="d0">DamageType</data>
+  <data key="d6">spalling</data>
+  <data key="d1">核心混凝土碎裂</data>
+  <data key="d7">column;shear_wall</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">column_top;column_bottom;wall_corner</data>
+  <data key="d10">core</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::concrete_blowout">
+  <data key="d0">DamageType</data>
+  <data key="d6">spalling</data>
+  <data key="d1">混凝土爆裂</data>
+  <data key="d7">column</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">column_top;column_bottom</data>
+  <data key="d10">core</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::tile_spalling">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">磁磚剝落</data>
+  <data key="d7">non_structural_element;curtain_wall</data>
+  <data key="d8">non_structural_falling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">surface_finish</data>
+  <data key="d11">na</data>
+  <data key="d12">low</data>
+  <data key="d5">自行檢測簡易手冊;教材</data>
+</node>
+<node id="DamageType::plaster_spalling">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">粉刷層剝落</data>
+  <data key="d7">non_structural_element;column;beam</data>
+  <data key="d8">non_structural_falling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">plaster</data>
+  <data key="d11">I_II</data>
+  <data key="d12">low</data>
+  <data key="d5">判定準則;自我檢查手冊</data>
+</node>
+<node id="DamageType::compression_crushing">
+  <data key="d0">DamageType</data>
+  <data key="d6">spalling</data>
+  <data key="d1">壓潰破壞</data>
+  <data key="d7">bearing_wall;column</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">wall_corner;column_bottom</data>
+  <data key="d10">core</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::rebar_exposed_intact">
+  <data key="d0">DamageType</data>
+  <data key="d6">rebar</data>
+  <data key="d1">鋼筋裸露但完好</data>
+  <data key="d7">column;beam;shear_wall</data>
+  <data key="d8">flexural</data>
+  <data key="d9">column_top;beam_end</data>
+  <data key="d10">cover</data>
+  <data key="d11">III</data>
+  <data key="d12">medium</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageType::tie_opened">
+  <data key="d0">DamageType</data>
+  <data key="d6">rebar</data>
+  <data key="d1">箍筋脫開</data>
+  <data key="d7">column;beam</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">column_top;column_bottom</data>
+  <data key="d10">core</data>
+  <data key="d11">IV</data>
+  <data key="d12">high</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::tie_fractured">
+  <data key="d0">DamageType</data>
+  <data key="d6">rebar</data>
+  <data key="d1">箍筋斷裂</data>
+  <data key="d7">column;beam</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">column_top;column_bottom</data>
+  <data key="d10">core</data>
+  <data key="d11">IV_V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::main_rebar_buckled">
+  <data key="d0">DamageType</data>
+  <data key="d6">rebar</data>
+  <data key="d1">主筋挫屈(燈籠狀)</data>
+  <data key="d7">column;shear_wall</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">column_top;column_bottom</data>
+  <data key="d10">core</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::main_rebar_ruptured">
+  <data key="d0">DamageType</data>
+  <data key="d6">rebar</data>
+  <data key="d1">主筋拉斷</data>
+  <data key="d7">shear_wall;column;beam</data>
+  <data key="d8">flexural</data>
+  <data key="d9">wall_corner;column_top</data>
+  <data key="d10">core</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::rebar_corrosion">
+  <data key="d0">DamageType</data>
+  <data key="d6">rebar</data>
+  <data key="d1">鋼筋鏽蝕</data>
+  <data key="d7">column;beam;slab</data>
+  <data key="d8">na</data>
+  <data key="d9">distributed</data>
+  <data key="d10">cover</data>
+  <data key="d11">na</data>
+  <data key="d12">low</data>
+  <data key="d5">自我檢視因應手冊</data>
+</node>
+<node id="DamageType::corrosion_expansion_cracking">
+  <data key="d0">DamageType</data>
+  <data key="d6">crack</data>
+  <data key="d1">鏽蝕膨脹裂縫</data>
+  <data key="d7">column;beam;slab</data>
+  <data key="d8">na</data>
+  <data key="d9">distributed</data>
+  <data key="d10">cover</data>
+  <data key="d11">na</data>
+  <data key="d12">low</data>
+  <data key="d5">自我檢視因應手冊</data>
+</node>
+<node id="DamageType::overall_tilt">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">建築物整體傾斜</data>
+  <data key="d7">foundation_or_column_base</data>
+  <data key="d8">na</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">critical</data>
+  <data key="d5">明細表;教材;勘災作業準則</data>
+</node>
+<node id="DamageType::story_offset">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">樓層錯位/弱層</data>
+  <data key="d7">column</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">critical</data>
+  <data key="d5">教材;自我檢視因應手冊</data>
+</node>
+<node id="DamageType::dislocation">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">錯位/移位</data>
+  <data key="d7">shear_wall;bearing_wall;staircase</data>
+  <data key="d8">shear</data>
+  <data key="d9">base;wall_center</data>
+  <data key="d10">through</data>
+  <data key="d11">IV_V</data>
+  <data key="d12">high</data>
+  <data key="d5">自行檢測簡易手冊;教材</data>
+</node>
+<node id="DamageType::slab_sagging">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">樓板下陷</data>
+  <data key="d7">slab</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;安全耐震我的家</data>
+</node>
+<node id="DamageType::beam_sagging">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">梁下垂</data>
+  <data key="d7">beam</data>
+  <data key="d8">flexural</data>
+  <data key="d9">beam_mid</data>
+  <data key="d10">na</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::column_shortening">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">柱縮短</data>
+  <data key="d7">column</data>
+  <data key="d8">axial_compression</data>
+  <data key="d9">column_top;column_bottom</data>
+  <data key="d10">na</data>
+  <data key="d11">V</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="DamageType::differential_settlement">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">差異沉陷</data>
+  <data key="d7">foundation_or_column_base</data>
+  <data key="d8">na</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">high</data>
+  <data key="d5">教材;住宅地震保險</data>
+</node>
+<node id="DamageType::base_separation">
+  <data key="d0">DamageType</data>
+  <data key="d6">joint_support</data>
+  <data key="d1">基礎與上部結構脫離錯開</data>
+  <data key="d7">foundation_or_column_base</data>
+  <data key="d8">na</data>
+  <data key="d9">base</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">critical</data>
+  <data key="d5">判定準則;明細表;教材</data>
+</node>
+<node id="DamageType::beam_column_joint_failure">
+  <data key="d0">DamageType</data>
+  <data key="d6">joint_support</data>
+  <data key="d1">梁柱接頭破壞</data>
+  <data key="d7">beam_column_joint</data>
+  <data key="d8">joint_failure</data>
+  <data key="d9">joint_region</data>
+  <data key="d10">core</data>
+  <data key="d11">IV_V</data>
+  <data key="d12">high</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="DamageType::bolt_loosened_or_sheared">
+  <data key="d0">DamageType</data>
+  <data key="d6">joint_support</data>
+  <data key="d1">螺栓鬆動或剪斷</data>
+  <data key="d7">brace;non_structural_element</data>
+  <data key="d8">connection_failure</data>
+  <data key="d9">joint_region</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">high</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::weld_cracking">
+  <data key="d0">DamageType</data>
+  <data key="d6">joint_support</data>
+  <data key="d1">銲道開裂</data>
+  <data key="d7">brace;beam;column</data>
+  <data key="d8">connection_failure</data>
+  <data key="d9">joint_region</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">high</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::steel_buckling">
+  <data key="d0">DamageType</data>
+  <data key="d6">deformation</data>
+  <data key="d1">鋼構挫屈</data>
+  <data key="d7">brace;column;beam</data>
+  <data key="d8">buckling</data>
+  <data key="d9">mid_height;base</data>
+  <data key="d10">na</data>
+  <data key="d11">IV_V</data>
+  <data key="d12">high</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::support_displacement">
+  <data key="d0">DamageType</data>
+  <data key="d6">joint_support</data>
+  <data key="d1">屋頂樓版支承移位</data>
+  <data key="d7">foundation_or_column_base;beam</data>
+  <data key="d8">na</data>
+  <data key="d9">base</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">high</data>
+  <data key="d5">明細表;教材;勘災作業準則</data>
+</node>
+<node id="DamageType::member_detachment">
+  <data key="d0">DamageType</data>
+  <data key="d6">joint_support</data>
+  <data key="d1">構材脫離/掉落</data>
+  <data key="d7">brace;non_structural_element</data>
+  <data key="d8">connection_failure</data>
+  <data key="d9">joint_region</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">high</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::parapet_damage">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">女兒牆損壞</data>
+  <data key="d7">parapet</data>
+  <data key="d8">non_structural_toppling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">medium</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::exterior_finish_spalling">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">外牆裝修材剝落</data>
+  <data key="d7">non_structural_element;curtain_wall</data>
+  <data key="d8">non_structural_falling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">surface_finish</data>
+  <data key="d11">na</data>
+  <data key="d12">medium</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::curtain_wall_damage">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">帷幕牆損壞</data>
+  <data key="d7">curtain_wall</data>
+  <data key="d8">non_structural_falling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">medium</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::ceiling_collapse">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">天花板掉落</data>
+  <data key="d7">non_structural_element</data>
+  <data key="d8">non_structural_falling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">medium</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::glass_breakage">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">玻璃破裂</data>
+  <data key="d7">curtain_wall;non_structural_element</data>
+  <data key="d8">non_structural_falling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">medium</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageType::partition_collapse">
+  <data key="d0">DamageType</data>
+  <data key="d6">non_structural</data>
+  <data key="d1">隔間牆倒塌</data>
+  <data key="d7">partition_wall</data>
+  <data key="d8">non_structural_toppling</data>
+  <data key="d9">distributed</data>
+  <data key="d10">na</data>
+  <data key="d11">na</data>
+  <data key="d12">medium</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="DamageMechanism::flexural">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">彎曲破壞</data>
+  <data key="d13">ductile_if_confined</data>
+  <data key="d14">medium</data>
+  <data key="d15">horizontal_crack;cover_spalling</data>
+  <data key="d9">column_top;column_bottom;beam_end;wall_corner</data>
+</node>
+<node id="RiskWeight::medium">
+  <data key="d0">RiskWeight</data>
+</node>
+<node id="DamageMechanism::shear">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">剪力破壞</data>
+  <data key="d13">brittle</data>
+  <data key="d14">high</data>
+  <data key="d15">diagonal_crack_45;x_shaped_crack</data>
+  <data key="d9">column_mid;beam_mid;wall_center</data>
+</node>
+<node id="RiskWeight::high">
+  <data key="d0">RiskWeight</data>
+</node>
+<node id="DamageMechanism::axial_compression">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">軸力壓潰</data>
+  <data key="d13">brittle</data>
+  <data key="d14">critical</data>
+  <data key="d15">concrete_blowout;core_concrete_crushing;main_rebar_buckled</data>
+  <data key="d9">column_top;column_bottom;wall_corner</data>
+</node>
+<node id="RiskWeight::critical">
+  <data key="d0">RiskWeight</data>
+</node>
+<node id="DamageMechanism::short_column_effect">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">短柱效應</data>
+  <data key="d13">brittle</data>
+  <data key="d14">critical</data>
+  <data key="d15">diagonal_crack_45;x_shaped_crack</data>
+  <data key="d9">column_mid;wall_column_interface</data>
+</node>
+<node id="DamageMechanism::joint_failure">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">接頭破壞</data>
+  <data key="d13">brittle</data>
+  <data key="d14">high</data>
+  <data key="d15">joint_diagonal_crack;beam_column_joint_failure</data>
+  <data key="d9">joint_region</data>
+</node>
+<node id="DamageMechanism::buckling">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">鋼構挫屈</data>
+  <data key="d13">brittle</data>
+  <data key="d14">high</data>
+  <data key="d15">steel_buckling</data>
+  <data key="d9">mid_height;base</data>
+</node>
+<node id="DamageMechanism::connection_failure">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">接合破壞</data>
+  <data key="d13">brittle</data>
+  <data key="d14">high</data>
+  <data key="d15">bolt_loosened_or_sheared;weld_cracking;member_detachment</data>
+  <data key="d9">joint_region;beam_end</data>
+</node>
+<node id="DamageMechanism::non_structural_falling">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">非結構墜落</data>
+  <data key="d13">brittle</data>
+  <data key="d14">medium</data>
+  <data key="d15">tile_spalling;exterior_finish_spalling;ceiling_collapse;curtain_wall_damage;glass_breakage;parapet_damage</data>
+  <data key="d9">distributed</data>
+</node>
+<node id="DamageMechanism::non_structural_toppling">
+  <data key="d0">DamageMechanism</data>
+  <data key="d1">非結構傾倒</data>
+  <data key="d13">brittle</data>
+  <data key="d14">medium</data>
+  <data key="d15">partition_collapse;cabinet_toppling;fence_collapse;exterior_stair_tilt;water_tank_tilt;utility_pole_tilt</data>
+  <data key="d9">distributed</data>
+</node>
+<node id="DamageGrade::col_I">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">column</data>
+  <data key="d17">I</data>
+  <data key="d18">0.1</data>
+  <data key="d19">1</data>
+  <data key="d20">輕微如髮絲之裂縫裂縫寬約在0.2mm以內</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::col_II">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">column</data>
+  <data key="d17">II</data>
+  <data key="d18">0.2</data>
+  <data key="d19">2</data>
+  <data key="d20">有明顯之裂痕裂縫寬約在0.2mm以上且混凝土粉刷層剝落剪力斜裂縫0.3mm以上</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::col_III">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">column</data>
+  <data key="d17">III</data>
+  <data key="d18">0.3</data>
+  <data key="d19">3</data>
+  <data key="d20">混凝土保護層剝落但主筋未挫屈箍筋未脫開或斷裂</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::col_IV">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">column</data>
+  <data key="d17">IV</data>
+  <data key="d18">0.65</data>
+  <data key="d19">4</data>
+  <data key="d20">混凝土保護層脫落範圍大部分箍筋已脫開或斷裂主筋可能已挫屈鋼筋外露</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::col_V">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">column</data>
+  <data key="d17">V</data>
+  <data key="d18">1.0</data>
+  <data key="d19">5</data>
+  <data key="d20">箍筋脫開斷裂主筋挫屈嚴重柱內混凝土碎裂脫落樓層下陷</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::beam_I">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">beam</data>
+  <data key="d17">I</data>
+  <data key="d18">0.1</data>
+  <data key="d19">1</data>
+  <data key="d20">輕微如髮絲之裂縫裂縫寬約在0.2mm以內</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::beam_II">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">beam</data>
+  <data key="d17">II</data>
+  <data key="d18">0.2</data>
+  <data key="d19">2</data>
+  <data key="d20">剪力裂縫0.3mm以下混凝土粉刷層脫落</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::beam_III">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">beam</data>
+  <data key="d17">III</data>
+  <data key="d18">0.3</data>
+  <data key="d19">3</data>
+  <data key="d20">裂縫0.3mm以上混凝土保護層脫落但主筋未挫屈箍筋未斷裂</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::beam_IV">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">beam</data>
+  <data key="d17">IV</data>
+  <data key="d18">0.65</data>
+  <data key="d19">4</data>
+  <data key="d20">保護層脫落範圍大部分箍筋斷裂主筋可能挫屈鋼筋外露</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::beam_V">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">beam</data>
+  <data key="d17">V</data>
+  <data key="d18">1.0</data>
+  <data key="d19">5</data>
+  <data key="d20">箍筋斷裂脫落主筋挫屈嚴重梁中混凝土裂開樓層下陷</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::wall_I">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">I</data>
+  <data key="d18">0.1</data>
+  <data key="d19">1</data>
+  <data key="d20">輕微裂縫水平向裂縫在0.3mm以下</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::wall_II">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">II</data>
+  <data key="d18">0.2</data>
+  <data key="d19">2</data>
+  <data key="d20">水平向裂縫多且延伸至柱裂縫寬度0.3mm至0.5mm斜向裂縫長度未超過牆對角線長度一半</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::wall_III">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">III</data>
+  <data key="d18">0.3</data>
+  <data key="d19">3</data>
+  <data key="d20">有斜向裂縫但未見牆內主筋斜向裂縫長度未超過牆對角線一半</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::wall_IV">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">IV</data>
+  <data key="d18">0.65</data>
+  <data key="d19">4</data>
+  <data key="d20">有大量之斜向裂縫可見牆內主筋但未拉斷邊柱之保護層脫落</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::wall_V">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">V</data>
+  <data key="d18">1.0</data>
+  <data key="d19">5</data>
+  <data key="d20">斜向裂縫擴大牆內主筋拉斷邊柱壓潰柱筋挫屈混凝土碎裂脫出樓板下陷</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::brick_I">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">bearing_wall</data>
+  <data key="d17">I</data>
+  <data key="d18">0.3</data>
+  <data key="d19">1</data>
+  <data key="d20">磚牆裂縫不大於0.5公分</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::brick_II">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">bearing_wall</data>
+  <data key="d17">II</data>
+  <data key="d18">1.0</data>
+  <data key="d19">2</data>
+  <data key="d20">磚牆裂縫大於0.5公分牆頂與梁底交界分開</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="DamageGrade::stair_minor">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">staircase</data>
+  <data key="d17">III</data>
+  <data key="d18">0.3</data>
+  <data key="d19">3</data>
+  <data key="d20">樓梯平台或轉角處發生裂縫直向裂紋速請評估</data>
+  <data key="d5">自我檢視因應手冊;自行檢測簡易手冊</data>
+</node>
+<node id="DamageGrade::stair_severe">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">staircase</data>
+  <data key="d17">IV</data>
+  <data key="d18">0.65</data>
+  <data key="d19">4</data>
+  <data key="d20">樓梯混凝土嚴重剝裂鋼筋外露樓梯平台沿踏步處水平斷裂</data>
+  <data key="d5">自我檢視因應手冊;自行檢測簡易手冊</data>
+</node>
+<node id="DamageGrade::slab_minor">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">slab</data>
+  <data key="d17">III</data>
+  <data key="d18">0.3</data>
+  <data key="d19">3</data>
+  <data key="d20">樓板角隅出現裂縫速請評估</data>
+  <data key="d5">自我檢視因應手冊;安全耐震我的家</data>
+</node>
+<node id="DamageGrade::slab_severe">
+  <data key="d0">DamageGrade</data>
+  <data key="d16">slab</data>
+  <data key="d17">IV</data>
+  <data key="d18">0.65</data>
+  <data key="d19">4</data>
+  <data key="d20">樓板混凝土剝落鋼筋外露樓板開裂管線破壞</data>
+  <data key="d5">自我檢視因應手冊;安全耐震我的家</data>
+</node>
+<node id="Threshold::TH_hair">
+  <data key="d0">Threshold</data>
+  <data key="d21">hairline_grade_I</data>
+  <data key="d22">0.2</data>
+  <data key="d23">mm</data>
+  <data key="d24">column;beam;general</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="Threshold::TH_shear2">
+  <data key="d0">Threshold</data>
+  <data key="d21">shear_crack_grade_II</data>
+  <data key="d22">0.3</data>
+  <data key="d23">mm</data>
+  <data key="d24">column;beam</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="Threshold::TH_beam3">
+  <data key="d0">Threshold</data>
+  <data key="d21">beam_crack_grade_III</data>
+  <data key="d22">0.3</data>
+  <data key="d23">mm</data>
+  <data key="d24">beam</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="Threshold::TH_wallh1">
+  <data key="d0">Threshold</data>
+  <data key="d21">wall_horizontal_grade_I</data>
+  <data key="d22">0.3</data>
+  <data key="d23">mm</data>
+  <data key="d24">shear_wall</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="Threshold::TH_wallh2">
+  <data key="d0">Threshold</data>
+  <data key="d21">wall_horizontal_grade_II</data>
+  <data key="d22">0.5</data>
+  <data key="d23">mm</data>
+  <data key="d24">shear_wall</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="Threshold::TH_brick">
+  <data key="d0">Threshold</data>
+  <data key="d21">brick_crack_grade_boundary</data>
+  <data key="d22">0.5</data>
+  <data key="d23">cm</data>
+  <data key="d24">bearing_wall;confined_masonry</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="Threshold::TH_coin">
+  <data key="d0">Threshold</data>
+  <data key="d21">coin_selfcheck_50nt</data>
+  <data key="d22">0.2</data>
+  <data key="d23">cm</data>
+  <data key="d24">general</data>
+  <data key="d5">新北市震後檢測;自行檢測簡易手冊</data>
+</node>
+<node id="Threshold::TH_tilt_minor">
+  <data key="d0">Threshold</data>
+  <data key="d21">tilt_jia_yi_boundary</data>
+  <data key="d22">0.01667</data>
+  <data key="d23">ratio</data>
+  <data key="d24">building</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_tilt_severe">
+  <data key="d0">Threshold</data>
+  <data key="d21">tilt_yi_bing_boundary</data>
+  <data key="d22">0.03333</data>
+  <data key="d23">ratio</data>
+  <data key="d24">building</data>
+  <data key="d5">明細表;教材;判定準則</data>
+</node>
+<node id="Threshold::TH_tilt_repair">
+  <data key="d0">Threshold</data>
+  <data key="d21">tilt_repair_threshold</data>
+  <data key="d22">0.005</data>
+  <data key="d23">ratio</data>
+  <data key="d24">building</data>
+  <data key="d5">自我檢視因應手冊</data>
+</node>
+<node id="Threshold::TH_tilt_demolish">
+  <data key="d0">Threshold</data>
+  <data key="d21">tilt_demolish_threshold</data>
+  <data key="d22">0.025</data>
+  <data key="d23">ratio</data>
+  <data key="d24">building</data>
+  <data key="d5">自我檢視因應手冊</data>
+</node>
+<node id="Threshold::TH_base">
+  <data key="d0">Threshold</data>
+  <data key="d21">base_separation</data>
+  <data key="d22">5.0</data>
+  <data key="d23">cm</data>
+  <data key="d24">foundation_or_column_base</data>
+  <data key="d5">明細表;判定準則</data>
+</node>
+<node id="Threshold::TH_base_insurance">
+  <data key="d0">Threshold</data>
+  <data key="d21">base_separation_insurance_fullloss</data>
+  <data key="d22">30.0</data>
+  <data key="d23">cm</data>
+  <data key="d24">foundation_or_column_base</data>
+  <data key="d5">住宅地震保險</data>
+</node>
+<node id="Threshold::TH_settle_insurance">
+  <data key="d0">Threshold</data>
+  <data key="d21">settlement_insurance_fullloss</data>
+  <data key="d22">10.0</data>
+  <data key="d23">cm</data>
+  <data key="d24">building</data>
+  <data key="d5">住宅地震保險</data>
+</node>
+<node id="Threshold::TH_basepct_minor">
+  <data key="d0">Threshold</data>
+  <data key="d21">base_pct_jia_yi_boundary</data>
+  <data key="d22">10.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">foundation_or_column_base</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_basepct_severe">
+  <data key="d0">Threshold</data>
+  <data key="d21">base_pct_yi_bing_boundary</data>
+  <data key="d22">20.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">foundation_or_column_base</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_sup1">
+  <data key="d0">Threshold</data>
+  <data key="d21">support_disp_jia_yi_boundary</data>
+  <data key="d22">0.25</data>
+  <data key="d23">ratio</data>
+  <data key="d24">masonry_support;timber_support</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_sup2">
+  <data key="d0">Threshold</data>
+  <data key="d21">support_disp_yi_bing_boundary</data>
+  <data key="d22">0.5</data>
+  <data key="d23">ratio</data>
+  <data key="d24">masonry_support;timber_support</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_member_pct_V">
+  <data key="d0">Threshold</data>
+  <data key="d21">member_grade_V_pct_bing</data>
+  <data key="d22">10.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">column;beam;shear_wall</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_member_pct_IVV">
+  <data key="d0">Threshold</data>
+  <data key="d21">member_grade_IV_plus_V_pct_bing</data>
+  <data key="d22">20.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">column;beam;shear_wall</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_brickwall_pct_yi">
+  <data key="d0">Threshold</data>
+  <data key="d21">brickwall_damage_pct_jia_yi</data>
+  <data key="d22">20.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">bearing_wall;confined_masonry</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_brickwall_pct_bing">
+  <data key="d0">Threshold</data>
+  <data key="d21">brickwall_damage_pct_yi_bing</data>
+  <data key="d22">50.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">bearing_wall;confined_masonry</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="Threshold::TH_glass_yi">
+  <data key="d0">Threshold</data>
+  <data key="d21">glass_finish_pct_jia_yi</data>
+  <data key="d22">1.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">curtain_wall;non_structural_element</data>
+  <data key="d5">教材</data>
+</node>
+<node id="Threshold::TH_glass_bing">
+  <data key="d0">Threshold</data>
+  <data key="d21">glass_finish_pct_yi_bing</data>
+  <data key="d22">10.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">curtain_wall;non_structural_element</data>
+  <data key="d5">教材</data>
+</node>
+<node id="Threshold::TH_fullloss_repair">
+  <data key="d0">Threshold</data>
+  <data key="d21">fullloss_repair_cost_ratio</data>
+  <data key="d22">50.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">building</data>
+  <data key="d5">住宅地震保險;判定準則</data>
+</node>
+<node id="Threshold::TH_id_value">
+  <data key="d0">Threshold</data>
+  <data key="d21">seismic_capacity_id_legal</data>
+  <data key="d22">0.35</data>
+  <data key="d23">ratio</data>
+  <data key="d24">building</data>
+  <data key="d5">自我檢視因應手冊;耐震評估補強方案</data>
+</node>
+<node id="Threshold::TH_opening_excl">
+  <data key="d0">Threshold</data>
+  <data key="d21">wall_opening_exclusion_ratio</data>
+  <data key="d22">0.2</data>
+  <data key="d23">ratio</data>
+  <data key="d24">shear_wall;bearing_wall</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="Threshold::TH_chloride">
+  <data key="d0">Threshold</data>
+  <data key="d21">chloride_content_sea_sand</data>
+  <data key="d22">0.3</data>
+  <data key="d23">ratio</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="Threshold::TH_fema_flex_insig">
+  <data key="d0">Threshold</data>
+  <data key="d21">fema_rc_flexure_insignificant_crack</data>
+  <data key="d22">4.8</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="Threshold::TH_fema_flex_slight">
+  <data key="d0">Threshold</data>
+  <data key="d21">fema_rc_flexure_slight_crack</data>
+  <data key="d22">6.4</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="Threshold::TH_fema_shear_insig">
+  <data key="d0">Threshold</data>
+  <data key="d21">fema_rc_shear_insignificant_crack</data>
+  <data key="d22">1.6</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="Threshold::TH_fema_shear_mod">
+  <data key="d0">Threshold</data>
+  <data key="d21">fema_rc_shear_moderate_crack</data>
+  <data key="d22">3.2</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="Threshold::TH_fema_shear_heavy">
+  <data key="d0">Threshold</data>
+  <data key="d21">fema_rc_shear_heavy_crack_max</data>
+  <data key="d22">9.5</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="Threshold::TH_aci_cover_earth">
+  <data key="d0">Threshold</data>
+  <data key="d21">aci_cover_cast_against_earth</data>
+  <data key="d22">75.0</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">ACI-318</data>
+</node>
+<node id="Threshold::TH_aci_cover_weather">
+  <data key="d0">Threshold</data>
+  <data key="d21">aci_cover_exposed_weather</data>
+  <data key="d22">50.0</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">ACI-318</data>
+</node>
+<node id="Threshold::TH_aci_cover_beamcol">
+  <data key="d0">Threshold</data>
+  <data key="d21">aci_cover_beams_columns_interior</data>
+  <data key="d22">40.0</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">ACI-318</data>
+</node>
+<node id="Threshold::TH_aci_cover_slab">
+  <data key="d0">Threshold</data>
+  <data key="d21">aci_cover_slabs_walls_interior</data>
+  <data key="d22">20.0</data>
+  <data key="d23">mm</data>
+  <data key="d24">reinforced_concrete</data>
+  <data key="d5">ACI-318</data>
+</node>
+<node id="Threshold::TH_fema154_cutoff">
+  <data key="d0">Threshold</data>
+  <data key="d21">fema154_rvs_score_cutoff</data>
+  <data key="d22">2.0</data>
+  <data key="d23">ratio</data>
+  <data key="d24">building</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="CriticalSignature::main_rebar_buckled">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">主筋挫屈</data>
+  <data key="d25">main_rebar_buckled</data>
+  <data key="d26">clearly_lost</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="Placard::紅單">
+  <data key="d0">Placard</data>
+</node>
+<node id="CriticalSignature::main_rebar_ruptured">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">主筋拉斷</data>
+  <data key="d25">main_rebar_ruptured</data>
+  <data key="d26">clearly_lost</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="CriticalSignature::tie_fractured">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">箍筋斷裂</data>
+  <data key="d25">tie_fractured</data>
+  <data key="d26">likely_compromised</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="CriticalSignature::core_concrete_crushing">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">核心混凝土碎裂</data>
+  <data key="d25">core_concrete_crushing</data>
+  <data key="d26">clearly_lost</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="CriticalSignature::concrete_blowout">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">混凝土爆裂</data>
+  <data key="d25">concrete_blowout</data>
+  <data key="d26">clearly_lost</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="CriticalSignature::story_collapse">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">樓層崩塌</data>
+  <data key="d25">slab_sagging</data>
+  <data key="d26">clearly_lost</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">判定準則;勘災作業準則</data>
+</node>
+<node id="CriticalSignature::overall_tilt_observed">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">整體傾斜</data>
+  <data key="d25">overall_tilt</data>
+  <data key="d26">likely_compromised</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="CriticalSignature::soft_story">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">軟層/弱層</data>
+  <data key="d25">story_offset</data>
+  <data key="d26">clearly_lost</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">教材;自我檢視因應手冊</data>
+</node>
+<node id="CriticalSignature::joint_failure">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">接頭破壞</data>
+  <data key="d25">beam_column_joint_failure</data>
+  <data key="d26">likely_compromised</data>
+  <data key="d27">紅單</data>
+  <data key="d14">high</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="CriticalSignature::short_column_shear">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">短柱剪力破壞</data>
+  <data key="d25">x_shaped_crack</data>
+  <data key="d26">likely_compromised</data>
+  <data key="d27">紅單</data>
+  <data key="d14">high</data>
+  <data key="d5">教材;判定準則</data>
+</node>
+<node id="CriticalSignature::base_separation">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">基礎脫離</data>
+  <data key="d25">base_separation</data>
+  <data key="d26">likely_compromised</data>
+  <data key="d27">紅單</data>
+  <data key="d14">critical</data>
+  <data key="d5">判定準則;明細表</data>
+</node>
+<node id="CriticalSignature::support_displacement_severe">
+  <data key="d0">CriticalSignature</data>
+  <data key="d1">支承移位嚴重</data>
+  <data key="d25">support_displacement</data>
+  <data key="d26">likely_compromised</data>
+  <data key="d27">紅單</data>
+  <data key="d14">high</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="GradeCriterion::GC_col_I">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">column</data>
+  <data key="d17">I</data>
+  <data key="d28">not_exposed</data>
+  <data key="d29">intact;cracked</data>
+  <data key="d30">0.0</data>
+  <data key="d31">0.2</data>
+  <data key="d32"></data>
+  <data key="d33">hairline</data>
+</node>
+<node id="GradeCriterion::GC_col_II">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">column</data>
+  <data key="d17">II</data>
+  <data key="d28">not_exposed</data>
+  <data key="d29">cracked</data>
+  <data key="d30">0.2</data>
+  <data key="d32"></data>
+  <data key="d33">plaster_spalling;shear_if_diagonal_min_0.3</data>
+</node>
+<node id="GradeCriterion::GC_col_III">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">column</data>
+  <data key="d17">III</data>
+  <data key="d28">exposed_intact</data>
+  <data key="d29">cracked</data>
+  <data key="d32"></data>
+  <data key="d33">cover_spalling;tie_intact;main_not_buckled</data>
+</node>
+<node id="GradeCriterion::GC_col_IV">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">column</data>
+  <data key="d17">IV</data>
+  <data key="d28">tie_opened;tie_fractured;main_buckled</data>
+  <data key="d29">cracked;crushed</data>
+  <data key="d32"></data>
+  <data key="d33">large_area_spalling;rebar_exposed</data>
+</node>
+<node id="GradeCriterion::GC_col_V">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">column</data>
+  <data key="d17">V</data>
+  <data key="d28">main_buckled;main_ruptured</data>
+  <data key="d29">crushed;core_disintegrated;blown_out</data>
+  <data key="d32"></data>
+  <data key="d33">core_crushing;story_sag</data>
+</node>
+<node id="GradeCriterion::GC_beam_I">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">beam</data>
+  <data key="d17">I</data>
+  <data key="d28">not_exposed</data>
+  <data key="d29">intact;cracked</data>
+  <data key="d30">0.0</data>
+  <data key="d31">0.2</data>
+  <data key="d32"></data>
+  <data key="d33">hairline</data>
+</node>
+<node id="GradeCriterion::GC_beam_II">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">beam</data>
+  <data key="d17">II</data>
+  <data key="d28">not_exposed</data>
+  <data key="d29">cracked</data>
+  <data key="d30">0.0</data>
+  <data key="d31">0.3</data>
+  <data key="d32">diagonal_45</data>
+  <data key="d33">plaster_spalling</data>
+</node>
+<node id="GradeCriterion::GC_beam_III">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">beam</data>
+  <data key="d17">III</data>
+  <data key="d28">exposed_intact</data>
+  <data key="d29">cracked</data>
+  <data key="d30">0.3</data>
+  <data key="d32"></data>
+  <data key="d33">cover_spalling;tie_intact;main_not_buckled</data>
+</node>
+<node id="GradeCriterion::GC_beam_IV">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">beam</data>
+  <data key="d17">IV</data>
+  <data key="d28">tie_fractured;main_buckled</data>
+  <data key="d29">cracked;crushed</data>
+  <data key="d32"></data>
+  <data key="d33">large_area_spalling;rebar_exposed</data>
+</node>
+<node id="GradeCriterion::GC_beam_V">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">beam</data>
+  <data key="d17">V</data>
+  <data key="d28">tie_fractured;main_buckled;main_ruptured</data>
+  <data key="d29">crushed;core_disintegrated</data>
+  <data key="d32"></data>
+  <data key="d33">story_sag;beam_sagging</data>
+</node>
+<node id="GradeCriterion::GC_wall_I">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">I</data>
+  <data key="d28">na</data>
+  <data key="d29">cracked</data>
+  <data key="d30">0.0</data>
+  <data key="d31">0.3</data>
+  <data key="d32">horizontal</data>
+  <data key="d33"></data>
+</node>
+<node id="GradeCriterion::GC_wall_II">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">II</data>
+  <data key="d28">na</data>
+  <data key="d29">cracked</data>
+  <data key="d30">0.3</data>
+  <data key="d31">0.5</data>
+  <data key="d32">horizontal</data>
+  <data key="d33">extends_to_column;diagonal_under_half_diagonal</data>
+</node>
+<node id="GradeCriterion::GC_wall_III">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">III</data>
+  <data key="d28">not_exposed</data>
+  <data key="d29">cracked</data>
+  <data key="d32">diagonal_45;x_cross</data>
+  <data key="d33">no_rebar_visible;diagonal_under_half_diagonal</data>
+</node>
+<node id="GradeCriterion::GC_wall_IV">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">IV</data>
+  <data key="d28">exposed_intact</data>
+  <data key="d29">cracked</data>
+  <data key="d32">diagonal_45;x_cross</data>
+  <data key="d33">many_diagonal;rebar_visible_not_ruptured;edge_column_spall</data>
+</node>
+<node id="GradeCriterion::GC_wall_V">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">shear_wall</data>
+  <data key="d17">V</data>
+  <data key="d28">main_ruptured</data>
+  <data key="d29">crushed;blown_out;core_disintegrated</data>
+  <data key="d32">diagonal_45;x_cross</data>
+  <data key="d33">edge_column_crush;col_rebar_buckled;slab_sag</data>
+</node>
+<node id="GradeCriterion::GC_brick_I">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">bearing_wall</data>
+  <data key="d17">I</data>
+  <data key="d28">na</data>
+  <data key="d29">cracked</data>
+  <data key="d30">0.0</data>
+  <data key="d31">5.0</data>
+  <data key="d32">diagonal_45;x_cross;horizontal;vertical</data>
+  <data key="d33">brick_crack_le_0.5cm</data>
+</node>
+<node id="GradeCriterion::GC_brick_II">
+  <data key="d0">GradeCriterion</data>
+  <data key="d16">bearing_wall</data>
+  <data key="d17">II</data>
+  <data key="d28">na</data>
+  <data key="d29">cracked;crushed</data>
+  <data key="d30">5.0</data>
+  <data key="d32">diagonal_45;x_cross;horizontal</data>
+  <data key="d33">brick_crack_gt_0.5cm;wall_beam_separation</data>
+</node>
+<node id="SeverityRule::SR_col_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">column</data>
+  <data key="d34">grade_V_pct&gt;10 OR grade_IV_plus_V_pct&gt;20</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">True</data>
+</node>
+<node id="Severity::丙_嚴重">
+  <data key="d0">Severity</data>
+</node>
+<node id="SeverityRule::SR_col_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">column</data>
+  <data key="d34">grade_IV_plus_V_pct&lt;=20 AND (has_IV OR has_V)</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">True</data>
+</node>
+<node id="Severity::乙_中等">
+  <data key="d0">Severity</data>
+</node>
+<node id="SeverityRule::SR_col_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">column</data>
+  <data key="d34">no_IV AND no_V</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">True</data>
+</node>
+<node id="Severity::甲_輕微">
+  <data key="d0">Severity</data>
+</node>
+<node id="SeverityRule::SR_beam_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">beam</data>
+  <data key="d34">grade_V_pct&gt;10 OR grade_IV_plus_V_pct&gt;20</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_beam_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">beam</data>
+  <data key="d34">grade_IV_plus_V_pct&lt;=20 AND (has_IV OR has_V)</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_beam_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">beam</data>
+  <data key="d34">no_IV AND no_V</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_wall_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">shear_wall</data>
+  <data key="d34">grade_V_pct&gt;10 OR grade_IV_plus_V_pct&gt;20</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_wall_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">shear_wall</data>
+  <data key="d34">grade_IV_plus_V_pct&lt;=20 AND (has_IV OR has_V)</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_wall_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">shear_wall</data>
+  <data key="d34">no_IV AND no_V</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_brick_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">bearing_wall</data>
+  <data key="d34">brick_crack_gt_0.5cm_length_pct&gt;50</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_brick_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">bearing_wall</data>
+  <data key="d34">brick_crack_gt_0.5cm_length_pct 20..50</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_brick_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">bearing_wall</data>
+  <data key="d34">brick_crack_gt_0.5cm_length_pct&lt;20</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_tilt_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">tilt&gt;0.03333</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_tilt_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">tilt 0.01667..0.03333</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_tilt_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">tilt&lt;0.01667</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_base_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">foundation_or_column_base</data>
+  <data key="d34">base_separation_ge_5cm_pct&gt;20</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_base_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">foundation_or_column_base</data>
+  <data key="d34">base_separation_ge_5cm_pct 10..20</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_base_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">foundation_or_column_base</data>
+  <data key="d34">base_separation_ge_5cm_pct&lt;10</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">True</data>
+</node>
+<node id="SeverityRule::SR_support_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">masonry_support</data>
+  <data key="d34">support_disp_ratio&gt;0.5</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_support_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">masonry_support</data>
+  <data key="d34">support_disp_ratio 0.25..0.5</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_support_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">masonry_support</data>
+  <data key="d34">support_disp_ratio&lt;0.25</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_brace_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">brace</data>
+  <data key="d34">severe_buckling_or_plate_tear_or_connection_failure</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_brace_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">brace</data>
+  <data key="d34">moderate_deformation</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_brace_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">brace</data>
+  <data key="d34">minor_or_intact</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_groundcrack_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">ground_crack_through_building_or_endangers_foundation</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_groundcrack_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">ground_crack_moderate</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_groundcrack_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">ground_crack_minor</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_slope_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">slope_severe_within_range OR slope_severe_edge</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_slope_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">slope_matrix_moderate</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_slope_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">slope_minor_or_outside_2x</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_retwall_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">retaining_wall_tilt&gt;0.03333_or_failed</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_retwall_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">retaining_wall_tilt 0.01667..0.03333_or_cracks_rebar</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_retwall_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">retaining_wall_tilt&lt;0.01667</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_adjacent_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">adjacent_tilt&gt;0.03333_and_DH_lt_1</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_adjacent_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">adjacent_tilt_matrix_moderate</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_adjacent_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">building</data>
+  <data key="d34">adjacent_tilt&lt;0.01667_or_DH_gt_2</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_ext_fall_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">non_structural_element</data>
+  <data key="d34">glass_finish_pct&gt;10 OR clear_tilt OR partial_fallen</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_ext_fall_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">non_structural_element</data>
+  <data key="d34">glass_finish_pct 1..10 OR minor_tilt</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_ext_fall_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">non_structural_element</data>
+  <data key="d34">glass_finish_pct&lt;1 OR no_tilt</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_int_topple_C">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">partition_wall</data>
+  <data key="d34">risk_of_falling_or_toppling</data>
+  <data key="d35">丙_嚴重</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_int_topple_B">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">partition_wall</data>
+  <data key="d34">damage_unclear_possible_aftershock_risk</data>
+  <data key="d35">乙_中等</data>
+  <data key="d36">False</data>
+</node>
+<node id="SeverityRule::SR_int_topple_A">
+  <data key="d0">SeverityRule</data>
+  <data key="d16">partition_wall</data>
+  <data key="d34">sound_no_tilt</data>
+  <data key="d35">甲_輕微</data>
+  <data key="d36">False</data>
+</node>
+<node id="PlacardRule::PR_red_tilt">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">building_tilt.severity&gt;=乙</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_red_base">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">base_separation_scour.severity&gt;=乙</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_red_column">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">column.severity&gt;=乙</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_red_beam">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">beam.severity&gt;=乙</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_red_wall">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">structural_wall.severity&gt;=乙</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_red_groundcrack">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">ground_crack.severity&gt;=乙</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_red_slope_retwall">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">slope_or_retaining_wall.severity&gt;=乙</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_red_judgment">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">assessor_judges_dangerous_must_stop_use</data>
+  <data key="d37">紅單</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="PlacardRule::PR_yellow_falling_toppling">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">any(exterior|interior_falling|toppling).severity=丙</data>
+  <data key="d37">黃單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="Placard::黃單">
+  <data key="d0">Placard</data>
+</node>
+<node id="PlacardRule::PR_yellow_adjacent">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">adjacent_building_tilt.severity&gt;=乙</data>
+  <data key="d37">黃單</data>
+  <data key="d5">明細表;教材;淺談</data>
+</node>
+<node id="PlacardRule::PR_yellow_judgment">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">assessor_judges_dangerous_must_pause_use</data>
+  <data key="d37">黃單</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="PlacardRule::PR_green">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">none_of_above</data>
+  <data key="d37">綠單</data>
+  <data key="d5">淺談;勘災作業準則</data>
+</node>
+<node id="Placard::綠單">
+  <data key="d0">Placard</data>
+</node>
+<node id="PlacardRule::PR_atc_unsafe">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">severe_conditions_endangering_overall_building</data>
+  <data key="d37">紅單</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="PlacardRule::PR_atc_restricted">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">localized_severe_and_overall_moderate_conditions</data>
+  <data key="d37">黃單</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="PlacardRule::PR_atc_inspected">
+  <data key="d0">PlacardRule</data>
+  <data key="d34">no_severe_conditions_apparently_safe</data>
+  <data key="d37">綠單</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="SelfcheckRubric::ABC_tilt_A">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">building</data>
+  <data key="d39">A</data>
+  <data key="d40">目視可察覺樓房傾斜</data>
+  <data key="d41">立即離開儘速通知專業技師</data>
+  <data key="d42">IV_V</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_tilt_B">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">building</data>
+  <data key="d39">B</data>
+  <data key="d40">目視無法察覺但懷疑樓房已傾斜</data>
+  <data key="d41">通知專業技師檢查</data>
+  <data key="d42">III</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_col_A1">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">column</data>
+  <data key="d39">A</data>
+  <data key="d40">柱子鋼筋外露</data>
+  <data key="d41">立即離開儘速通知專業技師</data>
+  <data key="d42">IV_V</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_col_A2">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">column</data>
+  <data key="d39">A</data>
+  <data key="d40">柱子連續的X形V形倒V形斜向或垂直向開裂</data>
+  <data key="d41">立即離開儘速通知專業技師</data>
+  <data key="d42">IV_V</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_col_B">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">column</data>
+  <data key="d39">B</data>
+  <data key="d40">柱子不連續的垂直向斜向裂縫</data>
+  <data key="d41">通知專業技師檢查</data>
+  <data key="d42">II_III</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_col_C">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">column</data>
+  <data key="d39">C</data>
+  <data key="d40">柱子細小的水平向裂紋</data>
+  <data key="d41">可自行修補</data>
+  <data key="d42">I</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_beam_A1">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">beam</data>
+  <data key="d39">A</data>
+  <data key="d40">梁的鋼筋外露</data>
+  <data key="d41">立即離開儘速通知專業技師</data>
+  <data key="d42">IV_V</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_beam_B">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">beam</data>
+  <data key="d39">B</data>
+  <data key="d40">梁有明顯而連續的X形斜向水平向垂直向裂縫</data>
+  <data key="d41">通知專業技師檢查</data>
+  <data key="d42">II_III</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_beam_C">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">beam</data>
+  <data key="d39">C</data>
+  <data key="d40">梁有垂直向不連續的裂紋</data>
+  <data key="d41">可自行修補</data>
+  <data key="d42">I</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_wall_A1">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">shear_wall</data>
+  <data key="d39">A</data>
+  <data key="d40">剪力牆鋼筋外露</data>
+  <data key="d41">立即離開儘速通知專業技師</data>
+  <data key="d42">IV_V</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_wall_A2">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">bearing_wall</data>
+  <data key="d39">A</data>
+  <data key="d40">加強磚造承重牆或RC隔間牆整片倒塌傾斜或大面積掉落</data>
+  <data key="d41">立即離開儘速通知專業技師</data>
+  <data key="d42">IV_V</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_wall_B">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">shear_wall</data>
+  <data key="d39">B</data>
+  <data key="d40">剪力牆承重牆隔間牆有長而連續的開裂</data>
+  <data key="d41">通知專業技師檢查</data>
+  <data key="d42">III_IV</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_wall_C">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">shear_wall</data>
+  <data key="d39">C</data>
+  <data key="d40">剪力牆承重牆隔間牆有短而不連續的裂紋</data>
+  <data key="d41">可自行修補</data>
+  <data key="d42">I_II</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_slab_A">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">slab</data>
+  <data key="d39">A</data>
+  <data key="d40">樓板開裂管線破壞</data>
+  <data key="d41">立即離開儘速通知專業技師</data>
+  <data key="d42">V</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="SelfcheckRubric::ABC_slab_B">
+  <data key="d0">SelfcheckRubric</data>
+  <data key="d38">slab</data>
+  <data key="d39">B</data>
+  <data key="d40">樓板角隅出現裂縫</data>
+  <data key="d41">通知專業技師檢查</data>
+  <data key="d42">II_III</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="RelationshipType::beam_column_joint">
+  <data key="d0">RelationshipType</data>
+  <data key="d43">REL_beam_column_joint</data>
+  <data key="d1">梁柱接頭</data>
+  <data key="d44">梁與柱交會之接頭區接頭破壞屬脆性高危</data>
+  <data key="d45">high</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="RelationshipType::adjacent_to">
+  <data key="d0">RelationshipType</data>
+  <data key="d43">REL_adjacent_to</data>
+  <data key="d1">相鄰</data>
+  <data key="d44">構材空間相鄰用於碰撞或連動分析</data>
+  <data key="d45">low</data>
+  <data key="d5">context_schema</data>
+</node>
+<node id="RelationshipType::sill_wall_constrains_column">
+  <data key="d0">RelationshipType</data>
+  <data key="d43">REL_sill_wall_constrains_column</data>
+  <data key="d1">窗台牆束制柱</data>
+  <data key="d44">窗台或窗間牆束制柱有效柱高縮短形成短柱效應剪力控制破壞</data>
+  <data key="d45">critical</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="RelationshipType::wall_in_frame">
+  <data key="d0">RelationshipType</data>
+  <data key="d43">REL_wall_in_frame</data>
+  <data key="d1">牆位於框架內</data>
+  <data key="d44">牆位於梁柱框架內影響勁度分布與地震力吸收</data>
+  <data key="d45">medium</data>
+  <data key="d5">教材;判定準則</data>
+</node>
+<node id="RelationshipType::discontinuous_column_line">
+  <data key="d0">RelationshipType</data>
+  <data key="d43">REL_discontinuous_column_line</data>
+  <data key="d1">柱線不連貫</data>
+  <data key="d44">柱線不連續造成勁度突變或軟層風險</data>
+  <data key="d45">high</data>
+  <data key="d5">教材;耐震評估補強方案</data>
+</node>
+<node id="RelationshipType::supported_by">
+  <data key="d0">RelationshipType</data>
+  <data key="d43">REL_supported_by</data>
+  <data key="d1">支承於</data>
+  <data key="d44">屋頂或樓版支承於牆或梁支承移位有掉落風險</data>
+  <data key="d45">high</data>
+  <data key="d5">明細表;教材;勘災作業準則</data>
+</node>
+<node id="SecondaryHazardType::exposed_wiring">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">電線掉落/裸露</data>
+  <data key="d46">utility</data>
+  <data key="d47">黃單</data>
+  <data key="d5">教材;明細表</data>
+</node>
+<node id="SecondaryHazardType::water_leak">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">漏水</data>
+  <data key="d46">utility</data>
+  <data key="d47">none</data>
+  <data key="d5">新北市震後檢測;自我檢查手冊</data>
+</node>
+<node id="SecondaryHazardType::gas_pipe">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">瓦斯管破裂</data>
+  <data key="d46">utility</data>
+  <data key="d47">黃單</data>
+  <data key="d5">教材;明細表</data>
+</node>
+<node id="SecondaryHazardType::sprinkler_pipe">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">灑水管線破裂</data>
+  <data key="d46">utility</data>
+  <data key="d47">黃單</data>
+  <data key="d5">教材</data>
+</node>
+<node id="SecondaryHazardType::loose_sign">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">招牌鬆動</data>
+  <data key="d46">falling</data>
+  <data key="d47">黃單</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="SecondaryHazardType::loose_window_grille">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">鐵窗鬆動</data>
+  <data key="d46">falling</data>
+  <data key="d47">黃單</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="SecondaryHazardType::tilted_water_tank">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">水塔傾斜</data>
+  <data key="d46">toppling</data>
+  <data key="d47">黃單</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="SecondaryHazardType::falling_debris">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">墜落物碎片</data>
+  <data key="d46">falling</data>
+  <data key="d47">黃單</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="SecondaryHazardType::ceiling_fixture_loose">
+  <data key="d0">SecondaryHazardType</data>
+  <data key="d1">天花板懸吊物鬆動</data>
+  <data key="d46">falling</data>
+  <data key="d47">黃單</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="HumanMarkingType::red_placard">
+  <data key="d0">HumanMarkingType</data>
+  <data key="d1">紅色危險標誌</data>
+  <data key="d48">危險建築物禁止進入須補強或拆除認定後始得使用</data>
+  <data key="d49">紅單</data>
+  <data key="d5">教材;淺談</data>
+</node>
+<node id="HumanMarkingType::yellow_placard">
+  <data key="d0">HumanMarkingType</data>
+  <data key="d1">黃色危險標誌</data>
+  <data key="d48">限制使用須排除危險認定後始得使用</data>
+  <data key="d49">黃單</data>
+  <data key="d5">教材;淺談</data>
+</node>
+<node id="HumanMarkingType::paint_mark">
+  <data key="d0">HumanMarkingType</data>
+  <data key="d1">噴漆標記</data>
+  <data key="d48">評估或調查留下之噴漆記號</data>
+  <data key="d49">none</data>
+  <data key="d5">教材</data>
+</node>
+<node id="HumanMarkingType::crack_monitor_gauge">
+  <data key="d0">HumanMarkingType</data>
+  <data key="d1">裂縫監測計</data>
+  <data key="d48">監測裂縫是否擴大之量規</data>
+  <data key="d49">none</data>
+  <data key="d5">自我檢查手冊</data>
+</node>
+<node id="HumanMarkingType::warning_tape">
+  <data key="d0">HumanMarkingType</data>
+  <data key="d1">警示帶</data>
+  <data key="d48">劃定危險區域之警示膠帶</data>
+  <data key="d49">none</data>
+  <data key="d5">教材</data>
+</node>
+<node id="HumanMarkingType::shoring_present">
+  <data key="d0">HumanMarkingType</data>
+  <data key="d1">臨時支撐</data>
+  <data key="d48">已架設緊急耐震補強支撐</data>
+  <data key="d49">none</data>
+  <data key="d5">教材</data>
+</node>
+<node id="HumanMarkingType::none">
+  <data key="d0">HumanMarkingType</data>
+  <data key="d1">無標記</data>
+  <data key="d48">無人為標記</data>
+  <data key="d49">none</data>
+  <data key="d5">教材</data>
+</node>
+<node id="PositionContext::column_top@column">
+  <data key="d0">PositionContext</data>
+  <data key="d50">column_top</data>
+  <data key="d16">column</data>
+  <data key="d51">柱頂彎矩最大(反曲點在柱中央)軸力併合彎矩破壞保護層剝落</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="PositionContext::column_bottom@column">
+  <data key="d0">PositionContext</data>
+  <data key="d50">column_bottom</data>
+  <data key="d16">column</data>
+  <data key="d51">柱底彎矩最大軸力併合彎矩破壞保護層剝落若箍筋不足主筋挫屈</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="PositionContext::column_mid@column">
+  <data key="d0">PositionContext</data>
+  <data key="d50">column_mid</data>
+  <data key="d16">column</data>
+  <data key="d51">窗台或牆束制致短柱中央剪力控制破壞</data>
+  <data key="d5">教材;判定準則</data>
+</node>
+<node id="PositionContext::beam_end@beam">
+  <data key="d0">PositionContext</data>
+  <data key="d50">beam_end</data>
+  <data key="d16">beam</data>
+  <data key="d51">梁端近柱大斜裂縫剪力破壞嚴重時連帶主筋下混凝土剝落</data>
+  <data key="d5">教材;判定準則</data>
+</node>
+<node id="PositionContext::beam_mid@beam">
+  <data key="d0">PositionContext</data>
+  <data key="d50">beam_mid</data>
+  <data key="d16">beam</data>
+  <data key="d51">梁下有隔間磚牆(牆短於梁)留短梁產生大剪力剪力破壞</data>
+  <data key="d5">教材;判定準則</data>
+</node>
+<node id="PositionContext::joint_region@beam_column_joint">
+  <data key="d0">PositionContext</data>
+  <data key="d50">joint_region</data>
+  <data key="d16">beam_column_joint</data>
+  <data key="d51">梁柱接頭斜裂或混凝土擠壓破碎無緊密圍束箍筋</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="PositionContext::wall_center@shear_wall">
+  <data key="d0">PositionContext</data>
+  <data key="d50">wall_center</data>
+  <data key="d16">shear_wall</data>
+  <data key="d51">牆中央斜裂縫寬大剪力筋降伏或握裹破壞嚴重剪力破壞</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="PositionContext::wall_corner@shear_wall">
+  <data key="d0">PositionContext</data>
+  <data key="d50">wall_corner</data>
+  <data key="d16">shear_wall</data>
+  <data key="d51">牆拉力側主筋降伏續接不良可能拉斷</data>
+  <data key="d5">教材;勘災作業準則</data>
+</node>
+<node id="PositionContext::opening_corner@shear_wall">
+  <data key="d0">PositionContext</data>
+  <data key="d50">opening_corner</data>
+  <data key="d16">shear_wall</data>
+  <data key="d51">開口角隅應力集中斜向裂縫</data>
+  <data key="d5">自我檢查手冊;自行檢測簡易手冊</data>
+</node>
+<node id="PositionContext::wall_column_interface@spandrel_or_sill_wall">
+  <data key="d0">PositionContext</data>
+  <data key="d50">wall_column_interface</data>
+  <data key="d16">spandrel_or_sill_wall</data>
+  <data key="d51">窗台牆與柱交界束制柱形成短柱效應</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="PositionContext::base@foundation_or_column_base">
+  <data key="d0">PositionContext</data>
+  <data key="d50">base</data>
+  <data key="d16">foundation_or_column_base</data>
+  <data key="d51">柱底或柱腳破壞基礎與上部結構脫離錯開</data>
+  <data key="d5">教材;判定準則</data>
+</node>
+<node id="PositionContext::mid_height@brace">
+  <data key="d0">PositionContext</data>
+  <data key="d50">mid_height</data>
+  <data key="d16">brace</data>
+  <data key="d51">鋼斜撐中段挫屈</data>
+  <data key="d5">明細表;教材</data>
+</node>
+<node id="PositionContext::distributed@shear_wall">
+  <data key="d0">PositionContext</data>
+  <data key="d50">distributed</data>
+  <data key="d16">shear_wall</data>
+  <data key="d51">大量分布斜裂縫遍及牆面</data>
+  <data key="d5">判定準則;安全耐震我的家</data>
+</node>
+<node id="MaterialIdCue::MID_shearwall_thick">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">shear_wall</data>
+  <data key="d53">厚度超過20公分且周圍有梁柱框架且無門窗開口</data>
+  <data key="d54">member_type=shear_wall;material=reinforced_concrete</data>
+  <data key="d55">medium</data>
+  <data key="d5">判定準則;台北結構技師公會</data>
+</node>
+<node id="MaterialIdCue::MID_rcwall_15">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">rc_wall</data>
+  <data key="d53">梯間電梯間通常15公分以上RC牆分戶牆86年後通常15公分RC</data>
+  <data key="d54">member_type=rc_wall;material=reinforced_concrete</data>
+  <data key="d55">medium</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_brick_joint">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">bearing_wall</data>
+  <data key="d53">紅磚砌體可見磚縫裂縫沿磚塊或砂漿界面</data>
+  <data key="d54">material=brick_masonry</data>
+  <data key="d55">high</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="MaterialIdCue::MID_old_brick">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">bearing_wall</data>
+  <data key="d53">三樓以下老舊建物外牆多為磚牆民國50年前日據時代</data>
+  <data key="d54">material=brick_masonry;building_age_hint=old_pre1980</data>
+  <data key="d55">medium</data>
+  <data key="d5">自行檢測簡易手冊;判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_partition_light">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">partition_wall</data>
+  <data key="d53">內部分間牆為磚牆或輕隔間矽酸鈣板居多</data>
+  <data key="d54">material=light_partition;member_type=partition_wall</data>
+  <data key="d55">medium</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_confined_masonry">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">bearing_wall</data>
+  <data key="d53">加強磚造磚牆配合鋼筋混凝土框架梁柱</data>
+  <data key="d54">material=confined_masonry</data>
+  <data key="d55">medium</data>
+  <data key="d5">判定準則;教材</data>
+</node>
+<node id="MaterialIdCue::MID_sill_wall_exclude">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">spandrel_or_sill_wall</data>
+  <data key="d53">窗台牆不計入結構評估但可束制柱形成短柱</data>
+  <data key="d54">member_type=spandrel_or_sill_wall;structural_role=non_structural</data>
+  <data key="d55">high</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_rc_recent">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">column</data>
+  <data key="d53">近期建築主結構多為RC梁柱框架</data>
+  <data key="d54">material=reinforced_concrete;building_age_hint=recent_post1997</data>
+  <data key="d55">low</data>
+  <data key="d5">安全耐震我的家;耐震評估補強方案</data>
+</node>
+<node id="MaterialIdCue::MID_src_high">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">column</data>
+  <data key="d53">鋼骨鋼筋混凝土SRC適用高樓及超高大樓型鋼組合梁柱再配筋灌漿</data>
+  <data key="d54">material=src</data>
+  <data key="d55">low</data>
+  <data key="d5">安全耐震我的家</data>
+</node>
+<node id="MaterialIdCue::MID_steel_clad">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">column</data>
+  <data key="d53">鋼骨構造大部分構材有包覆材外觀難判由樓版下陷層間變位推測</data>
+  <data key="d54">material=steel;exposed_material=steel_under_cladding</data>
+  <data key="d55">low</data>
+  <data key="d5">教材;安全耐震我的家</data>
+</node>
+<node id="MaterialIdCue::MID_exposed_render">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">column</data>
+  <data key="d53">剝落後裸露水泥粉刷層</data>
+  <data key="d54">exposed_material=cement_render;damage_depth=plaster</data>
+  <data key="d55">high</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_exposed_brick">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">bearing_wall</data>
+  <data key="d53">剝落後裸露磚砌體</data>
+  <data key="d54">exposed_material=brick_body</data>
+  <data key="d55">high</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_exposed_rebar">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">column</data>
+  <data key="d53">剝落後裸露鋼筋</data>
+  <data key="d54">exposed_material=rebar;damage_depth=cover</data>
+  <data key="d55">high</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_exposed_core">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">column</data>
+  <data key="d53">剝落後裸露核心混凝土骨材</data>
+  <data key="d54">exposed_material=core_concrete_aggregate;damage_depth=core</data>
+  <data key="d55">high</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="MaterialIdCue::MID_nonstruct_wall_def">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">rc_wall</data>
+  <data key="d53">結構性剪力牆以外的1B以上完整磚牆RC牆或校舍三面窗台為非結構牆</data>
+  <data key="d54">structural_role=non_structural</data>
+  <data key="d55">medium</data>
+  <data key="d5">耐震評估補強方案</data>
+</node>
+<node id="MaterialIdCue::MID_age_render">
+  <data key="d0">MaterialIdCue</data>
+  <data key="d52">column</data>
+  <data key="d53">老舊多磚造加強磚造較新多RC或SRC或鋼構</data>
+  <data key="d54">building_age_hint</data>
+  <data key="d55">low</data>
+  <data key="d5">context_schema;耐震評估補強方案</data>
+</node>
+<node id="DamageGradeScale::TW:I">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">TW</data>
+  <data key="d57">I</data>
+  <data key="d58">輕微/髮絲裂縫</data>
+  <data key="d59">minor hairline cracking no structural effect</data>
+  <data key="d60">DF=0.1</data>
+  <data key="d61">I</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="TWGrade::I">
+  <data key="d0">TWGrade</data>
+</node>
+<node id="DamageGradeScale::TW:II">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">TW</data>
+  <data key="d57">II</data>
+  <data key="d58">明顯裂痕</data>
+  <data key="d59">visible cracks plaster spalling slight structural</data>
+  <data key="d60">DF=0.2</data>
+  <data key="d61">II</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="TWGrade::II">
+  <data key="d0">TWGrade</data>
+</node>
+<node id="DamageGradeScale::TW:III">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">TW</data>
+  <data key="d57">III</data>
+  <data key="d58">保護層剝落</data>
+  <data key="d59">cover spalling no rebar buckling moderate structural</data>
+  <data key="d60">DF=0.3</data>
+  <data key="d61">III</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="TWGrade::III">
+  <data key="d0">TWGrade</data>
+</node>
+<node id="DamageGradeScale::TW:IV">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">TW</data>
+  <data key="d57">IV</data>
+  <data key="d58">大範圍剝落鋼筋外露</data>
+  <data key="d59">large spalling ties opened main rebar may buckle heavy</data>
+  <data key="d60">DF=0.65</data>
+  <data key="d61">IV</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="TWGrade::IV">
+  <data key="d0">TWGrade</data>
+</node>
+<node id="DamageGradeScale::TW:V">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">TW</data>
+  <data key="d57">V</data>
+  <data key="d58">主筋挫屈核心碎裂</data>
+  <data key="d59">rebar buckled core crushing story sag destruction</data>
+  <data key="d60">DF=1.0</data>
+  <data key="d61">V</data>
+  <data key="d5">判定準則</data>
+</node>
+<node id="TWGrade::V">
+  <data key="d0">TWGrade</data>
+</node>
+<node id="DamageGradeScale::EMS98_masonry:G1">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_masonry</data>
+  <data key="d57">G1</data>
+  <data key="d58">Negligible to slight</data>
+  <data key="d59">no structural slight non-structural hairline cracks few walls</data>
+  <data key="d60">na</data>
+  <data key="d61">I</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_masonry:G2">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_masonry</data>
+  <data key="d57">G2</data>
+  <data key="d58">Moderate</data>
+  <data key="d59">slight structural cracks many walls partial chimney collapse</data>
+  <data key="d60">na</data>
+  <data key="d61">II</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_masonry:G3">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_masonry</data>
+  <data key="d57">G3</data>
+  <data key="d58">Substantial to heavy</data>
+  <data key="d59">moderate structural large extensive cracks most walls</data>
+  <data key="d60">na</data>
+  <data key="d61">III</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_masonry:G4">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_masonry</data>
+  <data key="d57">G4</data>
+  <data key="d58">Very heavy</data>
+  <data key="d59">heavy structural serious wall failure partial roof floor failure</data>
+  <data key="d60">na</data>
+  <data key="d61">IV</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_masonry:G5">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_masonry</data>
+  <data key="d57">G5</data>
+  <data key="d58">Destruction</data>
+  <data key="d59">very heavy structural total or near total collapse</data>
+  <data key="d60">na</data>
+  <data key="d61">V</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_rc:G1">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_rc</data>
+  <data key="d57">G1</data>
+  <data key="d58">Negligible to slight</data>
+  <data key="d59">fine cracks in plaster over frame or walls at base</data>
+  <data key="d60">na</data>
+  <data key="d61">I</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_rc:G2">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_rc</data>
+  <data key="d57">G2</data>
+  <data key="d58">Moderate</data>
+  <data key="d59">cracks in columns beams structural walls fall of cladding plaster</data>
+  <data key="d60">na</data>
+  <data key="d61">II</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_rc:G3">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_rc</data>
+  <data key="d57">G3</data>
+  <data key="d58">Substantial to heavy</data>
+  <data key="d59">cracks in columns and beam-column joints spalling cover buckling rebar</data>
+  <data key="d60">na</data>
+  <data key="d61">III_IV</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_rc:G4">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_rc</data>
+  <data key="d57">G4</data>
+  <data key="d58">Very heavy</data>
+  <data key="d59">compression failure of concrete fracture rebars column tilting partial collapse</data>
+  <data key="d60">na</data>
+  <data key="d61">IV_V</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::EMS98_rc:G5">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">EMS98_rc</data>
+  <data key="d57">G5</data>
+  <data key="d58">Destruction</data>
+  <data key="d59">collapse of ground floor or wings</data>
+  <data key="d60">na</data>
+  <data key="d61">V</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageGradeScale::FEMA306:Insignificant">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">FEMA306</data>
+  <data key="d57">Insignificant</data>
+  <data key="d58">Insignificant</data>
+  <data key="d59">minor loss stiffness cosmetic restoration</data>
+  <data key="d60">lambdaK=0.8;lambdaQ=1.0;lambdaD=1.0</data>
+  <data key="d61">I</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageGradeScale::FEMA306:Slight">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">FEMA306</data>
+  <data key="d57">Slight</data>
+  <data key="d58">Slight</data>
+  <data key="d59">small effect minor structural restoration</data>
+  <data key="d60">lambdaK=0.6;lambdaQ=1.0;lambdaD=1.0</data>
+  <data key="d61">II</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageGradeScale::FEMA306:Moderate">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">FEMA306</data>
+  <data key="d57">Moderate</data>
+  <data key="d58">Moderate</data>
+  <data key="d59">intermediate effect spalling cover plastic hinge toe</data>
+  <data key="d60">lambdaK=0.5;lambdaQ=0.8;lambdaD=0.9</data>
+  <data key="d61">III</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageGradeScale::FEMA306:Heavy">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">FEMA306</data>
+  <data key="d57">Heavy</data>
+  <data key="d58">Heavy</data>
+  <data key="d59">major effect extensive restoration replacement may be required</data>
+  <data key="d60">lambdaK=0.2;lambdaQ=0.3;lambdaD=0.7</data>
+  <data key="d61">IV</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageGradeScale::FEMA306:Extreme">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">FEMA306</data>
+  <data key="d57">Extreme</data>
+  <data key="d58">Extreme</data>
+  <data key="d59">unreliable performance replacement or enhancement required</data>
+  <data key="d60">na</data>
+  <data key="d61">V</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageGradeScale::ATC20:MinorNone">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">ATC20</data>
+  <data key="d57">MinorNone</data>
+  <data key="d58">Minor/None</data>
+  <data key="d59">apparently no significant structural damage</data>
+  <data key="d60">na</data>
+  <data key="d61">I_II</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="DamageGradeScale::ATC20:Moderate">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">ATC20</data>
+  <data key="d57">Moderate</data>
+  <data key="d58">Moderate</data>
+  <data key="d59">intermediate damage localized severe may allow restricted use</data>
+  <data key="d60">na</data>
+  <data key="d61">III</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="DamageGradeScale::ATC20:Severe">
+  <data key="d0">DamageGradeScale</data>
+  <data key="d56">ATC20</data>
+  <data key="d57">Severe</data>
+  <data key="d58">Severe</data>
+  <data key="d59">endangers overall building grounds for unsafe posting</data>
+  <data key="d60">na</data>
+  <data key="d61">IV_V</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BehaviorMode::RC1A_insig">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure</data>
+  <data key="d65">flexural</data>
+  <data key="d66">high</data>
+  <data key="d67">Insignificant</data>
+  <data key="d68">flexural crack &lt;=3/16in and shear crack &lt;=1/8in no significant spalling</data>
+  <data key="d69">lambdaK=0.8</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1A_slight">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure</data>
+  <data key="d65">flexural</data>
+  <data key="d66">high</data>
+  <data key="d67">Slight</data>
+  <data key="d68">crack &lt;=1/4in no shear crack &gt;1/8in no buckled or fractured rebar</data>
+  <data key="d69">lambdaK=0.6</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1A_mod">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure</data>
+  <data key="d65">flexural</data>
+  <data key="d66">high</data>
+  <data key="d67">Moderate</data>
+  <data key="d68">spalling or incipient spalling at toe in plastic hinge cover only crack &lt;=1/4in</data>
+  <data key="d69">lambdaK=0.5;lambdaQ=0.8</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1A_ext">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure</data>
+  <data key="d65">flexural</data>
+  <data key="d66">high</data>
+  <data key="d67">Extreme</data>
+  <data key="d68">reinforcement fractured wide flexural crack single concentrated large residual displacement</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1B_insig">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_diagonal_tension</data>
+  <data key="d65">shear</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">Insignificant</data>
+  <data key="d68">shear crack &lt;=1/16in and flexural &lt;=3/16in no significant spalling</data>
+  <data key="d69">lambdaK=0.8</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1B_mod">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_diagonal_tension</data>
+  <data key="d65">shear</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">Moderate</data>
+  <data key="d68">shear crack &lt;=1/8in flexural &lt;=1/4in shear &gt;1/16in or limited spalling</data>
+  <data key="d69">lambdaK=0.5;lambdaQ=0.8</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1B_heavy">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_diagonal_tension</data>
+  <data key="d65">shear</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">Heavy</data>
+  <data key="d68">shear crack &gt;1/8in but &lt;=3/8in concentrated at one or more cracks</data>
+  <data key="d69">lambdaK=0.2;lambdaQ=0.3;lambdaD=0.7</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1C">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_web_crushing</data>
+  <data key="d65">shear</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">varies</data>
+  <data key="d68">web crushing of concrete after flexural yielding diagonal compression</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1D">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_sliding_shear</data>
+  <data key="d65">shear</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">varies</data>
+  <data key="d68">sliding along construction joint or crack at wall base horizontal offset</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1E">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_boundary_compression</data>
+  <data key="d65">axial_compression</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">varies</data>
+  <data key="d68">boundary zone compression failure bar buckling loss of confinement</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1F">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_lap_splice_slip</data>
+  <data key="d65">flexural</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">slip of lap splice at wall base degrading strength</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC1G">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">isolated_wall_or_stronger_pier</data>
+  <data key="d64">flexure_out_of_plane_buckling</data>
+  <data key="d65">buckling</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">out-of-plane instability of thin wall or boundary</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC2H">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">weaker_pier</data>
+  <data key="d64">preemptive_diagonal_tension</data>
+  <data key="d65">shear</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">brittle diagonal tension shear crack before flexural yield x-pattern</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC3B">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">coupling_beam</data>
+  <data key="d64">flexure_diagonal_tension</data>
+  <data key="d65">shear</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">varies</data>
+  <data key="d68">diagonal tension cracking in coupling beam over openings</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RC3D">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_concrete</data>
+  <data key="d63">coupling_beam</data>
+  <data key="d64">flexure_sliding_shear</data>
+  <data key="d65">shear</data>
+  <data key="d66">intermediate</data>
+  <data key="d67">varies</data>
+  <data key="d68">sliding shear at coupling beam ends</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RM_highduct">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_masonry</data>
+  <data key="d63">reinforced_masonry_wall</data>
+  <data key="d64">flexure</data>
+  <data key="d65">flexural</data>
+  <data key="d66">high</data>
+  <data key="d67">varies</data>
+  <data key="d68">flexural cracking horizontal at bed joints ductile</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RM_modduct">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_masonry</data>
+  <data key="d63">reinforced_masonry_wall</data>
+  <data key="d64">flexure_shear</data>
+  <data key="d65">shear</data>
+  <data key="d66">moderate</data>
+  <data key="d67">varies</data>
+  <data key="d68">combined flexure and diagonal shear cracking</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::RM_lowduct">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">reinforced_masonry</data>
+  <data key="d63">reinforced_masonry_wall</data>
+  <data key="d64">shear</data>
+  <data key="d65">shear</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">brittle diagonal shear cracking stair-step through units</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::URM_wall_inplane">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">unreinforced_masonry</data>
+  <data key="d63">urm_wall</data>
+  <data key="d64">in_plane_shear_rocking</data>
+  <data key="d65">shear</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">bed-joint sliding diagonal stair-step cracking rocking toe crushing</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::URM_wall_oop">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">unreinforced_masonry</data>
+  <data key="d63">urm_wall</data>
+  <data key="d64">out_of_plane</data>
+  <data key="d65">non_structural_toppling</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">out-of-plane flexure overturning of wall</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::URM_nonwall">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">unreinforced_masonry</data>
+  <data key="d63">urm_non_wall_element</data>
+  <data key="d64">falling_hazard</data>
+  <data key="d65">non_structural_falling</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">parapet chimney gable wall appendage failure</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::INF_solid">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">infilled_frame</data>
+  <data key="d63">solid_infill_panel</data>
+  <data key="d64">diagonal_compression_strut</data>
+  <data key="d65">shear</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">diagonal cracking corner crushing of infill panel</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::INF_steel">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">infilled_frame</data>
+  <data key="d63">infilled_steel_frame</data>
+  <data key="d64">frame_infill_interaction</data>
+  <data key="d65">shear</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">gap opening corner crushing frame yielding</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BehaviorMode::INF_concrete">
+  <data key="d0">BehaviorMode</data>
+  <data key="d62">infilled_frame</data>
+  <data key="d63">infilled_concrete_frame</data>
+  <data key="d64">frame_infill_interaction</data>
+  <data key="d65">short_column_effect</data>
+  <data key="d66">low</data>
+  <data key="d67">varies</data>
+  <data key="d68">captive or short column effect from partial-height infill</data>
+  <data key="d69">na</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="BuildingTypology::W1">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">W1</data>
+  <data key="d58">Light wood frame residential</data>
+  <data key="d72">timber</data>
+  <data key="d73">wood shear panels</data>
+  <data key="d74">low</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::W2">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">W2</data>
+  <data key="d58">Larger wood frame commercial</data>
+  <data key="d72">timber</data>
+  <data key="d73">wood shear panels</data>
+  <data key="d74">low</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::S1">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">S1</data>
+  <data key="d58">Steel moment-resisting frame</data>
+  <data key="d72">steel</data>
+  <data key="d73">moment frame</data>
+  <data key="d74">medium</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::S2">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">S2</data>
+  <data key="d58">Steel braced frame</data>
+  <data key="d72">steel</data>
+  <data key="d73">braced frame</data>
+  <data key="d74">medium</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::S3">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">S3</data>
+  <data key="d58">Light metal building</data>
+  <data key="d72">steel</data>
+  <data key="d73">braced frame</data>
+  <data key="d74">medium</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::S4">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">S4</data>
+  <data key="d58">Steel frame with concrete shear wall</data>
+  <data key="d72">steel</data>
+  <data key="d73">concrete shear wall</data>
+  <data key="d74">medium</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::S5">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">S5</data>
+  <data key="d58">Steel frame with URM infill</data>
+  <data key="d72">steel</data>
+  <data key="d73">urm infill</data>
+  <data key="d74">high</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::C1">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">C1</data>
+  <data key="d58">Concrete moment-resisting frame</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">moment frame</data>
+  <data key="d74">medium</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::C2">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">C2</data>
+  <data key="d58">Concrete shear wall</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">concrete shear wall</data>
+  <data key="d74">low</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::C3">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">C3</data>
+  <data key="d58">Concrete frame with URM infill</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">urm infill</data>
+  <data key="d74">high</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::PC1">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">PC1</data>
+  <data key="d58">Tilt-up concrete</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">tilt-up wall</data>
+  <data key="d74">high</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::PC2">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">PC2</data>
+  <data key="d58">Precast concrete frame</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">precast frame</data>
+  <data key="d74">high</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::RM1">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">RM1</data>
+  <data key="d58">Reinforced masonry flexible diaphragm</data>
+  <data key="d72">confined_masonry</data>
+  <data key="d73">reinforced masonry wall</data>
+  <data key="d74">medium</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::RM2">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">RM2</data>
+  <data key="d58">Reinforced masonry rigid diaphragm</data>
+  <data key="d72">confined_masonry</data>
+  <data key="d73">reinforced masonry wall</data>
+  <data key="d74">medium</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::URM">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">URM</data>
+  <data key="d58">Unreinforced masonry bearing wall</data>
+  <data key="d72">brick_masonry</data>
+  <data key="d73">urm bearing wall</data>
+  <data key="d74">high</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::MH">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">FEMA-154</data>
+  <data key="d71">MH</data>
+  <data key="d58">Mobile home or manufactured housing</data>
+  <data key="d72">steel</data>
+  <data key="d73">none</data>
+  <data key="d74">high</data>
+  <data key="d5">FEMA-154</data>
+</node>
+<node id="BuildingTypology::ATC_wood">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">ATC-20</data>
+  <data key="d71">wood_frame</data>
+  <data key="d58">Wood frame</data>
+  <data key="d72">timber</data>
+  <data key="d73">wood shear panels</data>
+  <data key="d74">low</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BuildingTypology::ATC_csw">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">ATC-20</data>
+  <data key="d71">concrete_shear_wall</data>
+  <data key="d58">Concrete shear wall</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">concrete shear wall</data>
+  <data key="d74">low</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BuildingTypology::ATC_steel">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">ATC-20</data>
+  <data key="d71">steel_frame</data>
+  <data key="d58">Steel frame</data>
+  <data key="d72">steel</data>
+  <data key="d73">moment or braced frame</data>
+  <data key="d74">medium</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BuildingTypology::ATC_urm">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">ATC-20</data>
+  <data key="d71">unreinforced_masonry</data>
+  <data key="d58">Unreinforced masonry</data>
+  <data key="d72">brick_masonry</data>
+  <data key="d73">urm bearing wall</data>
+  <data key="d74">high</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BuildingTypology::ATC_tiltup">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">ATC-20</data>
+  <data key="d71">tilt_up_concrete</data>
+  <data key="d58">Tilt-up concrete</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">tilt-up wall</data>
+  <data key="d74">high</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BuildingTypology::ATC_rm">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">ATC-20</data>
+  <data key="d71">reinforced_masonry</data>
+  <data key="d58">Reinforced masonry</data>
+  <data key="d72">confined_masonry</data>
+  <data key="d73">reinforced masonry wall</data>
+  <data key="d74">medium</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BuildingTypology::ATC_cframe">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">ATC-20</data>
+  <data key="d71">concrete_frame</data>
+  <data key="d58">Concrete frame</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">moment frame</data>
+  <data key="d74">medium</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="BuildingTypology::EMS_A">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">EMS-98</data>
+  <data key="d71">A</data>
+  <data key="d58">Vulnerability class A rubble stone adobe</data>
+  <data key="d72">brick_masonry</data>
+  <data key="d73">bearing wall</data>
+  <data key="d74">highest</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="BuildingTypology::EMS_B">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">EMS-98</data>
+  <data key="d71">B</data>
+  <data key="d58">Vulnerability class B simple stone unreinforced masonry manufactured units</data>
+  <data key="d72">brick_masonry</data>
+  <data key="d73">bearing wall</data>
+  <data key="d74">high</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="BuildingTypology::EMS_C">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">EMS-98</data>
+  <data key="d71">C</data>
+  <data key="d58">Vulnerability class C unreinforced masonry RC frame without ERD</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">frame or bearing wall</data>
+  <data key="d74">medium</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="BuildingTypology::EMS_D">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">EMS-98</data>
+  <data key="d71">D</data>
+  <data key="d58">Vulnerability class D reinforced or confined masonry RC with moderate ERD</data>
+  <data key="d72">confined_masonry</data>
+  <data key="d73">frame or wall</data>
+  <data key="d74">medium</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="BuildingTypology::EMS_E">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">EMS-98</data>
+  <data key="d71">E</data>
+  <data key="d58">Vulnerability class E RC steel with high ERD</data>
+  <data key="d72">reinforced_concrete</data>
+  <data key="d73">frame with seismic design</data>
+  <data key="d74">low</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="BuildingTypology::EMS_F">
+  <data key="d0">BuildingTypology</data>
+  <data key="d70">EMS-98</data>
+  <data key="d71">F</data>
+  <data key="d58">Vulnerability class F steel ductile RC with high ERD</data>
+  <data key="d72">steel</data>
+  <data key="d73">ductile frame</data>
+  <data key="d74">lowest</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="MechanismIntlNote::flexural:flexure">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">flexural</data>
+  <data key="d76">flexure</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Ductile flexural response plastic hinge at member end</data>
+  <data key="d79">horizontal cracks at base wider flexural cracks toe spalling at high ductility</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::flexural:flexure_lap_splice_slip">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">flexural</data>
+  <data key="d76">flexure_lap_splice_slip</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Lap splice slip degrades flexural strength</data>
+  <data key="d79">horizontal crack at splice region strength degradation</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::shear:flexure_diagonal_tension">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">shear</data>
+  <data key="d76">flexure_diagonal_tension</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Shear diagonal tension after flexural yield</data>
+  <data key="d79">diagonal shear cracks one or more wide concentrated</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::shear:preemptive_diagonal_tension">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">shear</data>
+  <data key="d76">preemptive_diagonal_tension</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Brittle shear before flexural yield weaker pier</data>
+  <data key="d79">x-pattern diagonal cracks early little ductility</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::shear:flexure_web_crushing">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">shear</data>
+  <data key="d76">flexure_web_crushing</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Web crushing of concrete in diagonal compression</data>
+  <data key="d79">crushed concrete along diagonal strut after cracking</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::shear:flexure_sliding_shear">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">shear</data>
+  <data key="d76">flexure_sliding_shear</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Sliding along base joint or crack</data>
+  <data key="d79">horizontal offset sliding at wall base construction joint</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::shear:in_plane_shear_rocking">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">shear</data>
+  <data key="d76">in_plane_shear_rocking</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">URM in-plane bed-joint sliding and rocking</data>
+  <data key="d79">stair-step diagonal cracks through bed joints toe crushing</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::shear:diagonal_compression_strut">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">shear</data>
+  <data key="d76">diagonal_compression_strut</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Infill panel acts as diagonal strut</data>
+  <data key="d79">diagonal cracking and corner crushing of infill</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::axial_compression:flexure_boundary_compression">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">axial_compression</data>
+  <data key="d76">flexure_boundary_compression</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Boundary zone compression failure and bar buckling</data>
+  <data key="d79">cover spalling bar buckling loss of confinement at wall toe</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::short_column_effect:infilled_concrete_frame_captive">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">short_column_effect</data>
+  <data key="d76">infilled_concrete_frame_captive</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Partial-height infill creates captive short column</data>
+  <data key="d79">short column shear cracking x-pattern at column mid</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::buckling:flexure_out_of_plane_buckling">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">buckling</data>
+  <data key="d76">flexure_out_of_plane_buckling</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Out-of-plane instability of thin wall or boundary</data>
+  <data key="d79">wall bows out of plane lateral instability</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::buckling:steel_member_buckling">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">buckling</data>
+  <data key="d76">steel_member_buckling</data>
+  <data key="d77">ATC-20</data>
+  <data key="d78">Steel brace or member buckling</data>
+  <data key="d79">buckled steel member visible deformation</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="MechanismIntlNote::joint_failure:beam_column_joint_shear">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">joint_failure</data>
+  <data key="d76">beam_column_joint_shear</data>
+  <data key="d77">EMS-98</data>
+  <data key="d78">Beam-column joint cracking at frame base</data>
+  <data key="d79">diagonal cracks in joint region bond failure of beam bars</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="MechanismIntlNote::non_structural_toppling:out_of_plane_overturning">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">non_structural_toppling</data>
+  <data key="d76">out_of_plane_overturning</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">Out-of-plane overturning of URM wall or parapet</data>
+  <data key="d79">wall or parapet topples outward</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="MechanismIntlNote::non_structural_falling:appendage_failure">
+  <data key="d0">MechanismIntlNote</data>
+  <data key="d75">non_structural_falling</data>
+  <data key="d76">appendage_failure</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d78">URM appendage falling hazard</data>
+  <data key="d79">parapet chimney gable wall cornice falls</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::hairline_crack:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">hairline_crack</data>
+  <data key="d81">Grade 1 hairline cracks</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS masonry/RC G1 hairline cracks in few walls or plaster</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::hairline_crack:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">hairline_crack</data>
+  <data key="d81">Insignificant flexural crack</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">no crack widths exceed 3/16in</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::diagonal_crack_45:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">diagonal_crack_45</data>
+  <data key="d81">stair-step crack</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">URM bed-joint sliding stair-step diagonal</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::x_shaped_crack:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">x_shaped_crack</data>
+  <data key="d81">preemptive diagonal tension</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">weaker pier RC2H brittle x-pattern</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::mortar_joint_crack:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">mortar_joint_crack</data>
+  <data key="d81">bed-joint sliding</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">URM in-plane shear along mortar joints</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::cover_spalling:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">cover_spalling</data>
+  <data key="d81">spalling of concrete cover</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G3 spalling of concrete cover</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::cover_spalling:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">cover_spalling</data>
+  <data key="d81">Moderate toe spalling</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">spalling at toe regions in plastic hinge cover only</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::core_concrete_crushing:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">core_concrete_crushing</data>
+  <data key="d81">compression failure of concrete</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G4 compression failure</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::core_concrete_crushing:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">core_concrete_crushing</data>
+  <data key="d81">web crushing</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">flexure web crushing behavior mode RC1C</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::main_rebar_buckled:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">main_rebar_buckled</data>
+  <data key="d81">buckling of reinforced rods</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G3 buckling of reinforcement</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::main_rebar_buckled:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">main_rebar_buckled</data>
+  <data key="d81">boundary compression bar buckling</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">flexure boundary compression RC1E</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::main_rebar_ruptured:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">main_rebar_ruptured</data>
+  <data key="d81">fracture of rebars</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G4 fracture of rebars</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::main_rebar_ruptured:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">main_rebar_ruptured</data>
+  <data key="d81">reinforcement has fractured</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">FEMA Extreme severity rebar fractured</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::dislocation:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">dislocation</data>
+  <data key="d81">sliding shear offset</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">flexure sliding shear horizontal offset at base RC1D</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<node id="DamageTypeCrosswalk::overall_tilt:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">overall_tilt</data>
+  <data key="d81">tilting of columns</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G4 tilting of columns</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::overall_tilt:ATC-20">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">overall_tilt</data>
+  <data key="d81">building or story leaning</data>
+  <data key="d77">ATC-20</data>
+  <data key="d82">ATC-20 rapid eval observed condition</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="DamageTypeCrosswalk::story_offset:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">story_offset</data>
+  <data key="d81">collapse of single upper floor</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G4 collapse of a single upper floor</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::parapet_damage:ATC-20">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">parapet_damage</data>
+  <data key="d81">chimney parapet falling hazard</data>
+  <data key="d77">ATC-20</data>
+  <data key="d82">ATC-20 falling hazard observed condition</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="DamageTypeCrosswalk::parapet_damage:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">parapet_damage</data>
+  <data key="d81">partial collapse of chimneys</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS masonry G2 partial chimney collapse</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::partition_collapse:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">partition_collapse</data>
+  <data key="d81">failure of infill panels</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G3 failure of individual infill panels</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::beam_column_joint_failure:EMS-98">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">beam_column_joint_failure</data>
+  <data key="d81">cracks in beam-column joints</data>
+  <data key="d77">EMS-98</data>
+  <data key="d82">EMS RC G3 cracks in columns and beam-column joints</data>
+  <data key="d5">EMS-98</data>
+</node>
+<node id="DamageTypeCrosswalk::differential_settlement:ATC-20">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">differential_settlement</data>
+  <data key="d81">ground slope movement or cracking</data>
+  <data key="d77">ATC-20</data>
+  <data key="d82">ATC-20 geotechnical observed condition</data>
+  <data key="d5">ATC-20</data>
+</node>
+<node id="DamageTypeCrosswalk::compression_crushing:FEMA-306">
+  <data key="d0">DamageTypeCrosswalk</data>
+  <data key="d80">compression_crushing</data>
+  <data key="d81">corner crushing of infill</data>
+  <data key="d77">FEMA-306</data>
+  <data key="d82">infill solid panel diagonal compression strut corner crushing</data>
+  <data key="d5">FEMA-306</data>
+</node>
+<edge source="MemberType::column" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::beam" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::beam_column_joint" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::shear_wall" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::shear_wall" target="MemberType::rc_wall" id="0">
+  <data key="d83">SUBTYPE_OF</data>
+</edge>
+<edge source="MemberType::bearing_wall" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::bearing_wall" target="MemberType::rc_wall" id="0">
+  <data key="d83">SUBTYPE_OF</data>
+</edge>
+<edge source="MemberType::rc_wall" target="Role::secondary_lateral" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::partition_wall" target="Role::secondary_lateral" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::curtain_wall" target="Role::non_structural" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::spandrel_or_sill_wall" target="Role::non_structural" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::spandrel_or_sill_wall" target="MemberType::partition_wall" id="0">
+  <data key="d83">SUBTYPE_OF</data>
+</edge>
+<edge source="MemberType::slab" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::staircase" target="Role::secondary_lateral" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::foundation_or_column_base" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::brace" target="Role::primary_load_bearing" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::parapet" target="Role::non_structural" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="MemberType::non_structural_element" target="Role::non_structural" id="0">
+  <data key="d83">HAS_DEFAULT_ROLE</data>
+</edge>
+<edge source="DamageMechanism::flexural" target="RiskWeight::medium" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::flexural" target="DamageType::horizontal_crack" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">教材;勘災作業準則</data>
+</edge>
+<edge source="DamageMechanism::flexural" target="DamageType::cover_spalling" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">判定準則;教材</data>
+</edge>
+<edge source="DamageMechanism::flexural" target="DamageType::main_rebar_ruptured" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">教材</data>
+</edge>
+<edge source="DamageMechanism::shear" target="RiskWeight::high" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::shear" target="DamageType::diagonal_crack_45" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">判定準則;教材</data>
+</edge>
+<edge source="DamageMechanism::shear" target="DamageType::x_shaped_crack" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">判定準則;教材</data>
+</edge>
+<edge source="DamageMechanism::shear" target="DamageType::through_crack" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">判定準則</data>
+</edge>
+<edge source="DamageMechanism::shear" target="DamageType::mortar_joint_crack" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">教材</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="RiskWeight::critical" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::cover_spalling" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">early</data>
+  <data key="d85">教材</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::large_area_spalling_rebar_exposed" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">判定準則</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::core_concrete_crushing" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">判定準則</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::concrete_blowout" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">判定準則</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::tie_opened" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">教材</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::tie_fractured" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">判定準則;教材</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::main_rebar_buckled" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">判定準則;教材</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::column_shortening" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">判定準則;教材</data>
+</edge>
+<edge source="DamageMechanism::axial_compression" target="DamageType::compression_crushing" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">判定準則;教材</data>
+</edge>
+<edge source="DamageMechanism::short_column_effect" target="RiskWeight::critical" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::short_column_effect" target="DamageType::diagonal_crack_45" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">教材</data>
+</edge>
+<edge source="DamageMechanism::short_column_effect" target="DamageType::x_shaped_crack" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">教材</data>
+</edge>
+<edge source="DamageMechanism::joint_failure" target="RiskWeight::high" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::joint_failure" target="DamageType::joint_diagonal_crack" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">教材;勘災作業準則</data>
+</edge>
+<edge source="DamageMechanism::joint_failure" target="DamageType::beam_column_joint_failure" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">教材</data>
+</edge>
+<edge source="DamageMechanism::buckling" target="RiskWeight::high" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::buckling" target="DamageType::steel_buckling" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::connection_failure" target="RiskWeight::high" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::connection_failure" target="DamageType::bolt_loosened_or_sheared" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::connection_failure" target="DamageType::weld_cracking" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::connection_failure" target="DamageType::member_detachment" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">severe</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::non_structural_falling" target="RiskWeight::medium" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::non_structural_falling" target="DamageType::tile_spalling" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">自行檢測簡易手冊;教材</data>
+</edge>
+<edge source="DamageMechanism::non_structural_falling" target="DamageType::exterior_finish_spalling" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::non_structural_falling" target="DamageType::curtain_wall_damage" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::non_structural_falling" target="DamageType::glass_breakage" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::non_structural_falling" target="DamageType::ceiling_collapse" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::non_structural_falling" target="DamageType::parapet_damage" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageMechanism::non_structural_toppling" target="RiskWeight::medium" id="0">
+  <data key="d83">MECHANISM_RISK</data>
+</edge>
+<edge source="DamageMechanism::non_structural_toppling" target="DamageType::partition_collapse" id="0">
+  <data key="d83">MECHANISM_PRODUCES</data>
+  <data key="d84">typical</data>
+  <data key="d85">明細表;教材</data>
+</edge>
+<edge source="DamageGrade::col_I" target="MemberType::column" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::col_II" target="MemberType::column" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::col_III" target="MemberType::column" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::col_IV" target="MemberType::column" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::col_V" target="MemberType::column" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::beam_I" target="MemberType::beam" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::beam_II" target="MemberType::beam" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::beam_III" target="MemberType::beam" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::beam_IV" target="MemberType::beam" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::beam_V" target="MemberType::beam" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::wall_I" target="MemberType::shear_wall" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::wall_II" target="MemberType::shear_wall" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::wall_III" target="MemberType::shear_wall" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::wall_IV" target="MemberType::shear_wall" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::wall_V" target="MemberType::shear_wall" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::brick_I" target="MemberType::bearing_wall" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::brick_II" target="MemberType::bearing_wall" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::stair_minor" target="MemberType::staircase" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::stair_severe" target="MemberType::staircase" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::slab_minor" target="MemberType::slab" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="DamageGrade::slab_severe" target="MemberType::slab" id="0">
+  <data key="d83">GRADE_FOR_MEMBER</data>
+</edge>
+<edge source="CriticalSignature::main_rebar_buckled" target="DamageType::main_rebar_buckled" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::main_rebar_buckled" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::main_rebar_ruptured" target="DamageType::main_rebar_ruptured" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::main_rebar_ruptured" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::tie_fractured" target="DamageType::tie_fractured" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::tie_fractured" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::core_concrete_crushing" target="DamageType::core_concrete_crushing" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::core_concrete_crushing" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::concrete_blowout" target="DamageType::concrete_blowout" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::concrete_blowout" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::story_collapse" target="DamageType::slab_sagging" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::story_collapse" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::overall_tilt_observed" target="DamageType::overall_tilt" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::overall_tilt_observed" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::soft_story" target="DamageType::story_offset" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::soft_story" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::joint_failure" target="DamageType::beam_column_joint_failure" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::joint_failure" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::short_column_shear" target="DamageType::x_shaped_crack" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::short_column_shear" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::base_separation" target="DamageType::base_separation" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::base_separation" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="CriticalSignature::support_displacement_severe" target="DamageType::support_displacement" id="0">
+  <data key="d83">SIGNATURE_OF_DAMAGE</data>
+</edge>
+<edge source="CriticalSignature::support_displacement_severe" target="Placard::紅單" id="0">
+  <data key="d83">SIGNATURE_IMPLIES_PLACARD</data>
+</edge>
+<edge source="GradeCriterion::GC_col_I" target="MemberType::column" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_col_I" target="DamageGrade::col_I" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_col_I" target="Threshold::TH_hair" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_col_II" target="MemberType::column" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_col_II" target="DamageGrade::col_II" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_col_II" target="Threshold::TH_hair" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_col_III" target="MemberType::column" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_col_III" target="DamageGrade::col_III" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_col_IV" target="MemberType::column" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_col_IV" target="DamageGrade::col_IV" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_col_V" target="MemberType::column" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_col_V" target="DamageGrade::col_V" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_I" target="MemberType::beam" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_I" target="DamageGrade::beam_I" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_I" target="Threshold::TH_hair" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_II" target="MemberType::beam" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_II" target="DamageGrade::beam_II" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_II" target="Threshold::TH_shear2" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_II" target="Threshold::TH_beam3" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_II" target="Threshold::TH_wallh1" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_III" target="MemberType::beam" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_III" target="DamageGrade::beam_III" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_III" target="Threshold::TH_shear2" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_III" target="Threshold::TH_beam3" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_III" target="Threshold::TH_wallh1" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_IV" target="MemberType::beam" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_IV" target="DamageGrade::beam_IV" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_V" target="MemberType::beam" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_beam_V" target="DamageGrade::beam_V" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_I" target="MemberType::shear_wall" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_I" target="DamageGrade::wall_I" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_I" target="Threshold::TH_shear2" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_I" target="Threshold::TH_beam3" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_I" target="Threshold::TH_wallh1" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_II" target="MemberType::shear_wall" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_II" target="DamageGrade::wall_II" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_II" target="Threshold::TH_shear2" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_II" target="Threshold::TH_beam3" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_II" target="Threshold::TH_wallh1" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_II" target="Threshold::TH_wallh2" id="0">
+  <data key="d83">USES_THRESHOLD</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_III" target="MemberType::shear_wall" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_III" target="DamageGrade::wall_III" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_IV" target="MemberType::shear_wall" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_IV" target="DamageGrade::wall_IV" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_V" target="MemberType::shear_wall" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_wall_V" target="DamageGrade::wall_V" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_brick_I" target="MemberType::bearing_wall" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_brick_I" target="DamageGrade::brick_I" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="GradeCriterion::GC_brick_II" target="MemberType::bearing_wall" id="0">
+  <data key="d83">CRITERION_FOR</data>
+</edge>
+<edge source="GradeCriterion::GC_brick_II" target="DamageGrade::brick_II" id="0">
+  <data key="d83">RESULTS_IN_GRADE</data>
+</edge>
+<edge source="SeverityRule::SR_col_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_col_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_col_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_beam_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_beam_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_beam_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_wall_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_wall_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_wall_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_brick_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_brick_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_brick_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_tilt_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_tilt_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_tilt_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_base_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_base_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_base_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_support_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_support_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_support_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_brace_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_brace_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_brace_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_groundcrack_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_groundcrack_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_groundcrack_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_slope_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_slope_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_slope_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_retwall_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_retwall_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_retwall_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_adjacent_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_adjacent_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_adjacent_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_ext_fall_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_ext_fall_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_ext_fall_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_int_topple_C" target="Severity::丙_嚴重" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_int_topple_B" target="Severity::乙_中等" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="SeverityRule::SR_int_topple_A" target="Severity::甲_輕微" id="0">
+  <data key="d83">AGGREGATES_TO</data>
+</edge>
+<edge source="PlacardRule::PR_red_tilt" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_red_base" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_red_column" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_red_beam" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_red_wall" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_red_groundcrack" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_red_slope_retwall" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_red_judgment" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_yellow_falling_toppling" target="Placard::黃單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_yellow_adjacent" target="Placard::黃單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_yellow_judgment" target="Placard::黃單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_green" target="Placard::綠單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_atc_unsafe" target="Placard::紅單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_atc_restricted" target="Placard::黃單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PlacardRule::PR_atc_inspected" target="Placard::綠單" id="0">
+  <data key="d83">TRIGGERS_PLACARD</data>
+</edge>
+<edge source="PositionContext::column_top@column" target="DamageMechanism::flexural" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">柱頂彎矩最大(反曲點在柱中央)軸力併合彎矩破壞保護層剝落</data>
+</edge>
+<edge source="PositionContext::column_bottom@column" target="DamageMechanism::flexural" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">柱底彎矩最大軸力併合彎矩破壞保護層剝落若箍筋不足主筋挫屈</data>
+</edge>
+<edge source="PositionContext::column_mid@column" target="DamageMechanism::shear" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">柱中央未配置圍束箍筋箍筋間距大易剪力破壞斜裂縫寬表示剪力筋已降伏</data>
+</edge>
+<edge source="PositionContext::column_mid@column" target="DamageMechanism::short_column_effect" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">窗台或牆束制致短柱中央剪力控制破壞</data>
+</edge>
+<edge source="PositionContext::beam_end@beam" target="DamageMechanism::flexural" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">梁兩端彎矩最大端點彎矩破壞受壓側混凝土剝落正常塑鉸為III級</data>
+</edge>
+<edge source="PositionContext::beam_end@beam" target="DamageMechanism::shear" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">梁端近柱大斜裂縫剪力破壞嚴重時連帶主筋下混凝土剝落</data>
+</edge>
+<edge source="PositionContext::beam_mid@beam" target="DamageMechanism::flexural" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">梁中央反曲點彎矩小無隔間牆長梁中央垂直裂紋</data>
+</edge>
+<edge source="PositionContext::beam_mid@beam" target="DamageMechanism::shear" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">梁下有隔間磚牆(牆短於梁)留短梁產生大剪力剪力破壞</data>
+</edge>
+<edge source="PositionContext::joint_region@beam_column_joint" target="DamageMechanism::joint_failure" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">梁柱接頭斜裂或混凝土擠壓破碎無緊密圍束箍筋</data>
+</edge>
+<edge source="PositionContext::wall_center@shear_wall" target="DamageMechanism::shear" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">牆中央斜裂縫寬大剪力筋降伏或握裹破壞嚴重剪力破壞</data>
+</edge>
+<edge source="PositionContext::wall_corner@shear_wall" target="DamageMechanism::axial_compression" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">牆兩端彎矩併合軸力破壞壓力側保護層剝落主筋挫屈核心爆裂</data>
+</edge>
+<edge source="PositionContext::wall_corner@shear_wall" target="DamageMechanism::flexural" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">牆拉力側主筋降伏續接不良可能拉斷</data>
+</edge>
+<edge source="PositionContext::opening_corner@shear_wall" target="DamageMechanism::shear" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">開口角隅應力集中斜向裂縫</data>
+</edge>
+<edge source="PositionContext::wall_column_interface@spandrel_or_sill_wall" target="DamageMechanism::short_column_effect" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">窗台牆與柱交界束制柱形成短柱效應</data>
+</edge>
+<edge source="PositionContext::base@foundation_or_column_base" target="DamageMechanism::axial_compression" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">柱底或柱腳破壞基礎與上部結構脫離錯開</data>
+</edge>
+<edge source="PositionContext::mid_height@brace" target="DamageMechanism::buckling" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">鋼斜撐中段挫屈</data>
+</edge>
+<edge source="PositionContext::distributed@shear_wall" target="DamageMechanism::shear" id="0">
+  <data key="d83">POSITION_IMPLIES_MECHANISM</data>
+  <data key="d86">大量分布斜裂縫遍及牆面</data>
+</edge>
+<edge source="DamageGradeScale::TW:I" target="TWGrade::I" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::TW:II" target="TWGrade::II" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::TW:III" target="TWGrade::III" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::TW:IV" target="TWGrade::IV" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::TW:V" target="TWGrade::V" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_masonry:G1" target="TWGrade::I" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_masonry:G2" target="TWGrade::II" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_masonry:G3" target="TWGrade::III" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_masonry:G4" target="TWGrade::IV" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_masonry:G5" target="TWGrade::V" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_rc:G1" target="TWGrade::I" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_rc:G2" target="TWGrade::II" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::EMS98_rc:G5" target="TWGrade::V" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::FEMA306:Insignificant" target="TWGrade::I" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::FEMA306:Slight" target="TWGrade::II" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::FEMA306:Moderate" target="TWGrade::III" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::FEMA306:Heavy" target="TWGrade::IV" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::FEMA306:Extreme" target="TWGrade::V" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="DamageGradeScale::ATC20:Moderate" target="TWGrade::III" id="0">
+  <data key="d83">SCALE_MAPS_TO_TW</data>
+</edge>
+<edge source="BehaviorMode::RC1A_insig" target="DamageMechanism::flexural" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1A_slight" target="DamageMechanism::flexural" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1A_mod" target="DamageMechanism::flexural" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1A_ext" target="DamageMechanism::flexural" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1B_insig" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1B_mod" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1B_heavy" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1C" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1D" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1E" target="DamageMechanism::axial_compression" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1F" target="DamageMechanism::flexural" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC1G" target="DamageMechanism::buckling" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC2H" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC3B" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RC3D" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RM_highduct" target="DamageMechanism::flexural" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RM_modduct" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::RM_lowduct" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::URM_wall_inplane" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::URM_wall_oop" target="DamageMechanism::non_structural_toppling" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::URM_nonwall" target="DamageMechanism::non_structural_falling" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::INF_solid" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::INF_steel" target="DamageMechanism::shear" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="BehaviorMode::INF_concrete" target="DamageMechanism::short_column_effect" id="0">
+  <data key="d83">BEHAVIOR_MAPS_TO_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::flexural:flexure" target="DamageMechanism::flexural" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::flexural:flexure_lap_splice_slip" target="DamageMechanism::flexural" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::shear:flexure_diagonal_tension" target="DamageMechanism::shear" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::shear:preemptive_diagonal_tension" target="DamageMechanism::shear" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::shear:flexure_web_crushing" target="DamageMechanism::shear" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::shear:flexure_sliding_shear" target="DamageMechanism::shear" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::shear:in_plane_shear_rocking" target="DamageMechanism::shear" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::shear:diagonal_compression_strut" target="DamageMechanism::shear" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::axial_compression:flexure_boundary_compression" target="DamageMechanism::axial_compression" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::short_column_effect:infilled_concrete_frame_captive" target="DamageMechanism::short_column_effect" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::buckling:flexure_out_of_plane_buckling" target="DamageMechanism::buckling" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::buckling:steel_member_buckling" target="DamageMechanism::buckling" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::joint_failure:beam_column_joint_shear" target="DamageMechanism::joint_failure" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::non_structural_toppling:out_of_plane_overturning" target="DamageMechanism::non_structural_toppling" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="MechanismIntlNote::non_structural_falling:appendage_failure" target="DamageMechanism::non_structural_falling" id="0">
+  <data key="d83">INTL_NOTE_FOR_MECHANISM</data>
+</edge>
+<edge source="DamageTypeCrosswalk::hairline_crack:EMS-98" target="DamageType::hairline_crack" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::hairline_crack:FEMA-306" target="DamageType::hairline_crack" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::diagonal_crack_45:FEMA-306" target="DamageType::diagonal_crack_45" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::x_shaped_crack:FEMA-306" target="DamageType::x_shaped_crack" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::mortar_joint_crack:FEMA-306" target="DamageType::mortar_joint_crack" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::cover_spalling:EMS-98" target="DamageType::cover_spalling" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::cover_spalling:FEMA-306" target="DamageType::cover_spalling" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::core_concrete_crushing:EMS-98" target="DamageType::core_concrete_crushing" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::core_concrete_crushing:FEMA-306" target="DamageType::core_concrete_crushing" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::main_rebar_buckled:EMS-98" target="DamageType::main_rebar_buckled" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::main_rebar_buckled:FEMA-306" target="DamageType::main_rebar_buckled" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::main_rebar_ruptured:EMS-98" target="DamageType::main_rebar_ruptured" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::main_rebar_ruptured:FEMA-306" target="DamageType::main_rebar_ruptured" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::dislocation:FEMA-306" target="DamageType::dislocation" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::overall_tilt:EMS-98" target="DamageType::overall_tilt" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::overall_tilt:ATC-20" target="DamageType::overall_tilt" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::story_offset:EMS-98" target="DamageType::story_offset" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::parapet_damage:ATC-20" target="DamageType::parapet_damage" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::parapet_damage:EMS-98" target="DamageType::parapet_damage" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::partition_collapse:EMS-98" target="DamageType::partition_collapse" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::beam_column_joint_failure:EMS-98" target="DamageType::beam_column_joint_failure" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::differential_settlement:ATC-20" target="DamageType::differential_settlement" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+<edge source="DamageTypeCrosswalk::compression_crushing:FEMA-306" target="DamageType::compression_crushing" id="0">
+  <data key="d83">CROSSWALK_FOR_DAMAGE</data>
+</edge>
+</graph></graphml>

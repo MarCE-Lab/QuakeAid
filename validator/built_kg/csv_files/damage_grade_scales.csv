@@ -1,0 +1,24 @@
+scale_id,level,label,structural_meaning,modification_factor,maps_to_tw_grade,source
+TW,I,輕微/髮絲裂縫,minor hairline cracking no structural effect,DF=0.1,I,判定準則
+TW,II,明顯裂痕,visible cracks plaster spalling slight structural,DF=0.2,II,判定準則
+TW,III,保護層剝落,cover spalling no rebar buckling moderate structural,DF=0.3,III,判定準則
+TW,IV,大範圍剝落鋼筋外露,large spalling ties opened main rebar may buckle heavy,DF=0.65,IV,判定準則
+TW,V,主筋挫屈核心碎裂,rebar buckled core crushing story sag destruction,DF=1.0,V,判定準則
+EMS98_masonry,G1,Negligible to slight,no structural slight non-structural hairline cracks few walls,na,I,EMS-98
+EMS98_masonry,G2,Moderate,slight structural cracks many walls partial chimney collapse,na,II,EMS-98
+EMS98_masonry,G3,Substantial to heavy,moderate structural large extensive cracks most walls,na,III,EMS-98
+EMS98_masonry,G4,Very heavy,heavy structural serious wall failure partial roof floor failure,na,IV,EMS-98
+EMS98_masonry,G5,Destruction,very heavy structural total or near total collapse,na,V,EMS-98
+EMS98_rc,G1,Negligible to slight,fine cracks in plaster over frame or walls at base,na,I,EMS-98
+EMS98_rc,G2,Moderate,cracks in columns beams structural walls fall of cladding plaster,na,II,EMS-98
+EMS98_rc,G3,Substantial to heavy,cracks in columns and beam-column joints spalling cover buckling rebar,na,III_IV,EMS-98
+EMS98_rc,G4,Very heavy,compression failure of concrete fracture rebars column tilting partial collapse,na,IV_V,EMS-98
+EMS98_rc,G5,Destruction,collapse of ground floor or wings,na,V,EMS-98
+FEMA306,Insignificant,Insignificant,minor loss stiffness cosmetic restoration,lambdaK=0.8;lambdaQ=1.0;lambdaD=1.0,I,FEMA-306
+FEMA306,Slight,Slight,small effect minor structural restoration,lambdaK=0.6;lambdaQ=1.0;lambdaD=1.0,II,FEMA-306
+FEMA306,Moderate,Moderate,intermediate effect spalling cover plastic hinge toe,lambdaK=0.5;lambdaQ=0.8;lambdaD=0.9,III,FEMA-306
+FEMA306,Heavy,Heavy,major effect extensive restoration replacement may be required,lambdaK=0.2;lambdaQ=0.3;lambdaD=0.7,IV,FEMA-306
+FEMA306,Extreme,Extreme,unreliable performance replacement or enhancement required,na,V,FEMA-306
+ATC20,MinorNone,Minor/None,apparently no significant structural damage,na,I_II,ATC-20
+ATC20,Moderate,Moderate,intermediate damage localized severe may allow restricted use,na,III,ATC-20
+ATC20,Severe,Severe,endangers overall building grounds for unsafe posting,na,IV_V,ATC-20

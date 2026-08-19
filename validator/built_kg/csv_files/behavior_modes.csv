@@ -1,0 +1,25 @@
+id,system,component_type,behavior_mode,maps_to_mechanism,ductility,severity,crack_criteria,modification_factors,source
+RC1A_insig,reinforced_concrete,isolated_wall_or_stronger_pier,flexure,flexural,high,Insignificant,flexural crack <=3/16in and shear crack <=1/8in no significant spalling,lambdaK=0.8,FEMA-306
+RC1A_slight,reinforced_concrete,isolated_wall_or_stronger_pier,flexure,flexural,high,Slight,crack <=1/4in no shear crack >1/8in no buckled or fractured rebar,lambdaK=0.6,FEMA-306
+RC1A_mod,reinforced_concrete,isolated_wall_or_stronger_pier,flexure,flexural,high,Moderate,spalling or incipient spalling at toe in plastic hinge cover only crack <=1/4in,lambdaK=0.5;lambdaQ=0.8,FEMA-306
+RC1A_ext,reinforced_concrete,isolated_wall_or_stronger_pier,flexure,flexural,high,Extreme,reinforcement fractured wide flexural crack single concentrated large residual displacement,na,FEMA-306
+RC1B_insig,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_diagonal_tension,shear,intermediate,Insignificant,shear crack <=1/16in and flexural <=3/16in no significant spalling,lambdaK=0.8,FEMA-306
+RC1B_mod,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_diagonal_tension,shear,intermediate,Moderate,shear crack <=1/8in flexural <=1/4in shear >1/16in or limited spalling,lambdaK=0.5;lambdaQ=0.8,FEMA-306
+RC1B_heavy,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_diagonal_tension,shear,intermediate,Heavy,shear crack >1/8in but <=3/8in concentrated at one or more cracks,lambdaK=0.2;lambdaQ=0.3;lambdaD=0.7,FEMA-306
+RC1C,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_web_crushing,shear,intermediate,varies,web crushing of concrete after flexural yielding diagonal compression,na,FEMA-306
+RC1D,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_sliding_shear,shear,intermediate,varies,sliding along construction joint or crack at wall base horizontal offset,na,FEMA-306
+RC1E,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_boundary_compression,axial_compression,intermediate,varies,boundary zone compression failure bar buckling loss of confinement,na,FEMA-306
+RC1F,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_lap_splice_slip,flexural,low,varies,slip of lap splice at wall base degrading strength,na,FEMA-306
+RC1G,reinforced_concrete,isolated_wall_or_stronger_pier,flexure_out_of_plane_buckling,buckling,low,varies,out-of-plane instability of thin wall or boundary,na,FEMA-306
+RC2H,reinforced_concrete,weaker_pier,preemptive_diagonal_tension,shear,low,varies,brittle diagonal tension shear crack before flexural yield x-pattern,na,FEMA-306
+RC3B,reinforced_concrete,coupling_beam,flexure_diagonal_tension,shear,intermediate,varies,diagonal tension cracking in coupling beam over openings,na,FEMA-306
+RC3D,reinforced_concrete,coupling_beam,flexure_sliding_shear,shear,intermediate,varies,sliding shear at coupling beam ends,na,FEMA-306
+RM_highduct,reinforced_masonry,reinforced_masonry_wall,flexure,flexural,high,varies,flexural cracking horizontal at bed joints ductile,na,FEMA-306
+RM_modduct,reinforced_masonry,reinforced_masonry_wall,flexure_shear,shear,moderate,varies,combined flexure and diagonal shear cracking,na,FEMA-306
+RM_lowduct,reinforced_masonry,reinforced_masonry_wall,shear,shear,low,varies,brittle diagonal shear cracking stair-step through units,na,FEMA-306
+URM_wall_inplane,unreinforced_masonry,urm_wall,in_plane_shear_rocking,shear,low,varies,bed-joint sliding diagonal stair-step cracking rocking toe crushing,na,FEMA-306
+URM_wall_oop,unreinforced_masonry,urm_wall,out_of_plane,non_structural_toppling,low,varies,out-of-plane flexure overturning of wall,na,FEMA-306
+URM_nonwall,unreinforced_masonry,urm_non_wall_element,falling_hazard,non_structural_falling,low,varies,parapet chimney gable wall appendage failure,na,FEMA-306
+INF_solid,infilled_frame,solid_infill_panel,diagonal_compression_strut,shear,low,varies,diagonal cracking corner crushing of infill panel,na,FEMA-306
+INF_steel,infilled_frame,infilled_steel_frame,frame_infill_interaction,shear,low,varies,gap opening corner crushing frame yielding,na,FEMA-306
+INF_concrete,infilled_frame,infilled_concrete_frame,frame_infill_interaction,short_column_effect,low,varies,captive or short column effect from partial-height infill,na,FEMA-306

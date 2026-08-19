@@ -1,0 +1,8 @@
+id,label_zh,meaning_zh,placard_floor_hint,source
+red_placard,紅色危險標誌,危險建築物禁止進入須補強或拆除認定後始得使用,紅單,教材;淺談
+yellow_placard,黃色危險標誌,限制使用須排除危險認定後始得使用,黃單,教材;淺談
+paint_mark,噴漆標記,評估或調查留下之噴漆記號,none,教材
+crack_monitor_gauge,裂縫監測計,監測裂縫是否擴大之量規,none,自我檢查手冊
+warning_tape,警示帶,劃定危險區域之警示膠帶,none,教材
+shoring_present,臨時支撐,已架設緊急耐震補強支撐,none,教材
+none,無標記,無人為標記,none,教材

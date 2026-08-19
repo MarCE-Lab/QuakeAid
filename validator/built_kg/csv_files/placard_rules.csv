@@ -1,0 +1,16 @@
+id,condition,resulting_placard,source
+PR_red_tilt,building_tilt.severity>=乙,紅單,明細表;教材;淺談
+PR_red_base,base_separation_scour.severity>=乙,紅單,明細表;教材;淺談
+PR_red_column,column.severity>=乙,紅單,明細表;教材;淺談
+PR_red_beam,beam.severity>=乙,紅單,明細表;教材;淺談
+PR_red_wall,structural_wall.severity>=乙,紅單,明細表;教材;淺談
+PR_red_groundcrack,ground_crack.severity>=乙,紅單,明細表;教材;淺談
+PR_red_slope_retwall,slope_or_retaining_wall.severity>=乙,紅單,明細表;教材;淺談
+PR_red_judgment,assessor_judges_dangerous_must_stop_use,紅單,明細表;教材
+PR_yellow_falling_toppling,any(exterior|interior_falling|toppling).severity=丙,黃單,明細表;教材;淺談
+PR_yellow_adjacent,adjacent_building_tilt.severity>=乙,黃單,明細表;教材;淺談
+PR_yellow_judgment,assessor_judges_dangerous_must_pause_use,黃單,明細表;教材
+PR_green,none_of_above,綠單,淺談;勘災作業準則
+PR_atc_unsafe,severe_conditions_endangering_overall_building,紅單,ATC-20
+PR_atc_restricted,localized_severe_and_overall_moderate_conditions,黃單,ATC-20
+PR_atc_inspected,no_severe_conditions_apparently_safe,綠單,ATC-20

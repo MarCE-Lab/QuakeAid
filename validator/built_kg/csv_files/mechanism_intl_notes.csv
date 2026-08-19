@@ -1,0 +1,16 @@
+schema_mechanism,intl_submode,standard,description_en,observable_signature,source
+flexural,flexure,FEMA-306,Ductile flexural response plastic hinge at member end,horizontal cracks at base wider flexural cracks toe spalling at high ductility,FEMA-306
+flexural,flexure_lap_splice_slip,FEMA-306,Lap splice slip degrades flexural strength,horizontal crack at splice region strength degradation,FEMA-306
+shear,flexure_diagonal_tension,FEMA-306,Shear diagonal tension after flexural yield,diagonal shear cracks one or more wide concentrated,FEMA-306
+shear,preemptive_diagonal_tension,FEMA-306,Brittle shear before flexural yield weaker pier,x-pattern diagonal cracks early little ductility,FEMA-306
+shear,flexure_web_crushing,FEMA-306,Web crushing of concrete in diagonal compression,crushed concrete along diagonal strut after cracking,FEMA-306
+shear,flexure_sliding_shear,FEMA-306,Sliding along base joint or crack,horizontal offset sliding at wall base construction joint,FEMA-306
+shear,in_plane_shear_rocking,FEMA-306,URM in-plane bed-joint sliding and rocking,stair-step diagonal cracks through bed joints toe crushing,FEMA-306
+shear,diagonal_compression_strut,FEMA-306,Infill panel acts as diagonal strut,diagonal cracking and corner crushing of infill,FEMA-306
+axial_compression,flexure_boundary_compression,FEMA-306,Boundary zone compression failure and bar buckling,cover spalling bar buckling loss of confinement at wall toe,FEMA-306
+short_column_effect,infilled_concrete_frame_captive,FEMA-306,Partial-height infill creates captive short column,short column shear cracking x-pattern at column mid,FEMA-306
+buckling,flexure_out_of_plane_buckling,FEMA-306,Out-of-plane instability of thin wall or boundary,wall bows out of plane lateral instability,FEMA-306
+buckling,steel_member_buckling,ATC-20,Steel brace or member buckling,buckled steel member visible deformation,ATC-20
+joint_failure,beam_column_joint_shear,EMS-98,Beam-column joint cracking at frame base,diagonal cracks in joint region bond failure of beam bars,EMS-98
+non_structural_toppling,out_of_plane_overturning,FEMA-306,Out-of-plane overturning of URM wall or parapet,wall or parapet topples outward,FEMA-306
+non_structural_falling,appendage_failure,FEMA-306,URM appendage falling hazard,parapet chimney gable wall cornice falls,FEMA-306

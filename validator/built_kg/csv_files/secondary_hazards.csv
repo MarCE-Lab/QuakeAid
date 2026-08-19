@@ -1,0 +1,10 @@
+id,label_zh,hazard_category,implies_placard_hint,source
+exposed_wiring,電線掉落/裸露,utility,黃單,教材;明細表
+water_leak,漏水,utility,none,新北市震後檢測;自我檢查手冊
+gas_pipe,瓦斯管破裂,utility,黃單,教材;明細表
+sprinkler_pipe,灑水管線破裂,utility,黃單,教材
+loose_sign,招牌鬆動,falling,黃單,明細表;教材
+loose_window_grille,鐵窗鬆動,falling,黃單,明細表;教材
+tilted_water_tank,水塔傾斜,toppling,黃單,明細表;教材
+falling_debris,墜落物碎片,falling,黃單,明細表;教材
+ceiling_fixture_loose,天花板懸吊物鬆動,falling,黃單,明細表;教材
