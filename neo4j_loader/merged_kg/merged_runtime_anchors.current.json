@@ -1,0 +1,701 @@
+{
+  "_meta": {
+    "purpose": "Runtime anchor concepts after all phases (terminology + qa_type T1+T2+T3+T4+T5).",
+    "version": "all",
+    "language": "zh-TW",
+    "design_note": "Anchors are reserved for safety-critical or runtime normalization concepts. Other terminology/QA nodes keep their term-derived IDs and may be merged in further phases."
+  },
+  "anchors": [
+    {
+      "node_id": "SEV_A",
+      "display_name": "A級損傷",
+      "runtime_role": "Severity_Level",
+      "semantic_category": "severity_level",
+      "summary": "結構安全性嚴重受損之最高級別損傷，建築不適合繼續居住，須立即撤離。",
+      "description": "A級損傷 (Level A / Red Tag) 代表結構主要承重系統已產生不可接受之損壞，依據 ATC-20 或 Taiwan 震後建築安全評估規範，建築不適合繼續使用。對應之安全行動為「盡速遠離」。在 ATC-20 流程中以張貼『不安全標示（紅標）』表示。",
+      "aliases": [
+        "A級",
+        "Level A",
+        "嚴重損傷",
+        "重損",
+        "紅色標籤",
+        "紅色標記",
+        "Red Tag",
+        "severe damage",
+        "不安全標示",
+        "紅標",
+        "禁止進入標籤",
+        "Unsafe placard",
+        "嚴重",
+        "紅單",
+        "高度危險",
+        "紅色危險",
+        "盡速遠離級",
+        "重大損傷"
+      ],
+      "source_ids": [
+        "term_142",
+        "term_865",
+        "term_420",
+        "term_166"
+      ],
+      "ordinal": 3,
+      "default_action": "ACT_EVAC",
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "SEV_A"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "SEV_A"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "SEV_A",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "anchor_merge",
+          "confidence": 1.0,
+          "reason": "Severity anchor; QA adds aliases 嚴重, 紅單, 高度危險."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "SEV_A",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['紅色危險', '盡速遠離級', '重大損傷']"
+        }
+      ],
+      "merge_notes": "term_166 (不安全標示/紅標 — ATC-20 placard) absorbed because it is the procedural artifact of A-level severity classification. Phase 2.2: added QA T3+T4 aliases ['紅色危險', '盡速遠離級', '重大損傷']."
+    },
+    {
+      "node_id": "SEV_B",
+      "display_name": "B級損傷",
+      "runtime_role": "Severity_Level",
+      "semantic_category": "severity_level",
+      "summary": "中等嚴重程度之結構損傷，結構功能受損但尚未達到立即危險，需專業評估。",
+      "description": "B級損傷 (Level B / Yellow Tag) 代表結構受損程度中等。建築使用需限制，須由持照結構技師評估後決定是否繼續使用。對應之安全行動為「請教專業技師」。在 ATC-20 流程中以張貼『使用限制標示（黃標）』表示。",
+      "aliases": [
+        "B級",
+        "Level B",
+        "中等損傷",
+        "中度損傷",
+        "黃色標籤",
+        "黃色標記",
+        "Yellow Tag",
+        "moderate damage",
+        "使用限制標示",
+        "黃標",
+        "限制使用標籤",
+        "Restricted Use placard",
+        "中等",
+        "黃單",
+        "黃色注意",
+        "限制使用級",
+        "請教專業技師級"
+      ],
+      "source_ids": [
+        "term_143",
+        "term_864",
+        "term_419",
+        "term_165"
+      ],
+      "ordinal": 2,
+      "default_action": "ACT_ENGINEER_INSPECTION",
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "SEV_B"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "SEV_B"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "SEV_B",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "anchor_merge",
+          "confidence": 1.0,
+          "reason": "Severity anchor; QA adds aliases 中等, 黃單."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "SEV_B",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['黃色注意', '限制使用級']"
+        }
+      ],
+      "merge_notes": "term_165 (使用限制標示/黃標 — ATC-20 placard) absorbed because it is the procedural artifact of B-level severity classification. Phase 2.2: added QA T3+T4 aliases ['黃色注意', '限制使用級']."
+    },
+    {
+      "node_id": "SEV_C",
+      "display_name": "C級損傷",
+      "runtime_role": "Severity_Level",
+      "semantic_category": "severity_level",
+      "summary": "輕微損傷，結構安全大致無虞，可由屋主自行修補或持續觀察。",
+      "description": "C級損傷 (Level C / Green Tag) 代表損傷僅及非結構部位或為輕微表面問題，建築可正常使用。對應之安全行動為「自行修補」。",
+      "aliases": [
+        "C級",
+        "Level C",
+        "輕微損傷",
+        "微損",
+        "綠色標籤",
+        "綠色標記",
+        "Green Tag",
+        "minor damage",
+        "輕微",
+        "綠單",
+        "表面損傷",
+        "綠色安全",
+        "可使用級",
+        "自行修補級"
+      ],
+      "source_ids": [
+        "term_144",
+        "term_863",
+        "term_418"
+      ],
+      "ordinal": 1,
+      "default_action": "ACT_SELF_REPAIR_OR_MONITOR",
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "SEV_C"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "SEV_C"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "SEV_C",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "anchor_merge",
+          "confidence": 1.0,
+          "reason": "Severity anchor; QA adds aliases 輕微, 綠單, 表面損傷."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "SEV_C",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['綠色安全', '可使用級']"
+        }
+      ],
+      "merge_notes": "Anchor preserved from terminology runtime_anchors.json; kg_nodes.jsonl record agrees on source_ids. Phase 2.2: added QA T3+T4 aliases ['綠色安全', '可使用級']."
+    },
+    {
+      "node_id": "ACT_EVAC",
+      "display_name": "盡速遠離",
+      "runtime_role": "Action",
+      "semantic_category": "severity_level",
+      "summary": "立即撤離建築並通報結構技師。",
+      "description": "對應 A 級損傷之安全行動。建築主結構已嚴重受損，存在立即性安全風險，住戶應停止進入並撤離至安全區域。",
+      "aliases": [
+        "立即撤離",
+        "立即離開",
+        "A級處置",
+        "撤離",
+        "evacuate",
+        "緊急撤離",
+        "疏散",
+        "盡速撤離",
+        "儘速遠離",
+        "立刻離開",
+        "盡快離開",
+        "離開建築物"
+      ],
+      "source_ids": [
+        "term_145"
+      ],
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "ACT_EVAC"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "ACT_EVAC"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "ACT_EVAC",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "anchor_merge",
+          "confidence": 1.0,
+          "reason": "Action anchor; QA adds 立即撤離, 緊急撤離, 撤離, 疏散, 盡速撤離, evacuate."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "ACT_EVAC",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['儘速遠離', '立刻離開', '盡快離開']"
+        }
+      ],
+      "merge_notes": "Dataset categorises this as 'severity_level' but its runtime role is Action. We preserve semantic_category and override runtime_role accordingly. Phase 2.2: added QA T3+T4 aliases ['儘速遠離', '立刻離開', '盡快離開']."
+    },
+    {
+      "node_id": "ACT_ENGINEER_INSPECTION",
+      "display_name": "請教專業技師",
+      "runtime_role": "Action",
+      "semantic_category": "severity_level",
+      "summary": "委託持照結構技師現場勘查與評估。",
+      "description": "對應 B 級損傷之安全行動。建築受損但尚未達立即危險，須由結構技師判定可否繼續使用、需何種補強。",
+      "aliases": [
+        "諮詢專業",
+        "專業評估",
+        "請結構技師評估",
+        "B級處置",
+        "限制使用",
+        "engineer inspection",
+        "請技師評估",
+        "結構技師評估",
+        "技師檢查",
+        "consult engineer",
+        "結構技師現場勘查",
+        "委託持照技師",
+        "請技師檢查",
+        "找技師"
+      ],
+      "source_ids": [
+        "term_146"
+      ],
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "ACT_ENGINEER_INSPECTION"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "ACT_ENGINEER_INSPECTION"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "ACT_ENGINEER_INSPECTION",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "anchor_merge",
+          "confidence": 1.0,
+          "reason": "Action anchor; QA adds 請技師評估, 專業評估, 結構技師評估, 技師檢查, consult engineer."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "ACT_ENGINEER_INSPECTION",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['結構技師現場勘查', '委託持照技師', 'engineer inspection']"
+        }
+      ],
+      "merge_notes": "Dataset categorises this as 'severity_level' but its runtime role is Action. Phase 2.2: added QA T3+T4 aliases ['結構技師現場勘查', '委託持照技師', 'engineer inspection']."
+    },
+    {
+      "node_id": "ACT_SELF_REPAIR_OR_MONITOR",
+      "display_name": "自行修補",
+      "runtime_role": "Action",
+      "semantic_category": "severity_level",
+      "summary": "屋主可自行進行表面修補或持續觀察。",
+      "description": "對應 C 級損傷之安全行動。損傷為非結構性或輕微，屋主可自行使用填縫劑、油漆等進行表面修補；若裂縫擴大應再尋求專業評估。",
+      "aliases": [
+        "自主修繕",
+        "C級處置",
+        "輕微損傷處理",
+        "觀察即可",
+        "self repair",
+        "自行觀察",
+        "觀察追蹤",
+        "自行處理",
+        "monitor",
+        "自行修復",
+        "自己處理",
+        "屋主修補",
+        "可自行處理"
+      ],
+      "source_ids": [
+        "term_147"
+      ],
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "ACT_SELF_REPAIR_OR_MONITOR"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "ACT_SELF_REPAIR_OR_MONITOR"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "ACT_SELF_REPAIR_OR_MONITOR",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "anchor_merge",
+          "confidence": 1.0,
+          "reason": "Action anchor; QA adds 自行觀察, 觀察追蹤, 自行處理, monitor, self repair."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "ACT_SELF_REPAIR_OR_MONITOR",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['自行修復', '自己處理', '屋主修補', '可自行處理']"
+        }
+      ],
+      "merge_notes": "Dataset categorises this as 'severity_level' but its runtime role is Action. Phase 2.2: added QA T3+T4 aliases ['自行修復', '自己處理', '屋主修補', '可自行處理']."
+    },
+    {
+      "node_id": "E_WALL",
+      "display_name": "牆",
+      "runtime_role": "Structural_Element",
+      "semantic_category": "structural_element",
+      "summary": "建築物之垂直面狀構件，承受水平與垂直荷載並界定空間。涵蓋承重牆、隔間牆、剪力牆等子型。",
+      "description": "牆 (wall) 是 CV 模組常用之 generic 構件標籤。在 KG 中作為 Structural_Element 的一般性 anchor 使用，並吸收 term_007「牆體」此一同義概念，以避免 alias collision。具體子型如剪力牆 (E_term_001)、承重牆 (E_term_163)、結構牆 (E_term_472)、隔間牆 (E_term_162) 等以 sub_type_of 關係連結至此 anchor。",
+      "aliases": [
+        "牆體",
+        "牆壁",
+        "wall",
+        "牆面"
+      ],
+      "source_ids": [
+        "term_007"
+      ],
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "E_WALL"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "E_WALL"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "E_WALL",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "anchor_merge",
+          "confidence": 1.0,
+          "reason": "Anchor; QA seed_ontology definition adds aliases (牆體, wall, 牆面, 牆壁) to canonical anchor."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "E_WALL",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['牆壁']"
+        }
+      ],
+      "merge_notes": "Anchor absorbs term_007 (牆體) since the term's definition matches the generic wall concept. Specific wall subtypes remain as separate nodes. Phase 2.2: added QA T3+T4 aliases ['牆壁']."
+    },
+    {
+      "node_id": "T_SPALLING_WITH_FINE_CRACK",
+      "display_name": "剝落與小裂縫",
+      "runtime_role": "Damage_Pattern",
+      "semantic_category": "damage_pattern",
+      "summary": "混凝土表面剝落並伴隨細小裂縫之複合損傷型態。",
+      "description": "此型態為 CV 模組可能輸出的複合 pattern 標籤之一，代表剝落與細小裂縫同時出現於同一構件表面。在 KG 中以 anchor 形式存在以服務 normalization。其組成可由 T_term_090 (剝落) 與 T_term_111 (髮絲裂縫) 推導。",
+      "aliases": [
+        "剝落+裂縫",
+        "spalling with hairline crack",
+        "剝落伴隨裂縫",
+        "複合損傷",
+        "spalling with cracks",
+        "剝落加裂縫",
+        "剝落+細小裂縫",
+        "剝落與細小裂縫",
+        "細小裂縫與剝落"
+      ],
+      "source_ids": [],
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "T_SPALLING_WITH_FINE_CRACK"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "T_SPALLING_WITH_FINE_CRACK"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "T_SPALLING_AND_CRACK",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "name_merge",
+          "confidence": 0.97,
+          "reason": "Composite-damage runtime anchor; QA name 剝落與小裂縫 = anchor display_name 剝落與小裂縫."
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "T_SPALLING_WITH_FINE_CRACK",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['剝落加裂縫', '剝落+細小裂縫']"
+        }
+      ],
+      "merge_notes": "DATASET_SPEC §3 lists this as a damage_pattern enum value but no individual term exists. Created as anchor. Phase 2.2: added QA T3+T4 aliases ['剝落加裂縫', '剝落+細小裂縫']."
+    },
+    {
+      "node_id": "T_CRACK_GENERIC",
+      "display_name": "裂縫（通稱）",
+      "runtime_role": "Damage_Type",
+      "semantic_category": "damage_pattern",
+      "summary": "通稱『裂縫』，是所有具體裂縫型態（X形、斜向、水平、垂直、V形、網狀、髮絲、貫穿、撓曲...）的上位概念。",
+      "description": "用於 QA 與 RAG 中 user 以『裂縫』泛稱時的 entity-linking 目標。具體 pattern 透過 sub_type_of 關係連結至此 anchor。validator 不應以此 anchor 觸發任何 severity 規則。",
+      "aliases": [
+        "crack",
+        "裂痕",
+        "裂開",
+        "縫隙",
+        "裂縫"
+      ],
+      "source_ids": [],
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "T_CRACK_GENERIC"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "T_CRACK_GENERIC"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "AUX_GENERIC_CRACK",
+          "source_file": "kg_nodes_1_2.jsonl",
+          "match_type": "alias_merge",
+          "confidence": 0.97,
+          "reason": "裂縫 (通稱) ≡ T_CRACK_GENERIC anchor. Definite anchor match for the umbrella crack concept."
+        }
+      ],
+      "merge_notes": "Required because DATASET_SPEC question_variations strategy explicitly lists 裂縫→裂痕→縫隙→裂開 as alias chain.",
+      "validator_blocked": true
+    },
+    {
+      "node_id": "AUX_COST_RANGE",
+      "display_name": "費用範圍（通稱）",
+      "runtime_role": "Cost_Range",
+      "semantic_category": "auxiliary",
+      "summary": "修繕費用範圍 anchor。實際費用節點以 AUX_COST_RANGE_<lo>_<hi> 形式 instantiate。",
+      "description": "此 anchor 是 affects_cost 關係的 range 父節點。子實例（如 AUX_COST_RANGE_3000_15000）由 QA Type-4 grounding 過程產生，且永不為 validator_grade。",
+      "aliases": [
+        "修繕費用",
+        "repair cost",
+        "修補費用",
+        "維修費用",
+        "施工成本"
+      ],
+      "source_ids": [],
+      "status": "accepted",
+      "source_anchors": [
+        {
+          "dataset": "terminology",
+          "source_file": "runtime_anchors.json",
+          "source_node_id": "AUX_COST_RANGE"
+        },
+        {
+          "dataset": "terminology",
+          "source_file": "kg_nodes.jsonl",
+          "source_node_id": "AUX_COST_RANGE"
+        },
+        {
+          "dataset": "qa_type",
+          "source_node_id": "AUX_COST_RANGE",
+          "source_file": "kg_nodes_3_4.jsonl",
+          "match_type": "anchor_merge_phase2_2",
+          "confidence": 1.0,
+          "reason": "Phase 2.2: QA T3+T4 contributed additional aliases: ['修補費用', '維修費用', '施工成本']"
+        }
+      ],
+      "merge_notes": "Required by KG_BUILD_SPEC §10 Example 5. Created as anchor; concrete cost-range nodes are produced during QA grounding. Phase 2.2: added QA T3+T4 aliases ['修補費用', '維修費用', '施工成本'].",
+      "validator_blocked": true
+    }
+  ],
+  "_consolidation_log": [
+    {
+      "anchor": "SEV_A",
+      "consolidates": [
+        "term_142 (A級損傷)",
+        "term_865 (嚴重損傷)",
+        "term_420 (紅色標籤)"
+      ],
+      "rationale": "Three terms referring to the same severity tier. Anchor SEV_A absorbs them; individual term nodes use SEV_term_142 etc. but are linked via same_as to SEV_A."
+    },
+    {
+      "anchor": "SEV_B",
+      "consolidates": [
+        "term_143 (B級損傷)",
+        "term_864 (中度損傷)",
+        "term_419 (黃色標籤)"
+      ]
+    },
+    {
+      "anchor": "SEV_C",
+      "consolidates": [
+        "term_144 (C級損傷)",
+        "term_863 (微損)",
+        "term_418 (綠色標籤)"
+      ]
+    },
+    {
+      "anchor_id": "SEV_A",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "SEV_A (anchor_merge)"
+      ],
+      "newly_added_aliases": [
+        "嚴重",
+        "紅單",
+        "高度危險"
+      ]
+    },
+    {
+      "anchor_id": "SEV_B",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "SEV_B (anchor_merge)"
+      ],
+      "newly_added_aliases": [
+        "中等",
+        "黃單"
+      ]
+    },
+    {
+      "anchor_id": "SEV_C",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "SEV_C (anchor_merge)"
+      ],
+      "newly_added_aliases": [
+        "輕微",
+        "綠單",
+        "表面損傷"
+      ]
+    },
+    {
+      "anchor_id": "ACT_EVAC",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "ACT_EVAC (anchor_merge)"
+      ],
+      "newly_added_aliases": [
+        "緊急撤離",
+        "疏散",
+        "盡速撤離"
+      ]
+    },
+    {
+      "anchor_id": "ACT_ENGINEER_INSPECTION",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "ACT_ENGINEER_INSPECTION (anchor_merge)"
+      ],
+      "newly_added_aliases": [
+        "請技師評估",
+        "結構技師評估",
+        "技師檢查",
+        "consult engineer"
+      ]
+    },
+    {
+      "anchor_id": "ACT_SELF_REPAIR_OR_MONITOR",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "ACT_SELF_REPAIR_OR_MONITOR (anchor_merge)"
+      ],
+      "newly_added_aliases": [
+        "自行觀察",
+        "觀察追蹤",
+        "自行處理",
+        "monitor"
+      ]
+    },
+    {
+      "anchor_id": "E_WALL",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "E_WALL (anchor_merge)"
+      ],
+      "newly_added_aliases": [
+        "牆面"
+      ]
+    },
+    {
+      "anchor_id": "T_SPALLING_WITH_FINE_CRACK",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "T_SPALLING_AND_CRACK (name_merge)"
+      ],
+      "newly_added_aliases": [
+        "剝落伴隨裂縫",
+        "複合損傷",
+        "spalling with cracks"
+      ]
+    },
+    {
+      "anchor_id": "T_CRACK_GENERIC",
+      "phase": "phase2_1",
+      "absorbed_qa_nodes": [
+        "AUX_GENERIC_CRACK (alias_merge)"
+      ],
+      "newly_added_aliases": [
+        "裂縫"
+      ]
+    },
+    {
+      "phase": "phase_2_3",
+      "date": "2026-05-05",
+      "description": "Phase 2.3 absorbed QA T5 colloquial alias variants into existing anchors.",
+      "changes_per_anchor": {
+        "SEV_B": [
+          "請教專業技師級"
+        ],
+        "SEV_C": [
+          "自行修補級"
+        ],
+        "ACT_EVAC": [
+          "離開建築物"
+        ],
+        "ACT_ENGINEER_INSPECTION": [
+          "找技師",
+          "請技師檢查"
+        ],
+        "T_SPALLING_WITH_FINE_CRACK": [
+          "剝落與細小裂縫",
+          "細小裂縫與剝落"
+        ]
+      }
+    }
+  ]
+}
